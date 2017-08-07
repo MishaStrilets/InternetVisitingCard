@@ -113,17 +113,6 @@
 			<artifactId>javax.servlet-api</artifactId>
 		</dependency>
 
-		<!-- JSP -->
-		<dependency>
-			<groupId>javax.servlet.jsp</groupId>
-			<artifactId>javax.servlet.jsp-api</artifactId>
-		</dependency>
-
-		<!-- JSTL -->
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>jstl</artifactId>
-		</dependency>
 	</dependencies>
 
 	<build>
