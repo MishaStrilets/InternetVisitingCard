@@ -24,6 +24,11 @@ public class CardServiceImpl implements CardService {
 		return dao.getCardById(id);
 	}
 
+	public Card getCardByLogin(String login) {
+		Card card = dao.getCardByLogin(login);
+		return card;
+	}
+
 	public List<Card> getCardsByName(String name) {
 		List<Card> cards = dao.getCardsByName(name);
 		return cards;
@@ -60,6 +65,11 @@ public class CardServiceImpl implements CardService {
 
 	public List<Card> getAllCards() {
 		return dao.getAllCards();
+	}
+
+	public boolean isCardLoginUnique(Integer id, String login) {
+		Card card = getCardByLogin(login);
+		return (card == null || ((id != null) && (card.getId() == id)));
 	}
 
 }

@@ -3,7 +3,6 @@ package strilets.dao;
 import java.util.List;
 
 import org.hibernate.Criteria;
-import org.hibernate.Hibernate;
 import org.hibernate.criterion.MatchMode;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
@@ -25,10 +24,18 @@ public class CardDaoImpl extends AbstractDao<Integer, Card> implements CardDao {
 
 	@SuppressWarnings("unchecked")
 	public List<Card> getCardsByName(String name) {
-		logger.info("NAME : {}", name);
+		logger.info("Name : {}", name);
 		Criteria criteria = createEntityCriteria();
 		List<Card> cards = criteria.add(Restrictions.like("name", name, MatchMode.START)).list();
 		return cards;
+	}
+
+	public Card getCardByLogin(String login) {
+		logger.info("Login : {}", login);
+		Criteria criteria = createEntityCriteria();
+		criteria.add(Restrictions.eq("login", login));
+		Card card = (Card) criteria.uniqueResult();
+		return card;
 	}
 
 	@SuppressWarnings("unchecked")

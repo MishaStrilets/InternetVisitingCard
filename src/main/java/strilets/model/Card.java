@@ -12,6 +12,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 @Table(name = "CARD")
@@ -25,21 +26,18 @@ public class Card implements Serializable {
 	private Integer id;
 
 	@NotBlank
-	@Size(max = 30)
-	@Column(name = "LOGIN")
+	@Column(name="LOGIN", unique=true, nullable=false)
 	private String login;
 
 	@NotBlank
 	@Size(max = 100)
-	@Column(name = "PASSWORD")
+	@Column(name="PASSWORD", nullable=false)
 	private String password;
 
-	@NotBlank
 	@Size(max = 30)
 	@Column(name = "NAME")
 	private String name;
 
-	@NotBlank
 	@Size(max = 2147483647)
 	@Column(name = "DESCRIPTION")
 	private String description;
@@ -74,7 +72,7 @@ public class Card implements Serializable {
 
 	@NotNull
 	@Size(max = 5)
-	@Column(name = "ROLE")
+	@Column(name = "ROLE", unique = true)
 	private String role;
 
 	public Integer getId() {

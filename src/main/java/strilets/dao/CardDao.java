@@ -10,6 +10,8 @@ public interface CardDao {
 
 	List<Card> getCardsByName(String name);
 
+	Card getCardByLogin(String login);
+
 	void saveCard(Card card);
 
 	void deleteCard(Integer id);
