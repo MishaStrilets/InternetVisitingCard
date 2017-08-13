@@ -17,7 +17,7 @@
 
 						<li><c:if
 								test="${pageContext.request.userPrincipal.name != null}">
-								<a href="<c:url value='/edit-card'/>" class="cards"><span
+								<a href="<c:url value='/edit-card-${pageContext.request.userPrincipal.name}'/>" class="cards"><span
 									class="glyphicon glyphicon-edit"></span> Edit</a>
 							</c:if></li>
 
@@ -40,7 +40,7 @@
 								<a href="<c:url value='/login'/>" class="login"><span
 									class="glyphicon glyphicon-log-in"></span> Log in</a>
 							</c:if> <c:if test="${pageContext.request.userPrincipal.name != null}">
-								<a href="<c:url value='/login'/>" class="login"><span
+								<a href="<c:url value='/logout'/>" class="login"><span
 									class="glyphicon glyphicon-log-out"></span> Log out</a>
 							</c:if></li>
 					</ul>

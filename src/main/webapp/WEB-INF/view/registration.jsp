@@ -21,7 +21,7 @@
 	<div>
 		<%@include file="header.jsp"%>
 
-		<div class="form">
+		<div class="registration-form">
 			<h2>Registration Form:</h2>
 
 			<form:form method="POST" modelAttribute="card"
@@ -32,7 +32,7 @@
 				<div class="form-group">
 					<label class="col-sm-2 control-label">Login:</label>
 
-					<div class="col-sm-3">
+					<div class="col-sm-4">
 						<form:input type="text" path="login" id="login"
 							class="form-control" />
 					</div>
@@ -46,7 +46,7 @@
 				<div class="form-group">
 					<label class="col-sm-2 control-label">Password:</label>
 
-					<div class="col-sm-3">
+					<div class="col-sm-4">
 						<form:input type="password" path="password" id="password"
 							class="form-control" />
 					</div>

@@ -13,6 +13,7 @@ import org.springframework.security.authentication.AuthenticationTrustResolver;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.security.web.authentication.rememberme.PersistentTokenBasedRememberMeServices;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -24,6 +25,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import strilets.model.Card;
+import strilets.model.Search;
 import strilets.service.CardService;
 
 @Controller
@@ -58,6 +60,20 @@ public class AppController {
 	public String listCards(ModelMap model) {
 		List<Card> cards = cardService.getAllCards();
 		model.addAttribute("cards", cards);
+		Search search = new Search();
+		model.addAttribute("search", search);
+		return "list_cards";
+	}
+
+	/**
+	 * This method will be called on form submission, handling POST request for
+	 * searching cards in database.
+	 */
+	@RequestMapping(value = { "/list-cards" }, method = RequestMethod.POST)
+	public String searchCards(Search search, ModelMap model) {
+		List<Card> cards = cardService.getCards(search);
+		model.addAttribute("cards", cards);
+		model.addAttribute("search", search);
 		return "list_cards";
 	}
 
@@ -100,9 +116,12 @@ public class AppController {
 	 */
 	@RequestMapping(value = { "/edit-card-{login}" }, method = RequestMethod.GET)
 	public String editCard(@PathVariable String login, ModelMap model) {
+
+		if (!getPrincipal().equals(login))
+			return "access_denied";
+
 		Card card = cardService.getCardByLogin(login);
 		model.addAttribute("card", card);
-		model.addAttribute("logged_user", getPrincipal());
 		return "edit_card";
 	}
 
@@ -117,14 +136,13 @@ public class AppController {
 			return "edit_card";
 		}
 		cardService.updateCard(card);
-		model.addAttribute("logged_user", getPrincipal());
 		return "view_card";
 	}
 
 	/**
 	 * This method will provide to view visiting card.
 	 */
-	@RequestMapping(value = { "/ivc-{login}" }, method = RequestMethod.GET)
+	@RequestMapping(value = { "/{login}" }, method = RequestMethod.GET)
 	public String viewCard(@PathVariable String login, ModelMap model) {
 		Card card = cardService.getCardByLogin(login);
 		model.addAttribute("card", card);
@@ -134,10 +152,10 @@ public class AppController {
 	/**
 	 * This method will delete an user by it's login.
 	 */
-	@RequestMapping(value = { "/delete-user-{login}" }, method = RequestMethod.GET)
-	public String deleteUser(@PathVariable Integer id) {
-		cardService.deleteCard(id);
-		return "redirect:/list";
+	@RequestMapping(value = { "/delete-card-{login}" }, method = RequestMethod.GET)
+	public String deleteUser(@PathVariable String login) {
+		cardService.deleteCard(login);
+		return "redirect:/list-cards";
 	}
 
 	/**
@@ -169,9 +187,9 @@ public class AppController {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		if (auth != null) {
 			persistentTokenBasedRememberMeServices.logout(request, response, auth);
-			SecurityContextHolder.getContext().setAuthentication(null);
+			new SecurityContextLogoutHandler().logout(request, response, auth);
 		}
-		return "redirect:/login?logout";
+		return "redirect:/";
 	}
 
 	/**

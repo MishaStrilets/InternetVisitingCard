@@ -3,12 +3,13 @@ package strilets.service;
 import java.util.List;
 
 import strilets.model.Card;
+import strilets.model.Search;
 
 public interface CardService {
 
 	Card getCardById(Integer id);
 
-	List<Card> getCardsByName(String name);
+	List<Card> getCards(Search search);
 
 	Card getCardByLogin(String login);
 
@@ -16,7 +17,7 @@ public interface CardService {
 
 	void updateCard(Card card);
 
-	void deleteCard(Integer id);
+	void deleteCard(String login);
 
 	List<Card> getAllCards();
 

@@ -74,7 +74,7 @@ div.alert {
 	right: 10px;
 }
 
-.form {
+.edit-form {
 	background-color: #ffffff;
 	border-radius: 7px;
 	border: 3px solid #004387;
@@ -82,7 +82,33 @@ div.alert {
 	top: 100px;
 	left: 10px;
 	right: 10px;
+	bottom: 75px;
 	padding: 10px;
+    overflow-x: hidden;   
+}
+
+.list-form {
+	background-color: #ffffff;
+	border-radius: 7px;
+	border: 3px solid #004387;
+	position: fixed;
+	top: 100px;
+	left: 10px;
+	right: 400px;
+	bottom: 75px;
+	padding: 10px;
+    overflow-x: hidden;   
+}
+
+.registration-form {
+	background-color: #ffffff;
+	border-radius: 7px;
+	border: 3px solid #004387;
+	position: fixed;
+	top: 100px;
+	left: 275px;
+	right: 275px;
+	padding: 10px;   
 }
 
 .login-form {
@@ -96,7 +122,17 @@ div.alert {
 	padding: 10px;
 }
 
-
+.search-form {
+	background-color: #ffffff;
+	border-radius: 7px;
+	border: 3px solid #004387;
+	position: fixed;
+	top: 100px;
+	left: 1000px;
+	right: 10px;
+	bottom: 230px;
+	padding: 10px;  
+}
 
 
 
@@ -106,17 +142,6 @@ div.alert {
 
 
 .view {
-	background-color: #ffffff;
-	border-radius: 7px;
-	border: 3px solid #1a5793;
-	position: fixed;
-	top: 100px;
-	left: 10px;
-	right: 10px;
-	padding: 10px;
-}
-
-.list {
 	background-color: #ffffff;
 	border-radius: 7px;
 	border: 3px solid #1a5793;

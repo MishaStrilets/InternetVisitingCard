@@ -5,7 +5,7 @@
 	<div class="container">
 		<div class="footer">
 			<p>
-				Contact information: <a href="mailto:mishastrilets@gmail.com">mishastrilets@gmail.com</a>.
+				<a href="/admin" target="_blank">Contact information.</a>
 			</p>
 		</div>
 	</div>

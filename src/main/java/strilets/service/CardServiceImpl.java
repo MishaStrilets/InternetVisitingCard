@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import strilets.dao.CardDao;
 import strilets.model.Card;
+import strilets.model.Search;
 
 @Service("cardService")
 @Transactional
@@ -29,8 +30,8 @@ public class CardServiceImpl implements CardService {
 		return card;
 	}
 
-	public List<Card> getCardsByName(String name) {
-		List<Card> cards = dao.getCardsByName(name);
+	public List<Card> getCards(Search search) {
+		List<Card> cards = dao.getCards(search);
 		return cards;
 	}
 
@@ -51,16 +52,16 @@ public class CardServiceImpl implements CardService {
 			entity.setPeople(card.getPeople());
 			entity.setAddress(card.getAddress());
 			entity.setEmail(card.getEmail());
-			entity.setName(card.getPhone());
+			entity.setPhone(card.getPhone());
 			entity.setFacebook(card.getFacebook());
 			entity.setTwitter(card.getTwitter());
 			entity.setInstagram(card.getInstagram());
-			entity.setRole("USER");
+			entity.setRole(card.getRole());
 		}
 	}
 
-	public void deleteCard(Integer id) {
-		dao.deleteCard(id);
+	public void deleteCard(String login) {
+		dao.deleteCard(login);
 	}
 
 	public List<Card> getAllCards() {

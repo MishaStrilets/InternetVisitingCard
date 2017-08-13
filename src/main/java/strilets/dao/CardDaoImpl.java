@@ -11,6 +11,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
 import strilets.model.Card;
+import strilets.model.Search;
 
 @Repository("cardDao")
 public class CardDaoImpl extends AbstractDao<Integer, Card> implements CardDao {
@@ -23,10 +24,12 @@ public class CardDaoImpl extends AbstractDao<Integer, Card> implements CardDao {
 	}
 
 	@SuppressWarnings("unchecked")
-	public List<Card> getCardsByName(String name) {
-		logger.info("Name : {}", name);
+	public List<Card> getCards(Search search) {
+		logger.info("Search : {}", search);
 		Criteria criteria = createEntityCriteria();
-		List<Card> cards = criteria.add(Restrictions.like("name", name, MatchMode.START)).list();
+		List<Card> cards = criteria.add(Restrictions.like("name", search.getName(), MatchMode.ANYWHERE))
+				.add(Restrictions.like("description", search.getDescription(), MatchMode.ANYWHERE))
+				.add(Restrictions.like("address", search.getAddress(), MatchMode.ANYWHERE)).list();
 		return cards;
 	}
 
@@ -50,9 +53,9 @@ public class CardDaoImpl extends AbstractDao<Integer, Card> implements CardDao {
 		persist(card);
 	}
 
-	public void deleteCard(Integer id) {
+	public void deleteCard(String login) {
 		Criteria criteria = createEntityCriteria();
-		criteria.add(Restrictions.eq("id", id));
+		criteria.add(Restrictions.eq("login", login));
 		Card card = (Card) criteria.uniqueResult();
 		delete(card);
 	}

@@ -21,7 +21,7 @@ public class PersistentLogin implements Serializable {
 	private String series;
 
 	@Column(name = "LOGIN", unique = true, nullable = false)
-	private String login;
+	private String username;
 
 	@Column(name = "TOKEN", unique = true, nullable = false)
 	private String token;
@@ -37,12 +37,12 @@ public class PersistentLogin implements Serializable {
 		this.series = series;
 	}
 
-	public String getLogin() {
-		return login;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setLogin(String login) {
-		this.login = login;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public String getToken() {

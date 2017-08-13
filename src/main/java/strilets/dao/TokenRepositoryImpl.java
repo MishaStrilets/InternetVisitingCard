@@ -24,7 +24,7 @@ public class TokenRepositoryImpl extends AbstractDao<String, PersistentLogin> im
 	public void createNewToken(PersistentRememberMeToken token) {
 		logger.info("Creating token for user : {}", token.getUsername());
 		PersistentLogin persistentLogin = new PersistentLogin();
-		persistentLogin.setLogin(token.getUsername());
+		persistentLogin.setUsername(token.getUsername());
 		persistentLogin.setSeries(token.getSeries());
 		persistentLogin.setToken(token.getTokenValue());
 		persistentLogin.setLast_used(token.getDate());
@@ -40,7 +40,7 @@ public class TokenRepositoryImpl extends AbstractDao<String, PersistentLogin> im
 			crit.add(Restrictions.eq("series", seriesId));
 			PersistentLogin persistentLogin = (PersistentLogin) crit.uniqueResult();
 
-			return new PersistentRememberMeToken(persistentLogin.getLogin(), persistentLogin.getSeries(),
+			return new PersistentRememberMeToken(persistentLogin.getUsername(), persistentLogin.getSeries(),
 					persistentLogin.getToken(), persistentLogin.getLast_used());
 		} catch (Exception e) {
 			logger.info("Token not found...");
