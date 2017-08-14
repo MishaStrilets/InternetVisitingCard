@@ -50,11 +50,13 @@
 										<td>${card.login}</td>
 									</sec:authorize>
 									<td><a href="<c:url value='/${card.login}' />"
-										class="btn btn-info" target="_blank">View</a></td>
+										class="btn btn-info" target="_blank"><span
+											class="glyphicon glyphicon-eye-open"></span></a></td>
 									<sec:authorize access="hasRole('ADMIN')">
 										<td><a
 											href="<c:url value='/delete-card-${card.login}' />"
-											class="btn btn-danger">Delete</a></td>
+											class="btn btn-danger"><span
+												class="glyphicon glyphicon-trash"></span></a></td>
 									</sec:authorize>
 								</tr>
 							</c:forEach>
@@ -83,7 +85,9 @@
 						<br />
 
 						<div>
-							<input type="submit" value="Search" class="btn btn-primary" />
+							<button type="submit" class="btn btn-primary">
+								<span class="glyphicon glyphicon-search"></span>
+							</button>
 						</div>
 					</form:form>
 				</div>

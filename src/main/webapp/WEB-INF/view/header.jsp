@@ -10,21 +10,22 @@
 
 					<ul class="nav navbar-nav">
 						<li><a href="<c:url value='/'/>" class="home"><span
-								class="glyphicon glyphicon-home"></span> Home</a></li>
+								class="glyphicon glyphicon-home"></span></a></li>
 
 						<li><a href="<c:url value='/list-cards'/>" class="cards"><span
-								class="glyphicon glyphicon-list"></span> Cards</a></li>
+								class="glyphicon glyphicon-list"></span></a></li>
 
 						<li><c:if
 								test="${pageContext.request.userPrincipal.name != null}">
-								<a href="<c:url value='/edit-card-${pageContext.request.userPrincipal.name}'/>" class="cards"><span
-									class="glyphicon glyphicon-edit"></span> Edit</a>
+								<a
+									href="<c:url value='/edit-card-${pageContext.request.userPrincipal.name}'/>"
+									class="cards"><span class="glyphicon glyphicon-edit"></span></a>
 							</c:if></li>
 
 						<li><c:if
 								test="${pageContext.request.userPrincipal.name != null}">
-								<a href="<c:url value='/view-card'/>" class="cards"><span
-									class="glyphicon glyphicon-eye-open"></span> View</a>
+								<a href="<c:url value='/${card.login}'/>" class="cards"
+									target="_blanc"><span class="glyphicon glyphicon-eye-open"></span></a>
 							</c:if></li>
 					</ul>
 
@@ -32,16 +33,16 @@
 						<li><c:if
 								test="${pageContext.request.userPrincipal.name == null}">
 								<a href="<c:url value='/registration-user'/>" class="sign"><span
-									class="glyphicon glyphicon-user"></span> Sign up</a>
+									class="glyphicon glyphicon-user"></span></a>
 							</c:if></li>
 
 						<li><c:if
 								test="${pageContext.request.userPrincipal.name == null}">
 								<a href="<c:url value='/login'/>" class="login"><span
-									class="glyphicon glyphicon-log-in"></span> Log in</a>
+									class="glyphicon glyphicon-log-in"></span></a>
 							</c:if> <c:if test="${pageContext.request.userPrincipal.name != null}">
 								<a href="<c:url value='/logout'/>" class="login"><span
-									class="glyphicon glyphicon-log-out"></span> Log out</a>
+									class="glyphicon glyphicon-log-out"></span></a>
 							</c:if></li>
 					</ul>
 				</div>

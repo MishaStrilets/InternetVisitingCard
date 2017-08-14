@@ -136,7 +136,7 @@ public class AppController {
 			return "edit_card";
 		}
 		cardService.updateCard(card);
-		return "view_card";
+		return "edit_card";
 	}
 
 	/**
