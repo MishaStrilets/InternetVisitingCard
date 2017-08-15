@@ -51,7 +51,7 @@
 
 			<div class="col-sm-4">
 				<img
-					src="https://upload.wikimedia.org/wikipedia/uk/b/bf/Chelsea.png"
+					src="${card.image}"
 					class="img-rounded" style="width: 100%" alt="Image">
 			</div>
 		</div>

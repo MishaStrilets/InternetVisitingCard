@@ -18,75 +18,41 @@ import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.web.multipart.MultipartFile;
 
-@Entity
-@Table(name = "CARD")
-public class Card implements Serializable {
+public class Mard implements Serializable {
 
-	public Card() {
+	public Mard() {
 	}
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 
-	@NotBlank
-	@Column(name = "LOGIN", unique = true, nullable = false)
 	private String login;
 
-	@NotBlank
-	@Size(max = 100)
-	@Column(name = "PASSWORD", nullable = false)
 	private String password;
 
-	@Size(max = 30)
-	@Column(name = "NAME")
 	private String name;
 
-	@Size(max = 2147483647)
-	@Column(name = "DESCRIPTION")
 	private String description;
 
-	@Size(max = 50)
-	@Column(name = "PEOPLE")
 	private String people;
 
-	@Size(max = 50)
-	@Column(name = "ADDRESS")
 	private String address;
 
-	@Size(max = 50)
-	@Column(name = "EMAIL")
 	private String email;
 
-	@Size(max = 50)
-	@Column(name = "PHONE")
 	private String phone;
 
-	@Size(max = 30)
-	@Column(name = "FACEBOOK")
 	private String facebook;
 
-	@Size(max = 30)
-	@Column(name = "TWITTER")
 	private String twitter;
 
-	@Size(max = 30)
-	@Column(name = "INSTAGRAM")
 	private String instagram;
 
-	@NotNull
-	@Size(max = 5)
-	@Column(name = "ROLE", unique = true)
 	private String role;
 
-	@Column(name = "NAME_IMAGE")
 	private String nameImage;
 
-	@Column(name = "TYPE")
 	private String type;
 
-	@Lob
-	@Column(name = "IMAGE")
 	private byte[] image;
 
 	public Integer getId() {
@@ -215,6 +181,16 @@ public class Card implements Serializable {
 
 	public void setImage(byte[] image) {
 		this.image = image;
+	}
+
+	MultipartFile file;
+
+	public MultipartFile getFile() {
+		return file;
+	}
+
+	public void setFile(MultipartFile file) {
+		this.file = file;
 	}
 
 }

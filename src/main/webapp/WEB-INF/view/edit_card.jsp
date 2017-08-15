@@ -24,7 +24,7 @@
 		<div class="edit-form">
 			<h2>Edit Card:</h2>
 
-			<form:form method="POST" modelAttribute="card"
+			<form:form method="POST" modelAttribute="mard" enctype="multipart/form-data"
 				class="form-horizontal">
 				<form:input type="hidden" path="id" id="id" />
 				<form:input type="hidden" path="login" id="login" />
@@ -135,6 +135,14 @@
 					<div class="col-sm-6">
 						<form:errors path="instagram" style="color: #ff0000"
 							class="alert alert-danger" />
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-sm-2 control-label">Image:</label>
+					<div class="col-sm-3">
+						<form:input type="file" path="file" id="file"
+							class="form-control" />
 					</div>
 				</div>
 
