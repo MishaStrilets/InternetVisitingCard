@@ -20,8 +20,8 @@
 	<div>
 		<%@include file="header.jsp"%>
 		<div class="alert">
-			<div class="alert alert-success">
-				User<strong> ${login} </strong>registered successfully.
+			<div class="alert alert-danger">
+				User with a username<strong> ${login} </strong>is not.
 			</div>
 			<%@include file="footer.jsp"%>
 		</div>

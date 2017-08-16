@@ -29,17 +29,16 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
 
 import strilets.model.Card;
-import strilets.model.Form;
+import strilets.model.User;
 import strilets.model.Search;
-import strilets.service.CardService;
+import strilets.service.UserService;
 
 @Controller
 @RequestMapping("/")
-// @SessionAttributes("roles")
 public class AppController {
 
 	@Autowired
-	CardService cardService;
+	UserService userService;
 
 	@Autowired
 	MessageSource messageSource;
@@ -63,8 +62,8 @@ public class AppController {
 	 */
 	@RequestMapping(value = { "/list-cards" }, method = RequestMethod.GET)
 	public String listCards(ModelMap model) {
-		List<Card> cards = cardService.getAllCards();
-		model.addAttribute("cards", cards);
+		List<User> users = userService.getAllUsers();
+		model.addAttribute("users", users);
 		Search search = new Search();
 		model.addAttribute("search", search);
 		return "list_cards";
@@ -76,8 +75,8 @@ public class AppController {
 	 */
 	@RequestMapping(value = { "/list-cards" }, method = RequestMethod.POST)
 	public String searchCards(Search search, ModelMap model) {
-		List<Card> cards = cardService.getCards(search);
-		model.addAttribute("cards", cards);
+		List<User> users = userService.getUsers(search);
+		model.addAttribute("users", users);
 		model.addAttribute("search", search);
 		return "list_cards";
 	}
@@ -87,8 +86,8 @@ public class AppController {
 	 */
 	@RequestMapping(value = { "/registration-user" }, method = RequestMethod.GET)
 	public String newUser(ModelMap model) {
-		Card card = new Card();
-		model.addAttribute("card", card);
+		User user = new User();
+		model.addAttribute("user", user);
 		return "registration";
 	}
 
@@ -97,23 +96,23 @@ public class AppController {
 	 * saving user in database. It also validates the user input.
 	 */
 	@RequestMapping(value = { "/registration-user" }, method = RequestMethod.POST)
-	public String saveUser(@Valid Card card, BindingResult result, ModelMap model) {
+	public String saveUser(@Valid User user, BindingResult result, ModelMap model) {
 
 		if (result.hasErrors()) {
 			return "registration";
 		}
 
-		if (!cardService.isCardLoginUnique(card.getId(), card.getLogin())) {
-			FieldError loginError = new FieldError("card", "login", messageSource.getMessage("non.unique.login",
-					new String[] { card.getLogin() }, Locale.getDefault()));
+		if (!userService.isUserLoginUnique(user.getId(), user.getLogin())) {
+			FieldError loginError = new FieldError("user", "login", messageSource.getMessage("non.unique.login",
+					new String[] { user.getLogin() }, Locale.getDefault()));
 			result.addError(loginError);
 			return "registration";
 		}
 
-		card.setRole("USER");
-		card.setNameImage("");
-		cardService.saveCard(card);
-		model.addAttribute("success", card.getLogin());
+		user.setRole("USER");
+		user.setNameImage("");
+		userService.saveUser(user);
+		model.addAttribute("login", user.getLogin());
 		return "registration_success";
 	}
 
@@ -126,23 +125,23 @@ public class AppController {
 		if (!getPrincipal().equals(login))
 			return "access_denied";
 
-		Card card = cardService.getCardByLogin(login);
+		User user = userService.getUserByLogin(login);
 
-		Form form = new Form();
+		Card card = new Card();
 
-		form.setLogin(card.getLogin());
-		form.setName(card.getName());
-		form.setDescription(card.getDescription());
-		form.setPeople(card.getPeople());
-		form.setAddress(card.getAddress());
-		form.setEmail(card.getEmail());
-		form.setPhone(card.getPhone());
-		form.setFacebook(card.getFacebook());
-		form.setTwitter(card.getTwitter());
-		form.setInstagram(card.getInstagram());
-		form.setNameImage(card.getNameImage());
+		card.setLogin(user.getLogin());
+		card.setName(user.getName());
+		card.setDescription(user.getDescription());
+		card.setPeople(user.getPeople());
+		card.setAddress(user.getAddress());
+		card.setEmail(user.getEmail());
+		card.setPhone(user.getPhone());
+		card.setFacebook(user.getFacebook());
+		card.setTwitter(user.getTwitter());
+		card.setInstagram(user.getInstagram());
+		card.setNameImage(user.getNameImage());
 
-		model.addAttribute("form", form);
+		model.addAttribute("card", card);
 		return "edit_card";
 	}
 
@@ -151,15 +150,15 @@ public class AppController {
 	 * updating card in database.
 	 */
 	@RequestMapping(value = { "/edit-card-{login}" }, method = RequestMethod.POST)
-	public String updateCard(@Valid Form form, BindingResult result, ModelMap model, @PathVariable String login)
+	public String updateCard(@Valid Card card, BindingResult result, ModelMap model, @PathVariable String login)
 			throws IOException {
 
 		if (result.hasErrors()) {
 			return "edit_card";
 		}
 
-		Card card = cardService.getCardByLogin(login);
-		saveForm(card, form);
+		User user = userService.getUserByLogin(login);
+		saveCard(user, card);
 
 		return "edit_card";
 	}
@@ -169,15 +168,23 @@ public class AppController {
 	 */
 	@RequestMapping(value = { "/{login}" }, method = RequestMethod.GET)
 	public String viewCard(@PathVariable String login, ModelMap model) {
-		Card card = cardService.getCardByLogin(login);
-		model.addAttribute("card", card);
-		return "view_card";
+		User user = userService.getUserByLogin(login);
+		if (user == null) {
+			model.addAttribute("login", login);
+			return "no_user";
+		} else {
+			model.addAttribute("user", user);
+			return "view_card";
+		}
 	}
 
+	/**
+	 * This method will provide to view user image.
+	 */
 	@RequestMapping(value = "/image-{login}")
 	public void getUserImage(HttpServletResponse response, @PathVariable String login) throws IOException {
-		response.setContentType(cardService.getCardByLogin(login).getType());
-		byte[] buffer = cardService.getCardByLogin(login).getImage();
+		response.setContentType(userService.getUserByLogin(login).getType());
+		byte[] buffer = userService.getUserByLogin(login).getImage();
 		InputStream in1 = new ByteArrayInputStream(buffer);
 		IOUtils.copy(in1, response.getOutputStream());
 	}
@@ -187,7 +194,7 @@ public class AppController {
 	 */
 	@RequestMapping(value = { "/delete-card-{login}" }, method = RequestMethod.GET)
 	public String deleteUser(@PathVariable String login) {
-		cardService.deleteCard(login);
+		userService.deleteUser(login);
 		return "redirect:/list-cards";
 	}
 
@@ -248,32 +255,35 @@ public class AppController {
 		return authenticationTrustResolver.isAnonymous(authentication);
 	}
 
-	private void saveForm(Card card, Form form) throws IOException {
-		card.setLogin(form.getLogin());
-		card.setName(form.getName());
-		card.setDescription(form.getDescription());
-		card.setPeople(form.getPeople());
-		card.setAddress(form.getAddress());
-		card.setEmail(form.getEmail());
-		card.setPhone(form.getPhone());
-		card.setFacebook(form.getFacebook());
-		card.setTwitter(form.getTwitter());
-		card.setInstagram(form.getInstagram());
-		card.setNameImage(form.getNameImage());
+	/**
+	 * This method copy data from Card to User.
+	 */
+	private void saveCard(User user, Card card) throws IOException {
+		user.setLogin(card.getLogin());
+		user.setName(card.getName());
+		user.setDescription(card.getDescription());
+		user.setPeople(card.getPeople());
+		user.setAddress(card.getAddress());
+		user.setEmail(card.getEmail());
+		user.setPhone(card.getPhone());
+		user.setFacebook(card.getFacebook());
+		user.setTwitter(card.getTwitter());
+		user.setInstagram(card.getInstagram());
+		user.setNameImage(card.getNameImage());
 
-		if ("".equals(card.getNameImage())) {
-			card.setType("");
-			card.setImage(null);
+		if ("".equals(user.getNameImage())) {
+			user.setType("");
+			user.setImage(null);
 		}
 
-		if ((!("".equals(form.getFile().getOriginalFilename())))) {
-			MultipartFile multipartFile = form.getFile();
-			card.setNameImage(multipartFile.getOriginalFilename());
-			card.setType(multipartFile.getContentType());
-			card.setImage(multipartFile.getBytes());
+		if ((!("".equals(card.getFile().getOriginalFilename())))) {
+			MultipartFile multipartFile = card.getFile();
+			user.setNameImage(multipartFile.getOriginalFilename());
+			user.setType(multipartFile.getContentType());
+			user.setImage(multipartFile.getBytes());
 		}
 
-		cardService.updateCard(card);
+		userService.updateUser(user);
 	}
 
 }

@@ -21,15 +21,15 @@ import org.springframework.security.web.authentication.rememberme.PersistentToke
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 	@Autowired
-	@Qualifier("cardDetailsService")
-	CardDetailsService cardDetailsService;
+	@Qualifier("userServiceDetail")
+	UserServiceDetail userServiceDetail;
 
 	@Autowired
 	PersistentTokenRepository tokenRepository;
 
 	@Autowired
 	public void configureGlobalSecurity(AuthenticationManagerBuilder auth) throws Exception {
-		auth.userDetailsService(cardDetailsService);
+		auth.userDetailsService(userServiceDetail);
 		auth.authenticationProvider(authenticationProvider());
 	}
 
@@ -51,7 +51,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	@Bean
 	public DaoAuthenticationProvider authenticationProvider() {
 		DaoAuthenticationProvider authenticationProvider = new DaoAuthenticationProvider();
-		authenticationProvider.setUserDetailsService(cardDetailsService);
+		authenticationProvider.setUserDetailsService(userServiceDetail);
 		authenticationProvider.setPasswordEncoder(passwordEncoder());
 		return authenticationProvider;
 	}
@@ -59,7 +59,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	@Bean
 	public PersistentTokenBasedRememberMeServices getPersistentTokenBasedRememberMeServices() {
 		PersistentTokenBasedRememberMeServices tokenBasedservice = new PersistentTokenBasedRememberMeServices(
-				"remember-me", cardDetailsService, tokenRepository);
+				"remember-me", userServiceDetail, tokenRepository);
 		return tokenBasedservice;
 	}
 

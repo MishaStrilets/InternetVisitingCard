@@ -6,43 +6,40 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
-import strilets.model.Card;
-import strilets.service.CardService;
+import strilets.model.User;
+import strilets.service.UserService;
 
-@Service("cardDetailsService")
+@Service("userServiceDetail")
 
-public class CardDetailsService implements UserDetailsService {
+public class UserServiceDetail implements UserDetailsService {
 
-	static final Logger logger = LoggerFactory.getLogger(CardDetailsService.class);
+	static final Logger logger = LoggerFactory.getLogger(UserServiceDetail.class);
 
 	@Autowired
-	private CardService cardService;
+	private UserService userService;
 
-	//@Transactional(readOnly = true)
 	public UserDetails loadUserByUsername(String login) throws UsernameNotFoundException {
-		Card card = cardService.getCardByLogin(login);
-		logger.info("Card : {}", card);
-		if (card == null) {
+		User user = userService.getUserByLogin(login);
+		logger.info("User : {}", user);
+		if (user == null) {
 			logger.info("User not found");
 			throw new UsernameNotFoundException("User not found");
 		}
-		return new org.springframework.security.core.userdetails.User(card.getLogin(), card.getPassword(), true, true,
-				true, true, getGrantedAuthorities(card));
+		return new org.springframework.security.core.userdetails.User(user.getLogin(), user.getPassword(), true, true,
+				true, true, getGrantedAuthorities(user));
 	}
 
-	private List<GrantedAuthority> getGrantedAuthorities(Card card) {
+	private List<GrantedAuthority> getGrantedAuthorities(User user) {
 		List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
-		logger.info("Card profile : {}", card);
-		authorities.add(new SimpleGrantedAuthority("ROLE_" + card.getRole()));
+		logger.info("Card profile : {}", user);
+		authorities.add(new SimpleGrantedAuthority("ROLE_" + user.getRole()));
 		logger.info("Authorities : {}", authorities);
 		return authorities;
 	}

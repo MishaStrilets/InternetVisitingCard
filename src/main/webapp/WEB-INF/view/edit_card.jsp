@@ -24,7 +24,7 @@
 		<div class="edit-form">
 			<h2>Edit Card:</h2>
 
-			<form:form method="POST" modelAttribute="form"
+			<form:form method="POST" modelAttribute="card"
 				enctype="multipart/form-data" class="form-horizontal">
 
 				<div class="form-group">
@@ -148,9 +148,9 @@
 
 						<br />
 
-						<c:if test="${form.nameImage != ''}">
+						<c:if test="${card.nameImage != ''}">
 
-							<img src="image-<c:out value="${form.login}"/>"
+							<img src="image-<c:out value="${card.login}"/>"
 								class="img-rounded" style="width: 100%" alt="Image">
 						</c:if>
 					</div>

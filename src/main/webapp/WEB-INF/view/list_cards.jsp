@@ -43,18 +43,18 @@
 							</tr>
 						</thead>
 						<tbody>
-							<c:forEach items="${cards}" var="card">
+							<c:forEach items="${users}" var="user">
 								<tr>
-									<td>${card.name}</td>
+									<td>${user.name}</td>
 									<sec:authorize access="hasRole('ADMIN')">
-										<td>${card.login}</td>
+										<td>${user.login}</td>
 									</sec:authorize>
-									<td><a href="<c:url value='/${card.login}' />"
+									<td><a href="<c:url value='/${user.login}' />"
 										class="btn btn-info" target="_blank"><span
 											class="glyphicon glyphicon-eye-open"></span></a></td>
 									<sec:authorize access="hasRole('ADMIN')">
 										<td><a
-											href="<c:url value='/delete-card-${card.login}' />"
+											href="<c:url value='/delete-card-${user.login}' />"
 											class="btn btn-danger"><span
 												class="glyphicon glyphicon-trash"></span></a></td>
 									</sec:authorize>

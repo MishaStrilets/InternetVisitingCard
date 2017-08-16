@@ -24,7 +24,7 @@
 		<div class="registration-form">
 			<h2>Registration Form:</h2>
 
-			<form:form method="POST" modelAttribute="card"
+			<form:form method="POST" modelAttribute="user"
 				class="form-horizontal">
 				<form:input type="hidden" path="id" id="id" />
 				<form:input type="hidden" path="role" id="role" />

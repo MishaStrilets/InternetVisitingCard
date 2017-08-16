@@ -10,54 +10,54 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
-import strilets.model.Card;
+import strilets.model.User;
 import strilets.model.Search;
 
-@Repository("cardDao")
-public class CardDaoImpl extends AbstractDao<Integer, Card> implements CardDao {
+@Repository("userDao")
+public class UserDaoImpl extends AbstractDao<Integer, User> implements UserDao {
 
-	static final Logger logger = LoggerFactory.getLogger(CardDaoImpl.class);
+	static final Logger logger = LoggerFactory.getLogger(UserDaoImpl.class);
 
-	public Card getCardById(Integer id) {
-		Card card = getByKey(id);
-		return card;
+	public User getUserById(Integer id) {
+		User user = getByKey(id);
+		return user;
 	}
 
 	@SuppressWarnings("unchecked")
-	public List<Card> getCards(Search search) {
+	public List<User> getUsers(Search search) {
 		logger.info("Search : {}", search);
 		Criteria criteria = createEntityCriteria();
-		List<Card> cards = criteria.add(Restrictions.like("name", search.getName(), MatchMode.ANYWHERE))
+		List<User> users = criteria.add(Restrictions.like("name", search.getName(), MatchMode.ANYWHERE))
 				.add(Restrictions.like("description", search.getDescription(), MatchMode.ANYWHERE))
 				.add(Restrictions.like("address", search.getAddress(), MatchMode.ANYWHERE)).list();
-		return cards;
+		return users;
 	}
 
-	public Card getCardByLogin(String login) {
+	public User getUserByLogin(String login) {
 		logger.info("Login : {}", login);
 		Criteria criteria = createEntityCriteria();
 		criteria.add(Restrictions.eq("login", login));
-		Card card = (Card) criteria.uniqueResult();
-		return card;
+		User user = (User) criteria.uniqueResult();
+		return user;
 	}
 
 	@SuppressWarnings("unchecked")
-	public List<Card> getAllCards() {
+	public List<User> getAllUsers() {
 		Criteria criteria = createEntityCriteria().addOrder(Order.asc("name"));
 		criteria.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY);
-		List<Card> cards = criteria.list();
+		List<User> cards = criteria.list();
 		return cards;
 	}
 
-	public void saveCard(Card card) {
-		persist(card);
+	public void saveUser(User user) {
+		persist(user);
 	}
 
-	public void deleteCard(String login) {
+	public void deleteUser(String login) {
 		Criteria criteria = createEntityCriteria();
 		criteria.add(Restrictions.eq("login", login));
-		Card card = (Card) criteria.uniqueResult();
-		delete(card);
+		User user = (User) criteria.uniqueResult();
+		delete(user);
 	}
 
 }
