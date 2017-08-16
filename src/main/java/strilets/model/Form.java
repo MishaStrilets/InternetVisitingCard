@@ -2,25 +2,11 @@ package strilets.model;
 
 import java.io.Serializable;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Lob;
-import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
-
-import org.hibernate.validator.constraints.NotBlank;
-import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.web.multipart.MultipartFile;
 
-public class Mard implements Serializable {
+public class Form implements Serializable {
 
-	public Mard() {
+	public Form() {
 	}
 
 	private Integer id;
@@ -54,6 +40,8 @@ public class Mard implements Serializable {
 	private String type;
 
 	private byte[] image;
+
+	MultipartFile file;
 
 	public Integer getId() {
 		return id;
@@ -182,8 +170,6 @@ public class Mard implements Serializable {
 	public void setImage(byte[] image) {
 		this.image = image;
 	}
-
-	MultipartFile file;
 
 	public MultipartFile getFile() {
 		return file;

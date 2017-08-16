@@ -57,7 +57,6 @@ public class CardServiceImpl implements CardService {
 			entity.setTwitter(card.getTwitter());
 			entity.setInstagram(card.getInstagram());
 			entity.setRole(card.getRole());
-			
 			entity.setImage(card.getImage());
 			entity.setNameImage(card.getNameImage());
 			entity.setType(card.getType());

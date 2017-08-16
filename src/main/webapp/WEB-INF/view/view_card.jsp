@@ -49,11 +49,13 @@
 
 			</div>
 
-			<div class="col-sm-4">
-				<img
-					src="${card.image}"
-					class="img-rounded" style="width: 100%" alt="Image">
-			</div>
+			<c:if test="${card.nameImage != ''}">
+
+				<div class="col-sm-4">
+					<img src="image-<c:out value="${card.login}"/>" class="img-rounded"
+						style="width: 100%" alt="Image">
+				</div>
+			</c:if>
 		</div>
 		<h2>${card.description}</h2>
 	</div>

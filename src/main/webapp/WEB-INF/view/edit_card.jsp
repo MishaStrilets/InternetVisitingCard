@@ -24,12 +24,17 @@
 		<div class="edit-form">
 			<h2>Edit Card:</h2>
 
-			<form:form method="POST" modelAttribute="mard" enctype="multipart/form-data"
-				class="form-horizontal">
+			<form:form method="POST" modelAttribute="form"
+				enctype="multipart/form-data" class="form-horizontal">
 				<form:input type="hidden" path="id" id="id" />
 				<form:input type="hidden" path="login" id="login" />
 				<form:input type="hidden" path="password" id="password" />
 				<form:input type="hidden" path="role" id="role" />
+
+				<form:input type="hidden" path="nameImage" id="nameImage" />
+				<form:input type="hidden" path="type" id="type" />
+				<form:input type="hidden" path="image" id="image" />
+
 
 				<div class="form-group">
 					<label class="col-sm-2 control-label">Name:</label>
@@ -45,8 +50,10 @@
 				<div class="form-group">
 					<label class="col-sm-2 control-label">Description:</label>
 					<div class="col-sm-3">
-						<form:input type="text" path="description" id="description"
-							class="form-control" />
+
+						<form:textarea name="description" path="description"
+							id="description" class="form-control" cols="40" rows="3" />
+
 					</div>
 					<div class="col-sm-6">
 						<form:errors path="description" style="color: #ff0000"
@@ -141,8 +148,14 @@
 				<div class="form-group">
 					<label class="col-sm-2 control-label">Image:</label>
 					<div class="col-sm-3">
-						<form:input type="file" path="file" id="file"
-							class="form-control" />
+						<form:input type="file" path="file" id="file" class="form-control" />
+
+						<br />
+						<c:if test="${form.nameImage != ''}">
+
+							<img src="image-<c:out value="${form.login}"/>"
+								class="img-rounded" style="width: 100%" alt="Image">
+						</c:if>
 					</div>
 				</div>
 

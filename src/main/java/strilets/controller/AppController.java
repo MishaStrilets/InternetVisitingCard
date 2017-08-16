@@ -1,7 +1,8 @@
 package strilets.controller;
 
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
+import java.io.InputStream;
 import java.util.List;
 import java.util.Locale;
 
@@ -9,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
-import org.apache.tomcat.util.codec.binary.Base64;
+import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.security.authentication.AuthenticationTrustResolver;
@@ -22,18 +23,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
-import org.springframework.web.bind.WebDataBinder;
-import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.multipart.MultipartFile;
 
 import strilets.util.FileValidator;
 
 import strilets.model.Card;
-import strilets.model.Mard;
+import strilets.model.Form;
 import strilets.model.Search;
 import strilets.service.CardService;
 
@@ -118,6 +116,7 @@ public class AppController {
 		}
 
 		card.setRole("USER");
+		card.setNameImage("");
 		cardService.saveCard(card);
 		model.addAttribute("success", card.getLogin());
 		return "registration_success";
@@ -133,32 +132,27 @@ public class AppController {
 			return "access_denied";
 
 		Card card = cardService.getCardByLogin(login);
-		
-		Mard mard = new Mard();
-		
-		
-		mard.setName(card.getName());
-		mard.setId(card.getId());
-		mard.setDescription(card.getDescription());
-		mard.setAddress(card.getAddress());
-		mard.setEmail(card.getEmail());
-		mard.setFacebook(card.getFacebook());
-		mard.setInstagram(card.getInstagram());
-		mard.setRole(card.getRole());
-		mard.setTwitter(card.getTwitter());
-		mard.setLogin(card.getLogin());
-		mard.setPassword(card.getPassword());
-		mard.setPeople(card.getPeople());
-		mard.setPhone(card.getPhone());
-		
-		//mard.setNameImage(multipartFile.getOriginalFilename());
-		//mard.setType(multipartFile.getContentType());
-		//mard.setImage(multipartFile.getBytes());
 
-		
-		
-		
-		model.addAttribute("mard", mard);
+		Form form = new Form();
+
+		form.setId(card.getId());
+		form.setLogin(card.getLogin());
+		form.setPassword(card.getPassword());
+		form.setName(card.getName());
+		form.setDescription(card.getDescription());
+		form.setPeople(card.getPeople());
+		form.setAddress(card.getAddress());
+		form.setEmail(card.getEmail());
+		form.setPhone(card.getPhone());
+		form.setFacebook(card.getFacebook());
+		form.setTwitter(card.getTwitter());
+		form.setInstagram(card.getInstagram());
+
+		form.setNameImage(card.getNameImage());
+		// form.setType(card.getType());
+		// form.setImage(card.getImage());
+
+		model.addAttribute("form", form);
 		return "edit_card";
 	}
 
@@ -167,47 +161,40 @@ public class AppController {
 	 * updating card in database.
 	 */
 	@RequestMapping(value = { "/edit-card-{login}" }, method = RequestMethod.POST)
-	public String updateCard(@Valid Mard mard, BindingResult result, ModelMap model, @PathVariable String login)
+	public String updateCard(@Valid Form form, BindingResult result, ModelMap model, @PathVariable String login)
 			throws IOException {
 
 		if (result.hasErrors()) {
-			System.out.println("@@@@%%%%%@@@@@@");
 			return "edit_card";
 		}
-		
-		Card card = cardService.getCardByLogin(login);
-		saveDocument(card, mard);
 
-		// cardService.updateCard(card);
+		Card card = cardService.getCardByLogin(login);
+		saveDocument(card, form);
 
 		return "edit_card";
 	}
 
-	private void saveDocument(Card card, Mard mard) throws IOException {
+	private void saveDocument(Card card, Form form) throws IOException {
+		card.setId(form.getId());
+		card.setLogin(form.getLogin());
+		card.setPassword(form.getPassword());
+		card.setName(form.getName());
+		card.setDescription(form.getDescription());
+		card.setPeople(form.getPeople());
+		card.setAddress(form.getAddress());
+		card.setEmail(form.getEmail());
+		card.setPhone(form.getPhone());
+		card.setFacebook(form.getFacebook());
+		card.setTwitter(form.getTwitter());
+		card.setInstagram(form.getInstagram());
 
-		MultipartFile multipartFile = mard.getFile();
+		if ((!("".equals(form.getFile().getOriginalFilename())))) {
+			MultipartFile multipartFile = form.getFile();
+			card.setNameImage(multipartFile.getOriginalFilename());
+			card.setType(multipartFile.getContentType());
+			card.setImage(multipartFile.getBytes());
+		}
 
-		System.out.println("1111" + mard.getName() + "2222");
-		System.out.println("3333" + mard.getAddress() + "4444");
-		System.out.println("5555" + multipartFile.getOriginalFilename() + "7777");
-		
-		card.setName(mard.getName());
-		card.setId(mard.getId());
-		card.setDescription(mard.getDescription());
-		card.setAddress(mard.getAddress());
-		card.setEmail(mard.getEmail());
-		card.setFacebook(mard.getFacebook());
-		card.setInstagram(mard.getInstagram());
-		card.setRole(mard.getRole());
-		card.setTwitter(mard.getTwitter());
-		card.setLogin(mard.getLogin());
-		card.setPassword(mard.getPassword());
-		card.setPeople(mard.getPeople());
-		card.setPhone(mard.getPhone());
-		
-		card.setNameImage(multipartFile.getOriginalFilename());
-		card.setType(multipartFile.getContentType());
-		card.setImage(multipartFile.getBytes());
 		cardService.updateCard(card);
 	}
 
@@ -218,8 +205,15 @@ public class AppController {
 	public String viewCard(@PathVariable String login, ModelMap model) {
 		Card card = cardService.getCardByLogin(login);
 		model.addAttribute("card", card);
-
 		return "view_card";
+	}
+
+	@RequestMapping(value = "/image-{login}")
+	public void getUserImage(HttpServletResponse response, @PathVariable String login) throws IOException {
+		response.setContentType(cardService.getCardByLogin(login).getType());
+		byte[] buffer = cardService.getCardByLogin(login).getImage();
+		InputStream in1 = new ByteArrayInputStream(buffer);
+		IOUtils.copy(in1, response.getOutputStream());
 	}
 
 	/**

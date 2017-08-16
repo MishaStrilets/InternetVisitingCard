@@ -1,6 +1,7 @@
 body {
 	font-family: Arial;
 	background-color: #fffd99;
+	overflow-x: hidden;
 }
 
 a {

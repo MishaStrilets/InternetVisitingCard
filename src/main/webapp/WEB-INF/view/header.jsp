@@ -24,7 +24,7 @@
 
 						<li><c:if
 								test="${pageContext.request.userPrincipal.name != null}">
-								<a href="<c:url value='/${card.login}'/>" class="cards"
+								<a href="<c:url value='/${pageContext.request.userPrincipal.name}'/>" class="cards"
 									target="_blanc"><span class="glyphicon glyphicon-eye-open"></span></a>
 							</c:if></li>
 					</ul>
