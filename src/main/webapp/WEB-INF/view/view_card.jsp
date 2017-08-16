@@ -26,14 +26,26 @@
 				<h1>
 					<b>${card.name}</b>
 				</h1>
-				<h2>
-					<i>Contacts: </i>${card.people}</h2>
-				<h2>
-					<i>Address: </i>${card.address}</h2>
-				<h2>
+
+				<c:if test="${card.people != ''}">
+					<h2>
+						<i>Contact person: </i>${card.people}</h2>
+				</c:if>
+
+				<c:if test="${card.address != ''}">
+					<h2>
+						<i>Address: </i>${card.address}</h2>
+					<h2>
+				</c:if>
+
+				<c:if test="${card.email != ''}">
 					<i>Email: </i>${card.email}</h2>
-				<h2>
+					<h2>
+				</c:if>
+
+				<c:if test="${card.phone != ''}">
 					<i>Phone number: </i>${card.phone}</h2>
+				</c:if>
 
 				<c:if test="${card.facebook != '' }">
 					<a href="<c:url value='${card.facebook}' />" target="_blank"><i
@@ -52,7 +64,6 @@
 						class="	fa fa-instagram" style="font-size: 48px; color: #000000"></i></a>
 
 				</c:if>
-
 			</div>
 
 			<c:if test="${card.nameImage != ''}">
