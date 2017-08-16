@@ -9,11 +9,7 @@ public class Form implements Serializable {
 	public Form() {
 	}
 
-	private Integer id;
-
 	private String login;
-
-	private String password;
 
 	private String name;
 
@@ -33,23 +29,9 @@ public class Form implements Serializable {
 
 	private String instagram;
 
-	private String role;
-
-	private String nameImage;
-
-	private String type;
-
-	private byte[] image;
-
 	MultipartFile file;
 
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
+	private String nameImage;
 
 	public String getLogin() {
 		return login;
@@ -57,14 +39,6 @@ public class Form implements Serializable {
 
 	public void setLogin(String login) {
 		this.login = login;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
 	}
 
 	public String getName() {
@@ -139,12 +113,12 @@ public class Form implements Serializable {
 		this.instagram = instagram;
 	}
 
-	public String getRole() {
-		return role;
+	public MultipartFile getFile() {
+		return file;
 	}
 
-	public void setRole(String role) {
-		this.role = role;
+	public void setFile(MultipartFile file) {
+		this.file = file;
 	}
 
 	public String getNameImage() {
@@ -153,30 +127,6 @@ public class Form implements Serializable {
 
 	public void setNameImage(String nameImage) {
 		this.nameImage = nameImage;
-	}
-
-	public String getType() {
-		return type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-	}
-
-	public byte[] getImage() {
-		return image;
-	}
-
-	public void setImage(byte[] image) {
-		this.image = image;
-	}
-
-	public MultipartFile getFile() {
-		return file;
-	}
-
-	public void setFile(MultipartFile file) {
-		this.file = file;
 	}
 
 }

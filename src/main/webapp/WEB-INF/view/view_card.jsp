@@ -23,11 +23,17 @@
 		<div class="row">
 
 			<div class="col-sm-8">
-				<h1>${card.name}</h1>
-				<h2>${card.people}</h2>
-				<h2>${card.address}</h2>
-				<h2>${card.email}</h2>
-				<h2>${card.phone}</h2>
+				<h1>
+					<b>${card.name}</b>
+				</h1>
+				<h2>
+					<i>Contacts: </i>${card.people}</h2>
+				<h2>
+					<i>Address: </i>${card.address}</h2>
+				<h2>
+					<i>Email: </i>${card.email}</h2>
+				<h2>
+					<i>Phone number: </i>${card.phone}</h2>
 
 				<c:if test="${card.facebook != '' }">
 					<a href="<c:url value='${card.facebook}' />" target="_blank"><i

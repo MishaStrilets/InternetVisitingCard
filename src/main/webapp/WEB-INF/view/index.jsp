@@ -14,6 +14,7 @@
 	href="@{/webjars/bootstrap/3.3.4/css/bootstrap.min.css}"
 	rel="stylesheet" media="screen" />
 <link href="<c:url value='/static/css/style.css' />" rel="stylesheet"></link>
+
 </head>
 
 <body>
@@ -25,8 +26,8 @@
 					<h2>Welcome to Internet Visiting Card site!!!</h2>
 				</div>
 				<div>
-					<h3 class="info">On this site you can create your own
-						internet visiting card.</h3>
+					<h3 class="info">On this site you can create your own internet
+						visiting card.</h3>
 				</div>
 			</div>
 		</div>

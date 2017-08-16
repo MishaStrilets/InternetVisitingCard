@@ -21,7 +21,7 @@
 		<%@include file="header.jsp"%>
 		<div class="alert">
 			<div class="alert alert-success">
-				User<strong> ${success} </strong>registered successfully
+				User<strong> ${success} </strong>registered successfully.
 			</div>
 			<%@include file="footer.jsp"%>
 		</div>

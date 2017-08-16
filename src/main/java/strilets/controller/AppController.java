@@ -28,8 +28,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
 
-import strilets.util.FileValidator;
-
 import strilets.model.Card;
 import strilets.model.Form;
 import strilets.model.Search;
@@ -51,9 +49,6 @@ public class AppController {
 
 	@Autowired
 	AuthenticationTrustResolver authenticationTrustResolver;
-
-	@Autowired
-	FileValidator fileValidator;
 
 	/**
 	 * This method will return home page.
@@ -135,9 +130,7 @@ public class AppController {
 
 		Form form = new Form();
 
-		form.setId(card.getId());
 		form.setLogin(card.getLogin());
-		form.setPassword(card.getPassword());
 		form.setName(card.getName());
 		form.setDescription(card.getDescription());
 		form.setPeople(card.getPeople());
@@ -147,10 +140,7 @@ public class AppController {
 		form.setFacebook(card.getFacebook());
 		form.setTwitter(card.getTwitter());
 		form.setInstagram(card.getInstagram());
-
 		form.setNameImage(card.getNameImage());
-		// form.setType(card.getType());
-		// form.setImage(card.getImage());
 
 		model.addAttribute("form", form);
 		return "edit_card";
@@ -169,33 +159,9 @@ public class AppController {
 		}
 
 		Card card = cardService.getCardByLogin(login);
-		saveDocument(card, form);
+		saveForm(card, form);
 
 		return "edit_card";
-	}
-
-	private void saveDocument(Card card, Form form) throws IOException {
-		card.setId(form.getId());
-		card.setLogin(form.getLogin());
-		card.setPassword(form.getPassword());
-		card.setName(form.getName());
-		card.setDescription(form.getDescription());
-		card.setPeople(form.getPeople());
-		card.setAddress(form.getAddress());
-		card.setEmail(form.getEmail());
-		card.setPhone(form.getPhone());
-		card.setFacebook(form.getFacebook());
-		card.setTwitter(form.getTwitter());
-		card.setInstagram(form.getInstagram());
-
-		if ((!("".equals(form.getFile().getOriginalFilename())))) {
-			MultipartFile multipartFile = form.getFile();
-			card.setNameImage(multipartFile.getOriginalFilename());
-			card.setType(multipartFile.getContentType());
-			card.setImage(multipartFile.getBytes());
-		}
-
-		cardService.updateCard(card);
 	}
 
 	/**
@@ -280,6 +246,34 @@ public class AppController {
 	private boolean isCurrentAuthenticationAnonymous() {
 		final Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		return authenticationTrustResolver.isAnonymous(authentication);
+	}
+
+	private void saveForm(Card card, Form form) throws IOException {
+		card.setLogin(form.getLogin());
+		card.setName(form.getName());
+		card.setDescription(form.getDescription());
+		card.setPeople(form.getPeople());
+		card.setAddress(form.getAddress());
+		card.setEmail(form.getEmail());
+		card.setPhone(form.getPhone());
+		card.setFacebook(form.getFacebook());
+		card.setTwitter(form.getTwitter());
+		card.setInstagram(form.getInstagram());
+		card.setNameImage(form.getNameImage());
+
+		if ("".equals(card.getNameImage())) {
+			card.setType("");
+			card.setImage(null);
+		}
+
+		if ((!("".equals(form.getFile().getOriginalFilename())))) {
+			MultipartFile multipartFile = form.getFile();
+			card.setNameImage(multipartFile.getOriginalFilename());
+			card.setType(multipartFile.getContentType());
+			card.setImage(multipartFile.getBytes());
+		}
+
+		cardService.updateCard(card);
 	}
 
 }

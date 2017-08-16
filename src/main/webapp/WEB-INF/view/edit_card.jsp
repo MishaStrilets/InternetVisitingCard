@@ -26,15 +26,6 @@
 
 			<form:form method="POST" modelAttribute="form"
 				enctype="multipart/form-data" class="form-horizontal">
-				<form:input type="hidden" path="id" id="id" />
-				<form:input type="hidden" path="login" id="login" />
-				<form:input type="hidden" path="password" id="password" />
-				<form:input type="hidden" path="role" id="role" />
-
-				<form:input type="hidden" path="nameImage" id="nameImage" />
-				<form:input type="hidden" path="type" id="type" />
-				<form:input type="hidden" path="image" id="image" />
-
 
 				<div class="form-group">
 					<label class="col-sm-2 control-label">Name:</label>
@@ -52,7 +43,7 @@
 					<div class="col-sm-3">
 
 						<form:textarea name="description" path="description"
-							id="description" class="form-control" cols="40" rows="3" />
+							id="description" class="form-control" cols="40" rows="5" />
 
 					</div>
 					<div class="col-sm-6">
@@ -151,6 +142,12 @@
 						<form:input type="file" path="file" id="file" class="form-control" />
 
 						<br />
+
+						<form:input type="text" path="nameImage" id="nameImage"
+							class="form-control" />
+
+						<br />
+
 						<c:if test="${form.nameImage != ''}">
 
 							<img src="image-<c:out value="${form.login}"/>"

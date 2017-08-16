@@ -19,7 +19,6 @@ import org.springframework.web.servlet.view.JstlView;
 @ComponentScan(basePackages = "strilets")
 public class MvcConfiguration extends WebMvcConfigurerAdapter {
 
-	//@Bean(name = "multipartResolver")
 	@Bean
 	public StandardServletMultipartResolver resolver() {
 		return new StandardServletMultipartResolver();
