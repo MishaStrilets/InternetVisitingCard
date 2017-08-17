@@ -17,7 +17,7 @@ import javax.validation.constraints.Size;
 import org.hibernate.validator.constraints.NotBlank;
 
 @Entity
-@Table(name = "CARD")
+@Table(name = "USER")
 public class User implements Serializable {
 
 	public User() {

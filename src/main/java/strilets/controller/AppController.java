@@ -110,6 +110,13 @@ public class AppController {
 		}
 
 		user.setRole("USER");
+		user.setPeople("");
+		user.setAddress("");
+		user.setEmail("");
+		user.setPhone("");
+		user.setFacebook("");
+		user.setTwitter("");
+		user.setInstagram("");
 		user.setNameImage("");
 		userService.saveUser(user);
 		model.addAttribute("login", user.getLogin());

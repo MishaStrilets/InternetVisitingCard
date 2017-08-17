@@ -24,9 +24,6 @@ public class MvcConfiguration extends WebMvcConfigurerAdapter {
 		return new StandardServletMultipartResolver();
 	}
 
-	/**
-	 * Configure ViewResolvers to deliver preferred views.
-	 */
 	@Override
 	public void configureViewResolvers(ViewResolverRegistry registry) {
 		InternalResourceViewResolver resolver = new InternalResourceViewResolver();
@@ -36,18 +33,11 @@ public class MvcConfiguration extends WebMvcConfigurerAdapter {
 		registry.viewResolver(resolver);
 	}
 
-	/**
-	 * Configure ResourceHandlers to serve static resources.
-	 */
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
 		registry.addResourceHandler("/static/**").addResourceLocations("/static/");
 	}
 
-	/**
-	 * Configure MessageSource to lookup any validation/error message in
-	 * internationalized property files
-	 */
 	@Bean
 	public MessageSource messageSource() {
 		ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
@@ -55,12 +45,6 @@ public class MvcConfiguration extends WebMvcConfigurerAdapter {
 		return messageSource;
 	}
 
-	/**
-	 * Optional. It's only required when handling '.' in @PathVariables which
-	 * otherwise ignore everything after last '.' in @PathVaidables argument.
-	 * It's a known bug in Spring [https://jira.spring.io/browse/SPR-6164],
-	 * still present in Spring 4.1.7. This is a workaround for this issue.
-	 */
 	@Override
 	public void configurePathMatch(PathMatchConfigurer matcher) {
 		matcher.setUseRegisteredSuffixPatternMatch(true);
