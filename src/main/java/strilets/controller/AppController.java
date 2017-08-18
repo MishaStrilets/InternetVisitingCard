@@ -206,6 +206,22 @@ public class AppController {
 	}
 
 	/**
+	 * This method will delete an image by it's login.
+	 */
+	@RequestMapping(value = { "/delete-image-{login}" }, method = RequestMethod.GET)
+	public String deleteUmage(@PathVariable String login) {
+		if (!getPrincipal().equals(login))
+			return "access_denied";
+
+		User user = userService.getUserByLogin(login);
+		user.setNameImage("");
+		user.setType("");
+		user.setImage(null);
+		userService.updateUser(user);
+		return "redirect:/edit-card-{login}";
+	}
+
+	/**
 	 * This method handles access denied redirect.
 	 */
 	@RequestMapping(value = "/access_denied")
@@ -278,10 +294,10 @@ public class AppController {
 		user.setInstagram(card.getInstagram());
 		user.setNameImage(card.getNameImage());
 
-		if ("".equals(user.getNameImage())) {
-			user.setType("");
-			user.setImage(null);
-		}
+		/*
+		 * if ("".equals(user.getNameImage())) { user.setType("");
+		 * user.setImage(null); }
+		 */
 
 		if ((!("".equals(card.getFile().getOriginalFilename())))) {
 			MultipartFile multipartFile = card.getFile();

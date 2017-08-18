@@ -141,18 +141,16 @@
 					<div class="col-sm-3">
 						<form:input type="file" path="file" id="file" class="form-control" />
 
-						<br />
-
-						<form:input type="text" path="nameImage" id="nameImage"
-							class="form-control" />
-
-						<br />
-
 						<c:if test="${card.nameImage != ''}">
-
+							<br />
 							<img src="image-<c:out value="${card.login}"/>"
 								class="img-rounded" style="width: 100%" alt="Image">
 						</c:if>
+
+						<div>
+							<br /> <a href="<c:url value='/delete-image-${card.login}' />"
+								class="btn btn-danger">Delete image</a>
+						</div>
 					</div>
 				</div>
 
