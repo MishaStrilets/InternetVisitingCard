@@ -78,6 +78,12 @@ public class User implements Serializable {
 	@Column(name = "IMAGE")
 	private byte[] image;
 
+	@Column(name = "FONT_COLOR")
+	private String fontColor;
+
+	@Column(name = "BACKGROUND_COLOR")
+	private String backgroundColor;
+
 	public Integer getId() {
 		return id;
 	}
@@ -204,6 +210,22 @@ public class User implements Serializable {
 
 	public void setImage(byte[] image) {
 		this.image = image;
+	}
+
+	public String getFontColor() {
+		return fontColor;
+	}
+
+	public void setFontColor(String fontColor) {
+		this.fontColor = fontColor;
+	}
+
+	public String getBackgroundColor() {
+		return backgroundColor;
+	}
+
+	public void setBackgroundColor(String backgroundColor) {
+		this.backgroundColor = backgroundColor;
 	}
 
 }

@@ -60,6 +60,8 @@ public class UserServiceImpl implements UserService {
 			entity.setImage(user.getImage());
 			entity.setNameImage(user.getNameImage());
 			entity.setType(user.getType());
+			entity.setFontColor(user.getFontColor());
+			entity.setBackgroundColor(user.getBackgroundColor());
 		}
 	}
 

@@ -145,12 +145,28 @@
 							<br />
 							<img src="image-<c:out value="${card.login}"/>"
 								class="img-rounded" style="width: 100%" alt="Image">
-						</c:if>
 
-						<div>
-							<br /> <a href="<c:url value='/delete-image-${card.login}' />"
-								class="btn btn-danger">Delete image</a>
-						</div>
+							<div>
+								<br /> <a href="<c:url value='/delete-image-${card.login}' />"
+									class="btn btn-danger">Delete image</a>
+							</div>
+						</c:if>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-sm-2 control-label">Font color:</label>
+					<div class="col-sm-3">
+						<form:input type="color" value='${card.fontColor}'
+							path="fontColor" id="fontColor" class="form-control" />
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-sm-2 control-label">Background color:</label>
+					<div class="col-sm-3">
+						<form:input type="color" value='${card.backgroundColor}'
+							path="backgroundColor" id="backgroundColor" class="form-control" />
 					</div>
 				</div>
 

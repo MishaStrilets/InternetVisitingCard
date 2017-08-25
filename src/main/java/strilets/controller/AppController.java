@@ -118,6 +118,8 @@ public class AppController {
 		user.setTwitter("");
 		user.setInstagram("");
 		user.setNameImage("");
+		user.setFontColor("#000000");
+		user.setBackgroundColor("#ffffff");
 		userService.saveUser(user);
 		model.addAttribute("login", user.getLogin());
 		return "registration_success";
@@ -147,6 +149,8 @@ public class AppController {
 		card.setTwitter(user.getTwitter());
 		card.setInstagram(user.getInstagram());
 		card.setNameImage(user.getNameImage());
+		card.setFontColor(user.getFontColor());
+		card.setBackgroundColor(user.getBackgroundColor());
 
 		model.addAttribute("card", card);
 		return "edit_card";
@@ -293,11 +297,8 @@ public class AppController {
 		user.setTwitter(card.getTwitter());
 		user.setInstagram(card.getInstagram());
 		user.setNameImage(card.getNameImage());
-
-		/*
-		 * if ("".equals(user.getNameImage())) { user.setType("");
-		 * user.setImage(null); }
-		 */
+		user.setFontColor(card.getFontColor());
+		user.setBackgroundColor(card.getBackgroundColor());
 
 		if ((!("".equals(card.getFile().getOriginalFilename())))) {
 			MultipartFile multipartFile = card.getFile();

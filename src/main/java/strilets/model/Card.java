@@ -44,6 +44,10 @@ public class Card implements Serializable {
 
 	private String nameImage;
 
+	private String fontColor;
+
+	private String backgroundColor;
+
 	public String getLogin() {
 		return login;
 	}
@@ -138,6 +142,22 @@ public class Card implements Serializable {
 
 	public void setNameImage(String nameImage) {
 		this.nameImage = nameImage;
+	}
+
+	public String getFontColor() {
+		return fontColor;
+	}
+
+	public void setFontColor(String fontColor) {
+		this.fontColor = fontColor;
+	}
+
+	public String getBackgroundColor() {
+		return backgroundColor;
+	}
+
+	public void setBackgroundColor(String backgroundColor) {
+		this.backgroundColor = backgroundColor;
 	}
 
 }
