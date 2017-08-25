@@ -296,7 +296,6 @@ public class AppController {
 		user.setFacebook(card.getFacebook());
 		user.setTwitter(card.getTwitter());
 		user.setInstagram(card.getInstagram());
-		user.setNameImage(card.getNameImage());
 		user.setFontColor(card.getFontColor());
 		user.setBackgroundColor(card.getBackgroundColor());
 

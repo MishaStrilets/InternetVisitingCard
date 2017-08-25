@@ -21,43 +21,48 @@
 	<div>
 		<%@include file="header.jsp"%>
 
-
 		<div class="row">
 			<div class="col-sm-8">
-
 
 				<div class="list-form">
 					<h2>List of Cards</h2>
 					<table class="table table-hover">
-						<thead>
-							<tr>
-								<th>Name</th>
-								<sec:authorize access="hasRole('ADMIN')">
-									<th>Login</th>
-								</sec:authorize>
-								<th width="100"></th>
-								<sec:authorize access="hasRole('ADMIN')">
-									<th width="100"></th>
-								</sec:authorize>
 
-							</tr>
-						</thead>
 						<tbody>
 							<c:forEach items="${users}" var="user">
-								<tr>
-									<td>${user.name}</td>
+
+								<tr
+									style="color: ${user.fontColor}; background-color: ${user.backgroundColor}">
+
+									<td><h3>
+											<b>${user.name}</b>
+										</h3></td>
+
+									<c:choose>
+										<c:when test="${user.nameImage != ''}">
+											<td><img src="image-<c:out value="${user.login}"/>"
+												class="img-rounded" style="width: 25%" alt="Image"></td>
+										</c:when>
+										<c:otherwise>
+											<td></td>
+										</c:otherwise>
+									</c:choose>
+
 									<sec:authorize access="hasRole('ADMIN')">
-										<td>${user.login}</td>
+										<td><h4>${user.login}</h4></td>
 									</sec:authorize>
+
 									<td><a href="<c:url value='/${user.login}' />"
 										class="btn btn-info" target="_blank"><span
 											class="glyphicon glyphicon-eye-open"></span></a></td>
+
 									<sec:authorize access="hasRole('ADMIN')">
 										<td><a
 											href="<c:url value='/delete-card-${user.login}' />"
 											class="btn btn-danger"><span
 												class="glyphicon glyphicon-trash"></span></a></td>
 									</sec:authorize>
+
 								</tr>
 							</c:forEach>
 						</tbody>

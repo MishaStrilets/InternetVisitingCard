@@ -85,7 +85,7 @@ div.alert {
 	right: 10px;
 	bottom: 75px;
 	padding: 10px;
-    overflow-x: hidden;   
+	overflow-x: hidden;
 }
 
 .list-form {
@@ -98,7 +98,7 @@ div.alert {
 	right: 400px;
 	bottom: 75px;
 	padding: 10px;
-    overflow-x: hidden;   
+	overflow-x: hidden;
 }
 
 .registration-form {
@@ -109,7 +109,7 @@ div.alert {
 	top: 100px;
 	left: 275px;
 	right: 275px;
-	padding: 10px;   
+	padding: 10px;
 }
 
 .login-form {
@@ -132,7 +132,7 @@ div.alert {
 	left: 1000px;
 	right: 10px;
 	height: 280px;
-	padding: 10px;  
+	padding: 10px;
 }
 
 .view {
