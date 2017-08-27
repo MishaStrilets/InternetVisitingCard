@@ -41,7 +41,7 @@
 						type="password" name="password" placeholder="Enter Password"
 						required>
 				</div>
-				
+
 				<div class="input-group">
 					<div class="checkbox">
 						<label><input type="checkbox" id="rememberme"
@@ -53,7 +53,7 @@
 					value="${_csrf.token}" />
 
 				<div>
-					<input type="submit" value="Log in" class="btn btn-primary" />
+					<input type="submit" value="Log in" class="btn btn-default" />
 				</div>
 			</form>
 		</div>
