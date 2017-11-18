@@ -20,7 +20,7 @@
 <body>
 	<div>
 		<%@include file="header.jsp"%>
-		<div class="jumbotron">
+		<div class="index">
 			<div>
 				<div class="row text-center">
 					<h2>Welcome to Internet Visiting Card site!!!</h2>

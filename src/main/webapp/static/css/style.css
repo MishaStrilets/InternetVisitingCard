@@ -1,6 +1,6 @@
 body {
 	font-family: Arial;
-	background-color: #fffd99;
+	background-color: #ffffff;
 	overflow-x: hidden;
 }
 
@@ -28,14 +28,13 @@ a.sign {
 	background-color: #1bc426;
 }
 
-.jumbotron {
-	background-color: #ffffff;
-	border-radius: 7px;
-	border: 3px solid #004387;
-	position: fixed;
+.index {
+	background-color: #004387;
+	color: #ffffff; 
 	top: 100px;
 	left: 10px;
 	right: 10px;
+	position: fixed;
 }
 
 .info {
@@ -76,63 +75,60 @@ div.alert {
 }
 
 .edit-form {
-	background-color: #ffffff;
-	border-radius: 7px;
-	border: 3px solid #004387;
-	position: fixed;
+	background-color: #004387;
+	color: #ffffff; 
 	top: 100px;
 	left: 10px;
 	right: 10px;
 	bottom: 75px;
 	padding: 10px;
 	overflow-x: hidden;
+	position: fixed;
 }
 
 .list-form {
-	background-color: #ffffff;
-	border-radius: 7px;
-	border: 3px solid #004387;
-	position: fixed;
+	background-color: #004387;
+	color: #ffffff; 
 	top: 100px;
 	left: 10px;
 	right: 400px;
 	bottom: 75px;
 	padding: 10px;
 	overflow-x: hidden;
+	position: fixed;
 }
 
 .registration-form {
-	background-color: #ffffff;
-	border-radius: 7px;
-	border: 3px solid #004387;
+	background-color: #004387; 
+	color: #ffffff;
 	position: fixed;
 	top: 100px;
 	left: 275px;
 	right: 275px;
 	padding: 10px;
+	color: #ffffff;
 }
 
 .login-form {
-	background-color: #ffffff;
-	border-radius: 7px;
-	border: 3px solid #004387;
+	background-color: #004387; 
+	color: #ffffff;
 	position: fixed;
 	top: 100px;
 	left: 500px;
 	right: 500px;
 	padding: 10px;
+	color: #ffffff;
 }
 
 .search-form {
-	background-color: #ffffff;
-	border-radius: 7px;
-	border: 3px solid #004387;
-	position: fixed;
+	background-color: #000000;
+	color: #ffffff; 
 	top: 100px;
 	left: 1000px;
 	right: 10px;
 	height: 280px;
 	padding: 10px;
+	position: fixed;
 }
 
 .view {
