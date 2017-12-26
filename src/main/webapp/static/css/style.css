@@ -30,7 +30,7 @@ a.sign {
 
 .index {
 	background-color: #004387;
-	color: #ffffff; 
+	color: #ffffff;
 	top: 100px;
 	left: 10px;
 	right: 10px;
@@ -52,6 +52,7 @@ a.sign {
 	color: #004387;
 	border-top: 3px solid #004387;
 	padding: 7px;
+	height: 50px;
 }
 
 .header {
@@ -76,7 +77,7 @@ div.alert {
 
 .edit-form {
 	background-color: #004387;
-	color: #ffffff; 
+	color: #ffffff;
 	top: 100px;
 	left: 10px;
 	right: 10px;
@@ -88,7 +89,7 @@ div.alert {
 
 .list-form {
 	background-color: #004387;
-	color: #ffffff; 
+	color: #ffffff;
 	top: 100px;
 	left: 10px;
 	right: 400px;
@@ -99,7 +100,7 @@ div.alert {
 }
 
 .registration-form {
-	background-color: #004387; 
+	background-color: #004387;
 	color: #ffffff;
 	position: fixed;
 	top: 100px;
@@ -110,7 +111,7 @@ div.alert {
 }
 
 .login-form {
-	background-color: #004387; 
+	background-color: #004387;
 	color: #ffffff;
 	position: fixed;
 	top: 100px;
@@ -122,7 +123,7 @@ div.alert {
 
 .search-form {
 	background-color: #000000;
-	color: #ffffff; 
+	color: #ffffff;
 	top: 100px;
 	left: 1000px;
 	right: 10px;

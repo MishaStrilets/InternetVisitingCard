@@ -25,7 +25,7 @@ public class UserDaoImpl extends AbstractDao<Integer, User> implements UserDao {
 
 	@SuppressWarnings("unchecked")
 	public List<User> getUsers(Search search) {
-		logger.info("Search : {}", search);
+		logger.info("Search user: {}", search);
 		Criteria criteria = createEntityCriteria();
 		List<User> users = criteria.add(Restrictions.like("name", search.getName(), MatchMode.ANYWHERE))
 				.add(Restrictions.like("description", search.getDescription(), MatchMode.ANYWHERE))
@@ -34,7 +34,7 @@ public class UserDaoImpl extends AbstractDao<Integer, User> implements UserDao {
 	}
 
 	public User getUserByLogin(String login) {
-		logger.info("Login : {}", login);
+		logger.info("Get user login : {}", login);
 		Criteria criteria = createEntityCriteria();
 		criteria.add(Restrictions.eq("login", login));
 		User user = (User) criteria.uniqueResult();
@@ -50,10 +50,12 @@ public class UserDaoImpl extends AbstractDao<Integer, User> implements UserDao {
 	}
 
 	public void saveUser(User user) {
+		logger.info("Save user: {}", user);
 		persist(user);
 	}
 
 	public void deleteUser(String login) {
+		logger.info("Delete user login: {}", login);
 		Criteria criteria = createEntityCriteria();
 		criteria.add(Restrictions.eq("login", login));
 		User user = (User) criteria.uniqueResult();

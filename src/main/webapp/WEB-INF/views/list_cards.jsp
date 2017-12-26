@@ -10,6 +10,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Internet Visiting Card</title>
+
+<link rel="icon" type="image/png" href="/static/images/icon.png" />
+
 <link
 	href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
 	href="@{/webjars/bootstrap/3.3.4/css/bootstrap.min.css}"
@@ -25,7 +28,7 @@
 			<div class="col-sm-8">
 
 				<div class="list-form">
-					<h2>List of Cards</h2>
+					<h2>List of cards</h2>
 					<table class="table table-hover">
 
 						<tbody>

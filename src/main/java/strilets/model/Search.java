@@ -2,6 +2,7 @@ package strilets.model;
 
 import java.io.Serializable;
 
+@SuppressWarnings("serial")
 public class Search implements Serializable {
 
 	public Search() {
@@ -33,6 +34,11 @@ public class Search implements Serializable {
 
 	public void setAddress(String address) {
 		this.address = address;
+	}
+
+	@Override
+	public String toString() {
+		return "Search [name=" + name + ", description=" + description + ", address=" + address + "]";
 	}
 
 }

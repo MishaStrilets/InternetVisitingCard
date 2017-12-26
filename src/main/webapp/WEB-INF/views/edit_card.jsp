@@ -10,6 +10,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Internet Visiting Card</title>
+
+<link rel="icon" type="image/png" href="/static/images/icon.png" />
+
 <link
 	href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
 	href="@{/webjars/bootstrap/3.3.4/css/bootstrap.min.css}"
@@ -22,7 +25,7 @@
 		<%@include file="header.jsp"%>
 
 		<div class="edit-form">
-			<h2>Edit Card:</h2>
+			<h2>Edit card:</h2>
 
 			<form:form method="POST" modelAttribute="card"
 				enctype="multipart/form-data" class="form-horizontal">

@@ -9,6 +9,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Internet Visiting Card</title>
+
+<link rel="icon" type="image/png" href="/static/images/icon.png" />
+
 <link
 	href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
 	href="@{/webjars/bootstrap/3.3.4/css/bootstrap.min.css}"
@@ -20,8 +23,8 @@
 	<div>
 		<%@include file="header.jsp"%>
 		<div class="alert">
-			<div class="alert alert-success">
-				User<strong> ${login} </strong>registered successfully.
+			<div class="alert alert-danger">
+				User with a username<strong> ${login} </strong>is not.
 			</div>
 			<%@include file="footer.jsp"%>
 		</div>

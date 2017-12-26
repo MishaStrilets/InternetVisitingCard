@@ -5,7 +5,7 @@
 	<div class="container">
 		<div class="footer">
 			<p>
-				<a href="/admin" target="_blank">Contact information.</a>
+				<a href="/admin" target="_blank">Contact information</a><br />2017
 			</p>
 		</div>
 	</div>
