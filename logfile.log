@@ -403,3 +403,767 @@ Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have a
 2017-12-26 23:10:31.463  INFO 1296 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
 2017-12-26 23:10:31.467  INFO 1296 --- [RMI TCP Connection(2)-127.0.0.1] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@d0fbae: startup date [Tue Dec 26 23:04:46 EET 2017]; root of context hierarchy
 2017-12-26 23:10:31.500  INFO 1296 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2017-12-31 20:54:27.166  INFO 4908 --- [main] s.InternetVisitingCardApplication        : Starting InternetVisitingCardApplication on MishaStrilets with PID 4908 (D:\Job\Projects\InternetVisitingCard\target\classes started by Misha Strilets in D:\Job\Projects\InternetVisitingCard)
+2017-12-31 20:54:27.195  INFO 4908 --- [main] s.InternetVisitingCardApplication        : No active profile set, falling back to default profiles: default
+2017-12-31 20:54:27.604  INFO 4908 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@d0fbae: startup date [Sun Dec 31 20:54:27 EET 2017]; root of context hierarchy
+2017-12-31 20:54:40.286  INFO 4908 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2017-12-31 20:54:40.697  INFO 4908 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2017-12-31 20:54:40.721  INFO 4908 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.16
+2017-12-31 20:54:42.245  INFO 4908 --- [localhost-startStop-1] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2017-12-31 20:54:42.368  INFO 4908 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-12-31 20:54:42.369  INFO 4908 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 14780 ms
+2017-12-31 20:54:42.802  INFO 4908 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-12-31 20:54:42.806  INFO 4908 --- [localhost-startStop-1] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2017-12-31 20:54:42.807  INFO 4908 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2017-12-31 20:54:43.715  INFO 4908 --- [main] o.s.j.d.DriverManagerDataSource          : Loaded JDBC driver: com.mysql.jdbc.Driver
+2017-12-31 20:54:44.968  INFO 4908 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from URL [file:/D:/Job/Projects/InternetVisitingCard/target/classes/schema.sql]
+2017-12-31 20:54:46.379  INFO 4908 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from URL [file:/D:/Job/Projects/InternetVisitingCard/target/classes/schema.sql] in 1409 ms.
+2017-12-31 20:54:47.430  INFO 4908 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.0.12.Final}
+2017-12-31 20:54:47.449  INFO 4908 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2017-12-31 20:54:47.452  INFO 4908 --- [main] org.hibernate.cfg.Environment            : HHH000021: Bytecode provider name : javassist
+2017-12-31 20:54:47.684  INFO 4908 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-12-31 20:54:48.832  INFO 4908 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2017-12-31 20:54:52.571  INFO 4908 --- [main] o.s.o.h.HibernateTransactionManager      : Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@10f7d9d] of Hibernate SessionFactory for HibernateTransactionManager
+2017-12-31 20:54:52.767  INFO 4908 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/]}" onto java.lang.String strilets.controller.AppController.index()
+2017-12-31 20:54:52.770  INFO 4908 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/registration-user],methods=[GET]}" onto public java.lang.String strilets.controller.AppController.newUser(org.springframework.ui.ModelMap)
+2017-12-31 20:54:52.771  INFO 4908 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/registration-user],methods=[POST]}" onto public java.lang.String strilets.controller.AppController.saveUser(strilets.model.User,org.springframework.validation.BindingResult,org.springframework.ui.ModelMap)
+2017-12-31 20:54:52.772  INFO 4908 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/edit-card-{login}],methods=[GET]}" onto public java.lang.String strilets.controller.AppController.editCard(java.lang.String,org.springframework.ui.ModelMap)
+2017-12-31 20:54:52.773  INFO 4908 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/{login}],methods=[GET]}" onto public java.lang.String strilets.controller.AppController.viewCard(java.lang.String,org.springframework.ui.ModelMap)
+2017-12-31 20:54:52.773  INFO 4908 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/list-cards],methods=[GET]}" onto public java.lang.String strilets.controller.AppController.listCards(org.springframework.ui.ModelMap)
+2017-12-31 20:54:52.774  INFO 4908 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/list-cards],methods=[POST]}" onto public java.lang.String strilets.controller.AppController.searchCards(strilets.model.Search,org.springframework.ui.ModelMap)
+2017-12-31 20:54:52.774  INFO 4908 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/edit-card-{login}],methods=[POST]}" onto public java.lang.String strilets.controller.AppController.updateCard(strilets.model.Card,org.springframework.validation.BindingResult,org.springframework.ui.ModelMap,java.lang.String) throws java.io.IOException
+2017-12-31 20:54:52.775  INFO 4908 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/image-{login}]}" onto public void strilets.controller.AppController.getUserImage(javax.servlet.http.HttpServletResponse,java.lang.String) throws java.io.IOException
+2017-12-31 20:54:52.776  INFO 4908 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/delete-card-{login}],methods=[GET]}" onto public java.lang.String strilets.controller.AppController.deleteUser(java.lang.String)
+2017-12-31 20:54:52.776  INFO 4908 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/delete-image-{login}],methods=[GET]}" onto public java.lang.String strilets.controller.AppController.deleteUmage(java.lang.String)
+2017-12-31 20:54:52.778  INFO 4908 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/access_denied]}" onto public java.lang.String strilets.controller.AppController.accessDeniedPage()
+2017-12-31 20:54:52.778  INFO 4908 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/login],methods=[GET]}" onto public java.lang.String strilets.controller.AppController.loginPage()
+2017-12-31 20:54:52.779  INFO 4908 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/logout],methods=[GET]}" onto public java.lang.String strilets.controller.AppController.logoutPage(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-12-31 20:54:52.803  INFO 4908 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-12-31 20:54:52.804  INFO 4908 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-12-31 20:54:52.926  INFO 4908 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/static/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-12-31 20:54:53.301  INFO 4908 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@d0fbae: startup date [Sun Dec 31 20:54:27 EET 2017]; root of context hierarchy
+2017-12-31 20:54:54.957  INFO 4908 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1ad01fe, org.springframework.security.web.context.SecurityContextPersistenceFilter@1d2d002, org.springframework.security.web.header.HeaderWriterFilter@faa16c, org.springframework.security.web.csrf.CsrfFilter@c9e023, org.springframework.security.web.authentication.logout.LogoutFilter@153316c, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@34ff56, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@20070c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1ef1ea2, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@1fe243f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@128a578, org.springframework.security.web.session.SessionManagementFilter@1b32a14, org.springframework.security.web.access.ExceptionTranslationFilter@1cd31c3, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@12e5c0d]
+2017-12-31 20:54:56.112  INFO 4908 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-12-31 20:54:56.652  INFO 4908 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2017-12-31 20:54:56.676  INFO 4908 --- [main] s.InternetVisitingCardApplication        : Started InternetVisitingCardApplication in 31.999 seconds (JVM running for 40.278)
+2017-12-31 20:55:16.106  INFO 4908 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2017-12-31 20:55:16.107  INFO 4908 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2017-12-31 20:55:16.182  INFO 4908 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 74 ms
+2017-12-31 20:55:42.389  INFO 4908 --- [http-nio-8080-exec-4] strilets.dao.UserDaoImpl                 : Get user login : admin
+2017-12-31 20:55:43.257  INFO 4908 --- [http-nio-8080-exec-4] strilets.dao.UserDaoImpl                 : Save user: strilets.model.User@1e3501b
+2017-12-31 20:55:53.170  INFO 4908 --- [http-nio-8080-exec-2] strilets.dao.UserDaoImpl                 : Get user login : admin
+2017-12-31 20:55:53.201  INFO 4908 --- [http-nio-8080-exec-2] strilets.security.UserServiceDetail      : User : strilets.model.User@786455
+2017-12-31 20:55:53.203  INFO 4908 --- [http-nio-8080-exec-2] strilets.security.UserServiceDetail      : Card profile : strilets.model.User@786455
+2017-12-31 20:55:53.204  INFO 4908 --- [http-nio-8080-exec-2] strilets.security.UserServiceDetail      : Authorities : [ROLE_ADMIN]
+2017-12-31 20:55:56.265  INFO 4908 --- [http-nio-8080-exec-9] strilets.dao.UserDaoImpl                 : Get user login : admin
+2017-12-31 20:56:00.863  INFO 4908 --- [http-nio-8080-exec-10] strilets.dao.UserDaoImpl                 : Get user login : admin
+2017-12-31 20:56:10.261  INFO 4908 --- [http-nio-8080-exec-9] strilets.dao.UserDaoImpl                 : Get user login : admin
+2017-12-31 20:56:15.461  INFO 4908 --- [http-nio-8080-exec-8] strilets.dao.UserDaoImpl                 : Get user login : admin
+2017-12-31 20:56:16.682  INFO 4908 --- [http-nio-8080-exec-1] strilets.dao.UserDaoImpl                 : Get user login : admin
+2017-12-31 20:57:39.728  INFO 4908 --- [http-nio-8080-exec-5] strilets.dao.UserDaoImpl                 : Get user login : admin
+2017-12-31 20:57:43.025  INFO 4908 --- [http-nio-8080-exec-9] strilets.dao.UserDaoImpl                 : Get user login : admin
+2017-12-31 20:57:43.141  INFO 4908 --- [http-nio-8080-exec-9] strilets.dao.UserDaoImpl                 : Get user login : admin
+2017-12-31 20:57:45.514  INFO 4908 --- [http-nio-8080-exec-6] strilets.dao.UserDaoImpl                 : Get user login : admin
+2017-12-31 20:57:46.061  INFO 4908 --- [http-nio-8080-exec-10] strilets.dao.UserDaoImpl                 : Get user login : admin
+2017-12-31 20:57:46.329  INFO 4908 --- [http-nio-8080-exec-10] strilets.dao.UserDaoImpl                 : Get user login : admin
+2017-12-31 20:57:53.247  INFO 4908 --- [http-nio-8080-exec-2] strilets.dao.TokenRepositoryImpl         : Removing token if any for user : admin
+2017-12-31 20:58:03.649  INFO 4908 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2017-12-31 20:58:03.651  INFO 4908 --- [RMI TCP Connection(2)-127.0.0.1] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@d0fbae: startup date [Sun Dec 31 20:54:27 EET 2017]; root of context hierarchy
+2017-12-31 20:58:03.678  INFO 4908 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2017-12-31 20:58:52.640  INFO 4088 --- [main] s.InternetVisitingCardApplication        : Starting InternetVisitingCardApplication on MishaStrilets with PID 4088 (D:\Job\Projects\InternetVisitingCard\target\classes started by Misha Strilets in D:\Job\Projects\InternetVisitingCard)
+2017-12-31 20:58:52.656  INFO 4088 --- [main] s.InternetVisitingCardApplication        : No active profile set, falling back to default profiles: default
+2017-12-31 20:58:52.827  INFO 4088 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@d0fbae: startup date [Sun Dec 31 20:58:52 EET 2017]; root of context hierarchy
+2017-12-31 20:58:56.935  INFO 4088 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2017-12-31 20:58:56.971  INFO 4088 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2017-12-31 20:58:56.974  INFO 4088 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.16
+2017-12-31 20:58:57.551  INFO 4088 --- [localhost-startStop-1] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2017-12-31 20:58:57.563  INFO 4088 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-12-31 20:58:57.565  INFO 4088 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 4763 ms
+2017-12-31 20:58:57.918  INFO 4088 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-12-31 20:58:57.921  INFO 4088 --- [localhost-startStop-1] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2017-12-31 20:58:57.922  INFO 4088 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2017-12-31 20:58:58.111  INFO 4088 --- [main] o.s.j.d.DriverManagerDataSource          : Loaded JDBC driver: com.mysql.jdbc.Driver
+2017-12-31 20:58:58.907  INFO 4088 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from URL [file:/D:/Job/Projects/InternetVisitingCard/target/classes/schema.sql]
+2017-12-31 20:58:58.940  INFO 4088 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from URL [file:/D:/Job/Projects/InternetVisitingCard/target/classes/schema.sql] in 32 ms.
+2017-12-31 20:58:59.245  INFO 4088 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.0.12.Final}
+2017-12-31 20:58:59.252  INFO 4088 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2017-12-31 20:58:59.256  INFO 4088 --- [main] org.hibernate.cfg.Environment            : HHH000021: Bytecode provider name : javassist
+2017-12-31 20:58:59.363  INFO 4088 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-12-31 20:58:59.631  INFO 4088 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2017-12-31 20:59:01.727  INFO 4088 --- [main] o.s.o.h.HibernateTransactionManager      : Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@865a90] of Hibernate SessionFactory for HibernateTransactionManager
+2017-12-31 20:59:01.867  INFO 4088 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/]}" onto java.lang.String strilets.controller.AppController.index()
+2017-12-31 20:59:01.870  INFO 4088 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/list-cards],methods=[GET]}" onto public java.lang.String strilets.controller.AppController.listCards(org.springframework.ui.ModelMap)
+2017-12-31 20:59:01.871  INFO 4088 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/list-cards],methods=[POST]}" onto public java.lang.String strilets.controller.AppController.searchCards(strilets.model.Search,org.springframework.ui.ModelMap)
+2017-12-31 20:59:01.872  INFO 4088 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/edit-card-{login}],methods=[POST]}" onto public java.lang.String strilets.controller.AppController.updateCard(strilets.model.Card,org.springframework.validation.BindingResult,org.springframework.ui.ModelMap,java.lang.String) throws java.io.IOException
+2017-12-31 20:59:01.873  INFO 4088 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/image-{login}]}" onto public void strilets.controller.AppController.getUserImage(javax.servlet.http.HttpServletResponse,java.lang.String) throws java.io.IOException
+2017-12-31 20:59:01.873  INFO 4088 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/delete-card-{login}],methods=[GET]}" onto public java.lang.String strilets.controller.AppController.deleteUser(java.lang.String)
+2017-12-31 20:59:01.874  INFO 4088 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/delete-image-{login}],methods=[GET]}" onto public java.lang.String strilets.controller.AppController.deleteUmage(java.lang.String)
+2017-12-31 20:59:01.875  INFO 4088 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/access_denied]}" onto public java.lang.String strilets.controller.AppController.accessDeniedPage()
+2017-12-31 20:59:01.876  INFO 4088 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/login],methods=[GET]}" onto public java.lang.String strilets.controller.AppController.loginPage()
+2017-12-31 20:59:01.877  INFO 4088 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/logout],methods=[GET]}" onto public java.lang.String strilets.controller.AppController.logoutPage(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-12-31 20:59:01.879  INFO 4088 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/registration-user],methods=[GET]}" onto public java.lang.String strilets.controller.AppController.newUser(org.springframework.ui.ModelMap)
+2017-12-31 20:59:01.880  INFO 4088 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/registration-user],methods=[POST]}" onto public java.lang.String strilets.controller.AppController.saveUser(strilets.model.User,org.springframework.validation.BindingResult,org.springframework.ui.ModelMap)
+2017-12-31 20:59:01.881  INFO 4088 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/edit-card-{login}],methods=[GET]}" onto public java.lang.String strilets.controller.AppController.editCard(java.lang.String,org.springframework.ui.ModelMap)
+2017-12-31 20:59:01.881  INFO 4088 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/{login}],methods=[GET]}" onto public java.lang.String strilets.controller.AppController.viewCard(java.lang.String,org.springframework.ui.ModelMap)
+2017-12-31 20:59:01.904  INFO 4088 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-12-31 20:59:01.905  INFO 4088 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-12-31 20:59:02.006  INFO 4088 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/static/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-12-31 20:59:02.125  INFO 4088 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@d0fbae: startup date [Sun Dec 31 20:58:52 EET 2017]; root of context hierarchy
+2017-12-31 20:59:03.065  INFO 4088 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@62cfa3, org.springframework.security.web.context.SecurityContextPersistenceFilter@545b0f, org.springframework.security.web.header.HeaderWriterFilter@1ed560f, org.springframework.security.web.csrf.CsrfFilter@1a9ea3c, org.springframework.security.web.authentication.logout.LogoutFilter@256d80, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1e87ddd, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4dac75, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@13da830, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@1f674ac, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@e190ed, org.springframework.security.web.session.SessionManagementFilter@253c57, org.springframework.security.web.access.ExceptionTranslationFilter@b702ce, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@13ec32d]
+2017-12-31 20:59:04.108  INFO 4088 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-12-31 20:59:04.387  INFO 4088 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2017-12-31 20:59:04.402  INFO 4088 --- [main] s.InternetVisitingCardApplication        : Started InternetVisitingCardApplication in 12.639 seconds (JVM running for 15.78)
+2017-12-31 21:00:15.690  INFO 4088 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2017-12-31 21:00:15.691  INFO 4088 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2017-12-31 21:00:15.744  INFO 4088 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 52 ms
+2017-12-31 21:00:19.196  INFO 4088 --- [http-nio-8080-exec-2] strilets.dao.UserDaoImpl                 : Get user login : admin
+2017-12-31 21:00:19.384  INFO 4088 --- [http-nio-8080-exec-2] strilets.dao.UserDaoImpl                 : Get user login : admin
+2017-12-31 21:00:24.504  INFO 4088 --- [http-nio-8080-exec-9] strilets.dao.UserDaoImpl                 : Get user login : admin
+2017-12-31 21:00:24.577  INFO 4088 --- [http-nio-8080-exec-9] strilets.dao.UserDaoImpl                 : Get user login : admin
+2017-12-31 21:00:54.945  INFO 4088 --- [http-nio-8080-exec-7] strilets.dao.UserDaoImpl                 : Get user login : company
+2017-12-31 21:00:55.229  INFO 4088 --- [http-nio-8080-exec-7] strilets.dao.UserDaoImpl                 : Save user: strilets.model.User@e4fdb9
+2017-12-31 21:01:05.118  INFO 4088 --- [http-nio-8080-exec-6] strilets.dao.UserDaoImpl                 : Get user login : company
+2017-12-31 21:01:05.127  INFO 4088 --- [http-nio-8080-exec-6] strilets.security.UserServiceDetail      : User : strilets.model.User@12d987e
+2017-12-31 21:01:05.130  INFO 4088 --- [http-nio-8080-exec-6] strilets.security.UserServiceDetail      : Card profile : strilets.model.User@12d987e
+2017-12-31 21:01:05.130  INFO 4088 --- [http-nio-8080-exec-6] strilets.security.UserServiceDetail      : Authorities : [ROLE_USER]
+2017-12-31 21:01:07.589  INFO 4088 --- [http-nio-8080-exec-10] strilets.dao.UserDaoImpl                 : Get user login : company
+2017-12-31 21:21:12.255  INFO 4088 --- [http-nio-8080-exec-2] strilets.dao.UserDaoImpl                 : Get user login : company
+2017-12-31 21:21:12.323  INFO 4088 --- [http-nio-8080-exec-2] strilets.dao.UserDaoImpl                 : Get user login : company
+2017-12-31 21:21:12.413 ERROR 4088 --- [http-nio-8080-exec-2] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
+
+java.lang.NullPointerException: null
+	at java.io.ByteArrayInputStream.<init>(Unknown Source) ~[na:1.8.0_101]
+	at strilets.controller.AppController.getUserImage(AppController.java:199) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_101]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_101]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_101]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_101]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133) ~[spring-web-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97) ~[spring-webmvc-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827) ~[spring-webmvc-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738) ~[spring-webmvc-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85) ~[spring-webmvc-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967) ~[spring-webmvc-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901) ~[spring-webmvc-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970) ~[spring-webmvc-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861) ~[spring-webmvc-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687) ~[javax.servlet-api-3.1.0.jar:3.1.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846) ~[spring-webmvc-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790) ~[javax.servlet-api-3.1.0.jar:3.1.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) ~[tomcat-embed-websocket-8.5.16.jar:8.5.16]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:317) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:114) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:158) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:100) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:64) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:214) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:177) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:346) ~[spring-web-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:262) ~[spring-web-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197) ~[spring-web-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198) ~[tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478) [tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:80) [tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) [tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:799) [tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1455) [tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-8.5.16.jar:8.5.16]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [na:1.8.0_101]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [na:1.8.0_101]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.16.jar:8.5.16]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_101]
+
+2017-12-31 21:21:14.381  INFO 4088 --- [http-nio-8080-exec-4] strilets.dao.UserDaoImpl                 : Get user login : company
+2017-12-31 21:21:24.649  INFO 4088 --- [http-nio-8080-exec-5] strilets.dao.UserDaoImpl                 : Get user login : company
+2017-12-31 21:21:27.236  INFO 4088 --- [http-nio-8080-exec-4] strilets.dao.UserDaoImpl                 : Get user login : company
+2017-12-31 21:21:27.286  INFO 4088 --- [http-nio-8080-exec-4] strilets.dao.UserDaoImpl                 : Get user login : company
+2017-12-31 21:21:27.305 ERROR 4088 --- [http-nio-8080-exec-4] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
+
+java.lang.NullPointerException: null
+	at java.io.ByteArrayInputStream.<init>(Unknown Source) ~[na:1.8.0_101]
+	at strilets.controller.AppController.getUserImage(AppController.java:199) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_101]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_101]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_101]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_101]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133) ~[spring-web-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97) ~[spring-webmvc-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827) ~[spring-webmvc-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738) ~[spring-webmvc-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85) ~[spring-webmvc-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967) ~[spring-webmvc-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901) ~[spring-webmvc-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970) ~[spring-webmvc-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861) ~[spring-webmvc-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687) ~[javax.servlet-api-3.1.0.jar:3.1.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846) ~[spring-webmvc-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790) ~[javax.servlet-api-3.1.0.jar:3.1.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) ~[tomcat-embed-websocket-8.5.16.jar:8.5.16]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:317) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:114) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:158) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:100) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:64) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:214) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:177) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:346) ~[spring-web-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:262) ~[spring-web-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197) ~[spring-web-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198) ~[tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478) [tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:80) [tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) [tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:799) [tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1455) [tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-8.5.16.jar:8.5.16]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [na:1.8.0_101]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [na:1.8.0_101]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.16.jar:8.5.16]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_101]
+
+2017-12-31 21:21:29.587  INFO 4088 --- [http-nio-8080-exec-6] strilets.dao.UserDaoImpl                 : Get user login : company
+2017-12-31 21:21:32.695  INFO 4088 --- [http-nio-8080-exec-7] strilets.dao.UserDaoImpl                 : Get user login : admin
+2017-12-31 21:21:32.808  INFO 4088 --- [http-nio-8080-exec-7] strilets.dao.UserDaoImpl                 : Get user login : admin
+2017-12-31 21:21:36.840  INFO 4088 --- [http-nio-8080-exec-2] strilets.dao.UserDaoImpl                 : Get user login : company
+2017-12-31 21:21:42.867  INFO 4088 --- [http-nio-8080-exec-8] strilets.dao.UserDaoImpl                 : Get user login : company
+2017-12-31 21:22:38.199  INFO 4088 --- [http-nio-8080-exec-7] strilets.dao.UserDaoImpl                 : Get user login : company
+2017-12-31 21:22:38.325  INFO 4088 --- [http-nio-8080-exec-7] strilets.dao.UserDaoImpl                 : Get user login : company
+2017-12-31 21:22:38.347 ERROR 4088 --- [http-nio-8080-exec-7] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
+
+java.lang.NullPointerException: null
+	at java.io.ByteArrayInputStream.<init>(Unknown Source) ~[na:1.8.0_101]
+	at strilets.controller.AppController.getUserImage(AppController.java:199) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_101]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_101]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_101]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_101]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133) ~[spring-web-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97) ~[spring-webmvc-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827) ~[spring-webmvc-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738) ~[spring-webmvc-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85) ~[spring-webmvc-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967) ~[spring-webmvc-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901) ~[spring-webmvc-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970) ~[spring-webmvc-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861) ~[spring-webmvc-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687) ~[javax.servlet-api-3.1.0.jar:3.1.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846) ~[spring-webmvc-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790) ~[javax.servlet-api-3.1.0.jar:3.1.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) ~[tomcat-embed-websocket-8.5.16.jar:8.5.16]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:317) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:114) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:158) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:100) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:64) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:214) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:177) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:346) ~[spring-web-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:262) ~[spring-web-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197) ~[spring-web-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198) ~[tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478) [tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:80) [tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) [tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:799) [tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1455) [tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-8.5.16.jar:8.5.16]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [na:1.8.0_101]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [na:1.8.0_101]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.16.jar:8.5.16]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_101]
+
+2017-12-31 21:22:40.578  INFO 4088 --- [http-nio-8080-exec-2] strilets.dao.UserDaoImpl                 : Get user login : company
+2017-12-31 21:22:43.454  INFO 4088 --- [http-nio-8080-exec-6] strilets.dao.UserDaoImpl                 : Get user login : company
+2017-12-31 21:22:53.095  INFO 4088 --- [http-nio-8080-exec-4] strilets.dao.UserDaoImpl                 : Get user login : company
+2017-12-31 21:22:53.114  INFO 4088 --- [http-nio-8080-exec-4] strilets.dao.UserDaoImpl                 : Get user login : company
+2017-12-31 21:22:53.127 ERROR 4088 --- [http-nio-8080-exec-4] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
+
+java.lang.NullPointerException: null
+	at java.io.ByteArrayInputStream.<init>(Unknown Source) ~[na:1.8.0_101]
+	at strilets.controller.AppController.getUserImage(AppController.java:199) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_101]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_101]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_101]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_101]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133) ~[spring-web-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97) ~[spring-webmvc-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827) ~[spring-webmvc-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738) ~[spring-webmvc-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85) ~[spring-webmvc-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967) ~[spring-webmvc-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901) ~[spring-webmvc-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970) ~[spring-webmvc-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861) ~[spring-webmvc-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687) ~[javax.servlet-api-3.1.0.jar:3.1.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846) ~[spring-webmvc-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790) ~[javax.servlet-api-3.1.0.jar:3.1.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) ~[tomcat-embed-websocket-8.5.16.jar:8.5.16]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:317) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:114) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:158) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:100) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:64) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:214) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:177) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:346) ~[spring-web-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:262) ~[spring-web-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197) ~[spring-web-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198) ~[tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478) [tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:80) [tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) [tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:799) [tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1455) [tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-8.5.16.jar:8.5.16]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [na:1.8.0_101]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [na:1.8.0_101]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.16.jar:8.5.16]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_101]
+
+2017-12-31 21:22:55.038  INFO 4088 --- [http-nio-8080-exec-6] strilets.dao.UserDaoImpl                 : Get user login : company
+2017-12-31 21:22:59.155  INFO 4088 --- [http-nio-8080-exec-7] strilets.dao.UserDaoImpl                 : Get user login : admin
+2017-12-31 21:22:59.226  INFO 4088 --- [http-nio-8080-exec-7] strilets.dao.UserDaoImpl                 : Get user login : admin
+2017-12-31 21:23:01.709  INFO 4088 --- [http-nio-8080-exec-3] strilets.dao.TokenRepositoryImpl         : Removing token if any for user : company
+2017-12-31 21:23:04.201  INFO 4088 --- [http-nio-8080-exec-8] strilets.dao.UserDaoImpl                 : Get user login : admin
+2017-12-31 21:23:04.284  INFO 4088 --- [http-nio-8080-exec-8] strilets.dao.UserDaoImpl                 : Get user login : admin
+2017-12-31 21:23:06.231  INFO 4088 --- [http-nio-8080-exec-1] strilets.dao.UserDaoImpl                 : Get user login : company
+2017-12-31 21:23:21.589  INFO 4088 --- [http-nio-8080-exec-8] strilets.dao.UserDaoImpl                 : Get user login : admin
+2017-12-31 21:23:21.723  INFO 4088 --- [http-nio-8080-exec-8] strilets.dao.UserDaoImpl                 : Get user login : admin
+2017-12-31 21:23:33.053  INFO 4088 --- [http-nio-8080-exec-3] strilets.dao.UserDaoImpl                 : Get user login : admin
+2017-12-31 21:23:33.103  INFO 4088 --- [http-nio-8080-exec-3] strilets.security.UserServiceDetail      : User : strilets.model.User@126b26a
+2017-12-31 21:23:33.104  INFO 4088 --- [http-nio-8080-exec-3] strilets.security.UserServiceDetail      : Card profile : strilets.model.User@126b26a
+2017-12-31 21:23:33.104  INFO 4088 --- [http-nio-8080-exec-3] strilets.security.UserServiceDetail      : Authorities : [ROLE_ADMIN]
+2017-12-31 21:23:35.622  INFO 4088 --- [http-nio-8080-exec-9] strilets.dao.UserDaoImpl                 : Get user login : admin
+2017-12-31 21:23:35.694  INFO 4088 --- [http-nio-8080-exec-9] strilets.dao.UserDaoImpl                 : Get user login : admin
+2017-12-31 21:23:38.856  INFO 4088 --- [http-nio-8080-exec-1] strilets.dao.UserDaoImpl                 : Get user login : company
+2017-12-31 21:23:42.016  INFO 4088 --- [http-nio-8080-exec-3] strilets.dao.UserDaoImpl                 : Delete user login: company
+2017-12-31 21:23:42.563  INFO 4088 --- [http-nio-8080-exec-6] strilets.dao.UserDaoImpl                 : Get user login : admin
+2017-12-31 21:23:42.893  INFO 4088 --- [http-nio-8080-exec-6] strilets.dao.UserDaoImpl                 : Get user login : admin
+2017-12-31 21:23:44.908  INFO 4088 --- [http-nio-8080-exec-5] strilets.dao.TokenRepositoryImpl         : Removing token if any for user : admin
+2017-12-31 21:28:13.792  INFO 4088 --- [http-nio-8080-exec-3] strilets.dao.UserDaoImpl                 : Get user login : admin
+2017-12-31 21:28:13.904  INFO 4088 --- [http-nio-8080-exec-3] strilets.dao.UserDaoImpl                 : Get user login : admin
+2017-12-31 21:28:28.416  INFO 4088 --- [http-nio-8080-exec-8] strilets.dao.UserDaoImpl                 : Get user login : pingvini
+2017-12-31 21:28:28.768  INFO 4088 --- [http-nio-8080-exec-8] strilets.dao.UserDaoImpl                 : Save user: strilets.model.User@b42efa
+2017-12-31 21:28:37.642  INFO 4088 --- [http-nio-8080-exec-2] strilets.dao.UserDaoImpl                 : Get user login : pingvini
+2017-12-31 21:28:37.707  INFO 4088 --- [http-nio-8080-exec-2] strilets.security.UserServiceDetail      : User : strilets.model.User@1147fe3
+2017-12-31 21:28:37.707  INFO 4088 --- [http-nio-8080-exec-2] strilets.security.UserServiceDetail      : Card profile : strilets.model.User@1147fe3
+2017-12-31 21:28:37.708  INFO 4088 --- [http-nio-8080-exec-2] strilets.security.UserServiceDetail      : Authorities : [ROLE_USER]
+2017-12-31 21:28:39.775  INFO 4088 --- [http-nio-8080-exec-5] strilets.dao.UserDaoImpl                 : Get user login : pingvini
+2017-12-31 21:29:35.989  INFO 4088 --- [http-nio-8080-exec-10] strilets.dao.UserDaoImpl                 : Get user login : pingvini
+2017-12-31 21:29:36.190  INFO 4088 --- [http-nio-8080-exec-10] strilets.dao.UserDaoImpl                 : Get user login : pingvini
+2017-12-31 21:29:36.210 ERROR 4088 --- [http-nio-8080-exec-10] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
+
+java.lang.NullPointerException: null
+	at java.io.ByteArrayInputStream.<init>(Unknown Source) ~[na:1.8.0_101]
+	at strilets.controller.AppController.getUserImage(AppController.java:199) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_101]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_101]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_101]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_101]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133) ~[spring-web-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97) ~[spring-webmvc-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827) ~[spring-webmvc-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738) ~[spring-webmvc-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85) ~[spring-webmvc-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967) ~[spring-webmvc-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901) ~[spring-webmvc-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970) ~[spring-webmvc-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861) ~[spring-webmvc-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687) ~[javax.servlet-api-3.1.0.jar:3.1.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846) ~[spring-webmvc-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790) ~[javax.servlet-api-3.1.0.jar:3.1.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) ~[tomcat-embed-websocket-8.5.16.jar:8.5.16]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:317) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:114) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:158) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:100) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:64) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:214) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:177) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:346) ~[spring-web-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:262) ~[spring-web-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197) ~[spring-web-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198) ~[tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478) [tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:80) [tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) [tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:799) [tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1455) [tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-8.5.16.jar:8.5.16]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [na:1.8.0_101]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [na:1.8.0_101]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.16.jar:8.5.16]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_101]
+
+2017-12-31 21:29:38.550  INFO 4088 --- [http-nio-8080-exec-3] strilets.dao.UserDaoImpl                 : Get user login : pingvini
+2017-12-31 21:29:41.896  INFO 4088 --- [http-nio-8080-exec-6] strilets.dao.UserDaoImpl                 : Get user login : pingvini
+2017-12-31 21:30:00.422  INFO 4088 --- [http-nio-8080-exec-3] strilets.dao.UserDaoImpl                 : Get user login : pingvini
+2017-12-31 21:30:01.055  INFO 4088 --- [http-nio-8080-exec-4] strilets.dao.UserDaoImpl                 : Get user login : pingvini
+2017-12-31 21:30:01.138  INFO 4088 --- [http-nio-8080-exec-4] strilets.dao.UserDaoImpl                 : Get user login : pingvini
+2017-12-31 21:30:01.197 ERROR 4088 --- [http-nio-8080-exec-4] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
+
+java.lang.NullPointerException: null
+	at java.io.ByteArrayInputStream.<init>(Unknown Source) ~[na:1.8.0_101]
+	at strilets.controller.AppController.getUserImage(AppController.java:199) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_101]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_101]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_101]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_101]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133) ~[spring-web-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97) ~[spring-webmvc-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827) ~[spring-webmvc-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738) ~[spring-webmvc-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85) ~[spring-webmvc-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967) ~[spring-webmvc-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901) ~[spring-webmvc-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970) ~[spring-webmvc-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861) ~[spring-webmvc-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687) ~[javax.servlet-api-3.1.0.jar:3.1.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846) ~[spring-webmvc-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790) ~[javax.servlet-api-3.1.0.jar:3.1.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) ~[tomcat-embed-websocket-8.5.16.jar:8.5.16]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:317) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:114) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:158) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:100) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:64) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:214) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:177) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:346) ~[spring-web-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:262) ~[spring-web-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197) ~[spring-web-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198) ~[tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478) [tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:80) [tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) [tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:799) [tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1455) [tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-8.5.16.jar:8.5.16]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [na:1.8.0_101]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [na:1.8.0_101]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.16.jar:8.5.16]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_101]
+
+2017-12-31 21:30:02.884  INFO 4088 --- [http-nio-8080-exec-5] strilets.dao.UserDaoImpl                 : Get user login : pingvini
+2017-12-31 21:30:07.331  INFO 4088 --- [http-nio-8080-exec-7] strilets.dao.UserDaoImpl                 : Get user login : pingvini
+2017-12-31 21:30:12.037  INFO 4088 --- [http-nio-8080-exec-4] strilets.dao.UserDaoImpl                 : Get user login : pingvini
+2017-12-31 21:30:12.469  INFO 4088 --- [http-nio-8080-exec-5] strilets.dao.UserDaoImpl                 : Get user login : pingvini
+2017-12-31 21:30:19.750  INFO 4088 --- [http-nio-8080-exec-7] strilets.dao.UserDaoImpl                 : Get user login : pingvini
+2017-12-31 21:30:22.873  INFO 4088 --- [http-nio-8080-exec-10] strilets.dao.UserDaoImpl                 : Get user login : pingvini
+2017-12-31 21:30:22.949  INFO 4088 --- [http-nio-8080-exec-10] strilets.dao.UserDaoImpl                 : Get user login : pingvini
+2017-12-31 21:30:25.716  INFO 4088 --- [http-nio-8080-exec-3] strilets.dao.UserDaoImpl                 : Get user login : pingvini
+2017-12-31 21:30:26.020  INFO 4088 --- [http-nio-8080-exec-6] strilets.dao.UserDaoImpl                 : Get user login : pingvini
+2017-12-31 21:30:26.085  INFO 4088 --- [http-nio-8080-exec-6] strilets.dao.UserDaoImpl                 : Get user login : pingvini
+2017-12-31 21:31:22.839  INFO 4088 --- [http-nio-8080-exec-5] strilets.dao.TokenRepositoryImpl         : Removing token if any for user : pingvini
+2017-12-31 21:31:25.405  INFO 4088 --- [http-nio-8080-exec-10] strilets.dao.UserDaoImpl                 : Get user login : admin
+2017-12-31 21:31:25.520  INFO 4088 --- [http-nio-8080-exec-3] strilets.dao.UserDaoImpl                 : Get user login : pingvini
+2017-12-31 21:31:25.524  INFO 4088 --- [http-nio-8080-exec-10] strilets.dao.UserDaoImpl                 : Get user login : admin
+2017-12-31 21:31:25.809  INFO 4088 --- [http-nio-8080-exec-3] strilets.dao.UserDaoImpl                 : Get user login : pingvini
+2017-12-31 21:31:56.265  INFO 4088 --- [http-nio-8080-exec-4] strilets.dao.UserDaoImpl                 : Get user login : pingvini
+2017-12-31 21:31:56.532  INFO 4088 --- [http-nio-8080-exec-9] strilets.dao.UserDaoImpl                 : Get user login : pingvini
+2017-12-31 21:31:56.741  INFO 4088 --- [http-nio-8080-exec-9] strilets.dao.UserDaoImpl                 : Get user login : pingvini
+2017-12-31 21:32:17.966  INFO 4088 --- [http-nio-8080-exec-10] strilets.dao.UserDaoImpl                 : Get user login : admin
+2017-12-31 21:32:18.529  INFO 4088 --- [http-nio-8080-exec-2] strilets.dao.UserDaoImpl                 : Get user login : admin
+2017-12-31 21:32:18.619  INFO 4088 --- [http-nio-8080-exec-2] strilets.dao.UserDaoImpl                 : Get user login : admin
+2017-12-31 21:35:03.337  INFO 4088 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2017-12-31 21:35:03.339  INFO 4088 --- [RMI TCP Connection(2)-127.0.0.1] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@d0fbae: startup date [Sun Dec 31 20:58:52 EET 2017]; root of context hierarchy
+2017-12-31 21:35:03.349  INFO 4088 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2017-12-31 21:36:38.291  INFO 4908 --- [main] s.InternetVisitingCardApplication        : Starting InternetVisitingCardApplication on MishaStrilets with PID 4908 (D:\Job\Projects\InternetVisitingCard\target\classes started by Misha Strilets in D:\Job\Projects\InternetVisitingCard)
+2017-12-31 21:36:38.341  INFO 4908 --- [main] s.InternetVisitingCardApplication        : No active profile set, falling back to default profiles: default
+2017-12-31 21:36:39.701  INFO 4908 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@d0fbae: startup date [Sun Dec 31 21:36:39 EET 2017]; root of context hierarchy
+2017-12-31 21:37:02.468  INFO 4908 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2017-12-31 21:37:03.546  INFO 4908 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2017-12-31 21:37:03.574  INFO 4908 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.16
+2017-12-31 21:37:07.656  INFO 4908 --- [localhost-startStop-1] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2017-12-31 21:37:07.704  INFO 4908 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-12-31 21:37:07.707  INFO 4908 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 28053 ms
+2017-12-31 21:37:08.393  INFO 4908 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-12-31 21:37:08.406  INFO 4908 --- [localhost-startStop-1] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2017-12-31 21:37:08.408  INFO 4908 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2017-12-31 21:37:10.645  INFO 4908 --- [main] o.s.j.d.DriverManagerDataSource          : Loaded JDBC driver: com.mysql.jdbc.Driver
+2017-12-31 21:37:14.316  INFO 4908 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from URL [file:/D:/Job/Projects/InternetVisitingCard/target/classes/schema.sql]
+2017-12-31 21:37:15.348  INFO 4908 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from URL [file:/D:/Job/Projects/InternetVisitingCard/target/classes/schema.sql] in 1030 ms.
+2017-12-31 21:37:23.117  INFO 4908 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.0.12.Final}
+2017-12-31 21:37:23.187  INFO 4908 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2017-12-31 21:37:23.397  INFO 4908 --- [main] org.hibernate.cfg.Environment            : HHH000021: Bytecode provider name : javassist
+2017-12-31 21:37:25.630  INFO 4908 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-12-31 21:37:31.012  INFO 4908 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2017-12-31 21:37:51.850  INFO 4908 --- [main] o.s.o.h.HibernateTransactionManager      : Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@53bb6f] of Hibernate SessionFactory for HibernateTransactionManager
+2017-12-31 21:37:53.097  INFO 4908 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/]}" onto java.lang.String strilets.controller.AppController.index()
+2017-12-31 21:37:53.103  INFO 4908 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/registration-user],methods=[GET]}" onto public java.lang.String strilets.controller.AppController.newUser(org.springframework.ui.ModelMap)
+2017-12-31 21:37:53.106  INFO 4908 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/registration-user],methods=[POST]}" onto public java.lang.String strilets.controller.AppController.saveUser(strilets.model.User,org.springframework.validation.BindingResult,org.springframework.ui.ModelMap)
+2017-12-31 21:37:53.108  INFO 4908 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/list-cards],methods=[GET]}" onto public java.lang.String strilets.controller.AppController.listCards(org.springframework.ui.ModelMap)
+2017-12-31 21:37:53.110  INFO 4908 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/list-cards],methods=[POST]}" onto public java.lang.String strilets.controller.AppController.searchCards(strilets.model.Search,org.springframework.ui.ModelMap)
+2017-12-31 21:37:53.113  INFO 4908 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/edit-card-{login}],methods=[POST]}" onto public java.lang.String strilets.controller.AppController.updateCard(strilets.model.Card,org.springframework.validation.BindingResult,org.springframework.ui.ModelMap,java.lang.String) throws java.io.IOException
+2017-12-31 21:37:53.121  INFO 4908 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/image-{login}]}" onto public void strilets.controller.AppController.getUserImage(javax.servlet.http.HttpServletResponse,java.lang.String) throws java.io.IOException
+2017-12-31 21:37:53.137  INFO 4908 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/delete-card-{login}],methods=[GET]}" onto public java.lang.String strilets.controller.AppController.deleteUser(java.lang.String)
+2017-12-31 21:37:53.138  INFO 4908 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/delete-image-{login}],methods=[GET]}" onto public java.lang.String strilets.controller.AppController.deleteUmage(java.lang.String)
+2017-12-31 21:37:53.139  INFO 4908 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/access_denied]}" onto public java.lang.String strilets.controller.AppController.accessDeniedPage()
+2017-12-31 21:37:53.140  INFO 4908 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/login],methods=[GET]}" onto public java.lang.String strilets.controller.AppController.loginPage()
+2017-12-31 21:37:53.253  INFO 4908 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/logout],methods=[GET]}" onto public java.lang.String strilets.controller.AppController.logoutPage(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-12-31 21:37:53.264  INFO 4908 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/edit-card-{login}],methods=[GET]}" onto public java.lang.String strilets.controller.AppController.editCard(java.lang.String,org.springframework.ui.ModelMap)
+2017-12-31 21:37:53.276  INFO 4908 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/{login}],methods=[GET]}" onto public java.lang.String strilets.controller.AppController.viewCard(java.lang.String,org.springframework.ui.ModelMap)
+2017-12-31 21:37:53.340  INFO 4908 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-12-31 21:37:53.376  INFO 4908 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-12-31 21:37:54.024  INFO 4908 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/static/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-12-31 21:37:54.998  INFO 4908 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@d0fbae: startup date [Sun Dec 31 21:36:39 EET 2017]; root of context hierarchy
+2017-12-31 21:37:59.753  INFO 4908 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1eeff87, org.springframework.security.web.context.SecurityContextPersistenceFilter@1f18e31, org.springframework.security.web.header.HeaderWriterFilter@62ead7, org.springframework.security.web.csrf.CsrfFilter@12744a1, org.springframework.security.web.authentication.logout.LogoutFilter@1d2d002, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1fc862e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@c8d8be, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@17b6a37, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@99eac7, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@14fc2d1, org.springframework.security.web.session.SessionManagementFilter@1f75b5c, org.springframework.security.web.access.ExceptionTranslationFilter@2e682a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@fbbff7]
+2017-12-31 21:38:02.794  INFO 4908 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-12-31 21:38:04.795  INFO 4908 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2017-12-31 21:38:04.811  INFO 4908 --- [main] s.InternetVisitingCardApplication        : Started InternetVisitingCardApplication in 91.98 seconds (JVM running for 123.01)
+2017-12-31 21:38:14.837  INFO 4908 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2017-12-31 21:38:14.838  INFO 4908 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2017-12-31 21:38:15.055  INFO 4908 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 217 ms
+2017-12-31 21:39:20.897  INFO 4908 --- [http-nio-8080-exec-8] strilets.dao.UserDaoImpl                 : Get user login : pingvini
+2017-12-31 21:39:21.113  INFO 4908 --- [http-nio-8080-exec-6] strilets.dao.UserDaoImpl                 : Get user login : admin
+2017-12-31 21:39:22.142  INFO 4908 --- [http-nio-8080-exec-6] strilets.dao.UserDaoImpl                 : Get user login : admin
+2017-12-31 21:39:22.146  INFO 4908 --- [http-nio-8080-exec-8] strilets.dao.UserDaoImpl                 : Get user login : pingvini
+2017-12-31 21:40:08.561  INFO 4908 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2017-12-31 21:40:08.563  INFO 4908 --- [RMI TCP Connection(2)-127.0.0.1] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@d0fbae: startup date [Sun Dec 31 21:36:39 EET 2017]; root of context hierarchy
+2017-12-31 21:40:08.573  INFO 4908 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
