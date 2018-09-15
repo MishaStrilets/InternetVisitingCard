@@ -2,10 +2,8 @@ package strilets.model;
 
 import java.io.Serializable;
 
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -16,6 +14,7 @@ import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotBlank;
 
+@SuppressWarnings("serial")
 @Entity
 @Table(name = "USER")
 public class User implements Serializable {

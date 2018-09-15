@@ -1,7 +1,11 @@
 bin/
-target/
-.settings/
-.mvn/
+logfile.log
+
+# Eclipse
 .classpath
 .project
-logfile.log
+.settings/
+
+# Maven
+target/
+.mvn/

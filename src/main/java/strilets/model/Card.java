@@ -6,6 +6,7 @@ import javax.validation.constraints.Size;
 
 import org.springframework.web.multipart.MultipartFile;
 
+@SuppressWarnings("serial")
 public class Card implements Serializable {
 
 	public Card() {

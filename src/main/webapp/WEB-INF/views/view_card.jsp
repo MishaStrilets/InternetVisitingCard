@@ -11,14 +11,11 @@
 <title>${user.login}</title>
 
 <link rel="icon" type="image/png" href="/static/images/icon.png" />
-
 <link
 	href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
-	href="@{/webjars/bootstrap/3.3.4/css/bootstrap.min.css}"
 	rel="stylesheet" media="screen" />
-<link href="<c:url value='/static/css/style.css' />" rel="stylesheet"></link>
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="<c:url value='/static/css/style.css' />" rel="stylesheet" />
+
 </head>
 
 <body

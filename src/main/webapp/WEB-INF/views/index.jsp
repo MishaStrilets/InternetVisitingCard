@@ -11,12 +11,10 @@
 <title>Internet Visiting Card</title>
 
 <link rel="icon" type="image/png" href="/static/images/icon.png" />
-
 <link
 	href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
-	href="@{/webjars/bootstrap/3.3.4/css/bootstrap.min.css}"
 	rel="stylesheet" media="screen" />
-<link href="<c:url value='/static/css/style.css' />" rel="stylesheet"></link>
+<link href="<c:url value='/static/css/style.css' />" rel="stylesheet" />
 
 </head>
 
