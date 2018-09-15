@@ -1,6 +1,7 @@
-bin
-target
+bin/
+target/
+.settings/
+.mvn/
 .classpath
 .project
-.settings
 logfile.log
