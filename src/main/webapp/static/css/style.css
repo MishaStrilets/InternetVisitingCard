@@ -77,10 +77,10 @@ div.alert {
 .edit-form {
 	background-color: #004387;
 	color: #ffffff;
-	top: 60px;
-	left: 10px;
-	right: 10px;
-	bottom: 60px;
+	top: 8%;
+	left: 13%;
+	width: 1300px;
+	bottom: 8%;
 	padding: 10px;
 	overflow-x: hidden;
 	position: fixed;
@@ -89,10 +89,10 @@ div.alert {
 .list-form {
 	background-color: #004387;
 	color: #ffffff;
-	top: 60px;
-	left: 10px;
-	right: 375px;
-	bottom: 60px;
+	top: 8%;
+	left: 1%;
+	width: 1330px;
+	bottom: 8%;
 	padding: 10px;
 	overflow-x: hidden;
 	position: fixed;
@@ -102,9 +102,9 @@ div.alert {
 	background-color: #004387;
 	color: #ffffff;
 	position: fixed;
-	top: 100px;
-	left: 275px;
-	right: 275px;
+	top: 20%;
+	left: 30%;
+	width: 800px;
 	padding: 10px;
 	color: #ffffff;
 }
@@ -113,9 +113,9 @@ div.alert {
 	background-color: #004387;
 	color: #ffffff;
 	position: fixed;
-	top: 100px;
-	left: 500px;
-	right: 500px;
+	top: 20%;
+	left: 40%;
+	width: 300px;
 	padding: 10px;
 	color: #ffffff;
 }
@@ -123,9 +123,9 @@ div.alert {
 .search-form {
 	background-color: #000000;
 	color: #ffffff;
-	top: 60px;
-	left: 1000px;
-	right: 10px;
+	top: 8%;
+	left: 80%;
+	width: 325px;
 	height: 280px;
 	padding: 10px;
 	position: fixed;

@@ -1,6 +1,7 @@
 package strilets.model;
 
 import java.io.Serializable;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -82,6 +84,9 @@ public class User implements Serializable {
 
 	@Column(name = "BACKGROUND_COLOR")
 	private String backgroundColor;
+	
+	@OneToMany(mappedBy="user")
+    private Set<Review> review;
 
 	public Integer getId() {
 		return id;
@@ -226,5 +231,12 @@ public class User implements Serializable {
 	public void setBackgroundColor(String backgroundColor) {
 		this.backgroundColor = backgroundColor;
 	}
+	
+	public Set<Review> getReview() {
+		return review;
+	}
 
+	public void setReview(Set<Review> review) {
+		this.review = review;
+	}
 }
