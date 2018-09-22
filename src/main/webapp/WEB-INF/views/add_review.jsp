@@ -16,48 +16,44 @@
 	href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
 	rel="stylesheet" media="screen" />
 <link href="<c:url value='/static/css/style.css' />" rel="stylesheet" />
+
 </head>
 
 <body>
 	<div>
 		<%@include file="header.jsp"%>
-		<div class="registration-user">
-			<h2>Registration</h2>
-			<form:form method="POST" modelAttribute="user"
+		<div class="add-review">
+			<h2>Add review:</h2>
+			<form:form method="POST" modelAttribute="review"
 				class="form-horizontal">
-				<form:input type="hidden" path="id" id="id" />
-				<form:input type="hidden" path="role" id="role" />
-
 				<div class="form-group">
-					<label class="col-sm-2 control-label">Login:</label>
-
-					<div class="col-sm-4">
-						<form:input type="text" path="login" id="login"
+					<label class="col-sm-2 control-label">Author:</label>
+					<div class="col-sm-6">
+						<form:input type="text" path="author" id="author"
 							class="form-control" />
 					</div>
-
-					<div class="col-sm-6">
-						<form:errors path="login" style="color: #ff0000"
+					<div class="col-sm-4">
+						<form:errors path="author" style="color: #ff0000"
 							class="alert alert-danger" />
 					</div>
 				</div>
 
 				<div class="form-group">
-					<label class="col-sm-2 control-label">Password:</label>
-
-					<div class="col-sm-4">
-						<form:input type="password" path="password" id="password"
-							class="form-control" />
-					</div>
-
+					<label class="col-sm-2 control-label">Description:</label>
 					<div class="col-sm-6">
-						<form:errors path="password" style="color: #ff0000"
+
+						<form:textarea name="description" path="description"
+							id="description" class="form-control" cols="40" rows="5" />
+
+					</div>
+					<div class="col-sm-4">
+						<form:errors path="description" style="color: #ff0000"
 							class="alert alert-danger" />
 					</div>
 				</div>
 
 				<div>
-					<input type="submit" value="Sign up" class="btn btn-success" />
+					<input type="submit" value="Add" class="btn btn-warning" />
 				</div>
 			</form:form>
 		</div>

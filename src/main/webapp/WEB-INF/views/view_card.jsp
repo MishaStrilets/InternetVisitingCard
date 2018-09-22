@@ -20,10 +20,8 @@
 
 <body
 	style="color: ${user.fontColor}; background-color: ${user.backgroundColor}">
-
-	<div class="view">
+	<div class="view-card">
 		<div class="row">
-
 			<div class="col-sm-8">
 				<h1>
 					<b>${user.name}</b>
@@ -69,7 +67,6 @@
 			</div>
 
 			<c:if test="${user.nameImage != ''}">
-
 				<div class="col-sm-4">
 					<img src="image-<c:out value="${user.login}"/>" class="img-rounded"
 						style="width: 100%" alt="Image">

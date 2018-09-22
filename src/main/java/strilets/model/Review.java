@@ -31,14 +31,13 @@ public class Review implements Serializable {
 	@Column(name = "AUTHOR")
 	private String author;
 
-
 	@NotBlank
 	@Column(name = "DESCRIPTION")
 	private String description;
 
 	@ManyToOne
-    @JoinColumn(name = "USER_ID", nullable = false)
-    private User user;
+	@JoinColumn(name = "USER_ID", nullable = false)
+	private User user;
 
 	public Integer getId() {
 		return id;

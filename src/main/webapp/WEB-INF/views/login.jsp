@@ -15,15 +15,13 @@
 	href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
 	rel="stylesheet" media="screen" />
 <link href="<c:url value='/static/css/style.css' />" rel="stylesheet" />
-
 </head>
 
 <body>
 	<div>
 		<%@include file="header.jsp"%>
-
-		<div class="login-form">
-			<h2>Login Form:</h2>
+		<div class="login-user">
+			<h2>Login</h2>
 			<c:url var="loginUrl" value="/login" />
 			<form action="${loginUrl}" method="post" class="form-horizontal">
 
@@ -59,7 +57,6 @@
 				</div>
 			</form>
 		</div>
-
 		<%@include file="footer.jsp"%>
 	</div>
 </body>

@@ -22,20 +22,15 @@
 <body>
 	<div>
 		<%@include file="header.jsp"%>
-
 		<div class="row">
 			<div class="col-sm-8">
-
-				<div class="list-form">
+				<div class="list-cards">
 					<h2>List of cards</h2>
 					<table class="table table-hover">
-
 						<tbody>
 							<c:forEach items="${users}" var="user">
-
 								<tr
 									style="color: ${user.fontColor}; background-color: ${user.backgroundColor}">
-
 									<td><h3>
 											<b>${user.name}</b>
 										</h3></td>
@@ -55,8 +50,17 @@
 									</sec:authorize>
 
 									<td><a href="<c:url value='/${user.login}' />"
-										class="btn btn-info" target="_blank"><span
+										class="btn btn-success" target="_blank"><span
 											class="glyphicon glyphicon-eye-open"></span></a></td>
+
+									<td><a
+										href="<c:url value='/list-reviews-${user.login}' />"
+										class="btn btn-info"><span
+											class="glyphicon glyphicon-align-justify"></span></a></td>
+
+									<td><a href="<c:url value='/add-review-${user.login}' />"
+										class="btn btn-warning"><span
+											class="glyphicon glyphicon glyphicon-pencil"></span></a></td>
 
 									<sec:authorize access="hasRole('ADMIN')">
 										<td><a
@@ -64,7 +68,6 @@
 											class="btn btn-danger"><span
 												class="glyphicon glyphicon-trash"></span></a></td>
 									</sec:authorize>
-
 								</tr>
 							</c:forEach>
 						</tbody>
@@ -73,9 +76,8 @@
 			</div>
 
 			<div class="col-sm-4">
-				<div class="search-form">
-					<h2>Search:</h2>
-
+				<div class="search-cards">
+					<h2>Search</h2>
 					<form:form method="POST" modelAttribute="search"
 						class="form-horizontal">
 
@@ -100,7 +102,6 @@
 				</div>
 			</div>
 		</div>
-
 		<%@include file="footer.jsp"%>
 	</div>
 </body>

@@ -29,8 +29,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
 
 import strilets.model.Card;
+import strilets.model.Review;
 import strilets.model.User;
 import strilets.model.Search;
+import strilets.service.ReviewService;
 import strilets.service.UserService;
 
 @Controller
@@ -39,6 +41,9 @@ public class AppController {
 
 	@Autowired
 	UserService userService;
+
+	@Autowired
+	ReviewService reviewService;
 
 	@Autowired
 	MessageSource messageSource;
@@ -309,4 +314,42 @@ public class AppController {
 		userService.updateUser(user);
 	}
 
+	/**
+	 * This method will provide to add review.
+	 */
+	@RequestMapping(value = { "/add-review-{login}" }, method = RequestMethod.GET)
+	public String newReview(@PathVariable String login, ModelMap model) {
+		Review review = new Review();
+		model.addAttribute("review", review);
+		return "add_review";
+	}
+
+	/**
+	 * This method will be called on form submission, handling POST request for
+	 * adding review in database.
+	 */
+	@RequestMapping(value = { "/add-review-{login}" }, method = RequestMethod.POST)
+	public String saveReview(@Valid Review review, BindingResult result, ModelMap model, @PathVariable String login)
+			throws IOException {
+
+		if (result.hasErrors()) {
+			return "add_review";
+		}
+
+		User user = userService.getUserByLogin(login);
+		review.setUser(user);
+		reviewService.saveReview(review);
+
+		return "review_success";
+	}
+
+	/**
+	 * This method will list all reviews to user.
+	 */
+	@RequestMapping(value = { "/list-reviews-{login}" }, method = RequestMethod.GET)
+	public String listReviews(@PathVariable String login, ModelMap model) {
+		User user = userService.getUserByLogin(login);
+		model.addAttribute("reviews", user.getReview());
+		return "list_reviews";
+	}
 }

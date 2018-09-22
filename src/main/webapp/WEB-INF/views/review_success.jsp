@@ -21,18 +21,12 @@
 <body>
 	<div>
 		<%@include file="header.jsp"%>
-		<div class="index">
-			<div>
-				<div class="row text-center">
-					<h2>Welcome to Internet Visiting Card site!!!</h2>
-				</div>
-				<div>
-					<h3>On this site you can create your own internet visiting
-						card.</h3>
-				</div>
+		<div class="alert">
+			<div class="alert alert-success">
+				Your review to user<strong> ${login} </strong>added successfully.
 			</div>
+			<%@include file="footer.jsp"%>
 		</div>
-		<%@include file="footer.jsp"%>
 	</div>
 </body>
 </html>
