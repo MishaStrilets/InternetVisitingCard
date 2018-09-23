@@ -24,11 +24,6 @@
 			<h2>Login</h2>
 			<c:url var="loginUrl" value="/login" />
 			<form action="${loginUrl}" method="post" class="form-horizontal">
-
-				<c:if test="${param.error != null}">
-					<p class="alert alert-danger">Invalid login or password.</p>
-				</c:if>
-
 				<div class="input-group">
 					<span class="input-group-addon"><i
 						class="glyphicon glyphicon-user"></i></span> <input class="form-control"
@@ -53,6 +48,11 @@
 					<input type="submit" value="Log in" class="btn btn-default" />
 				</div>
 			</form>
+		</div>
+		<div class="login-error">
+			<c:if test="${param.error != null}">
+				<p class="alert alert-danger">Invalid login or password.</p>
+			</c:if>
 		</div>
 		<%@include file="footer.jsp"%>
 	</div>
