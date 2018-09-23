@@ -29,7 +29,7 @@
 				<form:input type="hidden" path="role" id="role" />
 
 				<div class="form-group">
-					<label class="col-sm-2 control-label">Login:</label>
+					<label class="col-sm-2 control-label">Login</label>
 
 					<div class="col-sm-4">
 						<form:input type="text" path="login" id="login"
@@ -43,7 +43,7 @@
 				</div>
 
 				<div class="form-group">
-					<label class="col-sm-2 control-label">Password:</label>
+					<label class="col-sm-2 control-label">Password</label>
 
 					<div class="col-sm-4">
 						<form:input type="password" path="password" id="password"

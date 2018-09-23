@@ -30,5 +30,6 @@ CREATE TABLE IF NOT EXISTS review (
   id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   author VARCHAR(30) NOT NULL,
   description TEXT NOT NULL,
+  rating INT NOT NULL,
   user_id bigint REFERENCES user (id)
 );

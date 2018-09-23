@@ -28,7 +28,7 @@
 				enctype="multipart/form-data" class="form-horizontal">
 
 				<div class="form-group">
-					<label class="col-sm-2 control-label">Name:</label>
+					<label class="col-sm-2 control-label">Name</label>
 					<div class="col-sm-6">
 						<form:input type="text" path="name" id="name" class="form-control" />
 					</div>
@@ -39,7 +39,7 @@
 				</div>
 
 				<div class="form-group">
-					<label class="col-sm-2 control-label">Description:</label>
+					<label class="col-sm-2 control-label">Description</label>
 					<div class="col-sm-6">
 
 						<form:textarea name="description" path="description"
@@ -53,7 +53,7 @@
 				</div>
 
 				<div class="form-group">
-					<label class="col-sm-2 control-label">People:</label>
+					<label class="col-sm-2 control-label">People</label>
 					<div class="col-sm-4">
 						<form:input type="text" path="people" id="people"
 							class="form-control" />
@@ -65,7 +65,7 @@
 				</div>
 
 				<div class="form-group">
-					<label class="col-sm-2 control-label">Address:</label>
+					<label class="col-sm-2 control-label">Address</label>
 					<div class="col-sm-4">
 						<form:input type="text" path="address" id="address"
 							class="form-control" />
@@ -77,7 +77,7 @@
 				</div>
 
 				<div class="form-group">
-					<label class="col-sm-2 control-label">Email:</label>
+					<label class="col-sm-2 control-label">Email</label>
 					<div class="col-sm-4">
 						<form:input type="text" path="email" id="email"
 							class="form-control" />
@@ -89,7 +89,7 @@
 				</div>
 
 				<div class="form-group">
-					<label class="col-sm-2 control-label">Phone:</label>
+					<label class="col-sm-2 control-label">Phone</label>
 					<div class="col-sm-6">
 						<form:input type="text" path="phone" id="phone"
 							class="form-control" />
@@ -101,7 +101,7 @@
 				</div>
 
 				<div class="form-group">
-					<label class="col-sm-2 control-label">Facebook:</label>
+					<label class="col-sm-2 control-label">Facebook</label>
 					<div class="col-sm-6">
 						<form:input type="text" path="facebook" id="facebook"
 							class="form-control" />
@@ -113,7 +113,7 @@
 				</div>
 
 				<div class="form-group">
-					<label class="col-sm-2 control-label">Twitter:</label>
+					<label class="col-sm-2 control-label">Twitter</label>
 					<div class="col-sm-6">
 						<form:input type="text" path="twitter" id="twitter"
 							class="form-control" />
@@ -125,7 +125,7 @@
 				</div>
 
 				<div class="form-group">
-					<label class="col-sm-2 control-label">Instagram:</label>
+					<label class="col-sm-2 control-label">Instagram</label>
 					<div class="col-sm-6">
 						<form:input type="text" path="instagram" id="instagram"
 							class="form-control" />
@@ -137,7 +137,7 @@
 				</div>
 
 				<div class="form-group">
-					<label class="col-sm-2 control-label">Image:</label>
+					<label class="col-sm-2 control-label">Image</label>
 					<div class="col-sm-6">
 						<form:input type="file" path="file" id="file" class="form-control" />
 
@@ -155,7 +155,7 @@
 				</div>
 
 				<div class="form-group">
-					<label class="col-sm-2 control-label">Font color:</label>
+					<label class="col-sm-2 control-label">Font color</label>
 					<div class="col-sm-6">
 						<form:input type="color" value='${card.fontColor}'
 							path="fontColor" id="fontColor" class="form-control" />
@@ -163,7 +163,7 @@
 				</div>
 
 				<div class="form-group">
-					<label class="col-sm-2 control-label">Background color:</label>
+					<label class="col-sm-2 control-label">Background color</label>
 					<div class="col-sm-6">
 						<form:input type="color" value='${card.backgroundColor}'
 							path="backgroundColor" id="backgroundColor" class="form-control" />

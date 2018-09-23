@@ -23,11 +23,11 @@
 	<div>
 		<%@include file="header.jsp"%>
 		<div class="add-review">
-			<h2>Add review:</h2>
+			<h2>Add review</h2>
 			<form:form method="POST" modelAttribute="review"
 				class="form-horizontal">
 				<div class="form-group">
-					<label class="col-sm-2 control-label">Author:</label>
+					<label class="col-sm-2 control-label">Author</label>
 					<div class="col-sm-6">
 						<form:input type="text" path="author" id="author"
 							class="form-control" />
@@ -39,7 +39,7 @@
 				</div>
 
 				<div class="form-group">
-					<label class="col-sm-2 control-label">Description:</label>
+					<label class="col-sm-2 control-label">Description</label>
 					<div class="col-sm-6">
 
 						<form:textarea name="description" path="description"
@@ -48,6 +48,31 @@
 					</div>
 					<div class="col-sm-4">
 						<form:errors path="description" style="color: #ff0000"
+							class="alert alert-danger" />
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-sm-2 control-label">Rating</label>
+					<div class="col-sm-6">
+						<form:select name="rating" path="rating" id="rating"
+							class="form-control">
+							<option value="">-</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
+							<option value="8">8</option>
+							<option value="9">9</option>
+							<option value="10">10</option>
+						</form:select>
+
+					</div>
+					<div class="col-sm-4">
+						<form:errors path="rating" style="color: #ff0000"
 							class="alert alert-danger" />
 					</div>
 				</div>

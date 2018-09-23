@@ -26,27 +26,24 @@
 			<form action="${loginUrl}" method="post" class="form-horizontal">
 
 				<c:if test="${param.error != null}">
-					<p class="alert alert-danger">Invalid login and password.</p>
+					<p class="alert alert-danger">Invalid login or password.</p>
 				</c:if>
 
 				<div class="input-group">
 					<span class="input-group-addon"><i
 						class="glyphicon glyphicon-user"></i></span> <input class="form-control"
-						type="text" name="login" placeholder="Enter Login" required>
+						type="text" name="login" placeholder="Login" required>
 				</div>
 				<br />
 				<div class="input-group">
 					<span class="input-group-addon"><i
 						class="glyphicon glyphicon-lock"></i></span> <input class="form-control"
-						type="password" name="password" placeholder="Enter Password"
-						required>
+						type="password" name="password" placeholder="Password" required>
 				</div>
 
 				<div class="input-group">
-					<div class="checkbox">
-						<label><input type="checkbox" id="rememberme"
-							name="remember-me"> Remember Me</label>
-					</div>
+					<label><input type="checkbox" id="rememberme"
+						name="remember-me"> Remember me</label>
 				</div>
 
 				<input type="hidden" name="${_csrf.parameterName}"

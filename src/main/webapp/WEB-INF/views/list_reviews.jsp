@@ -26,14 +26,21 @@
 			<div class="col-sm-8">
 				<div class="list-reviews">
 					<h2>List of reviews</h2>
-					<table class="table table-condensed">
+					<table class="table table-condensed"
+						style="color: #ffffff; table-layout: fixed">
+						<thead>
+							<tr>
+								<th>Author</th>
+								<th>Description</th>
+								<th>Rating</th>
+							</tr>
+						</thead>
 						<tbody>
 							<c:forEach items="${reviews}" var="review">
-								<tr style="color: #ffffff">
-									<td><h4>
-											<i>${review.author}</i>
-										</h4></td>
-									<td><h4>${review.description}</h4></td>
+								<tr>
+									<td><i>${review.author}</i></td>
+									<td style="word-wrap: break-word">${review.description}</td>
+									<td><b>${review.rating}</b></td>
 								</tr>
 							</c:forEach>
 						</tbody>

@@ -67,9 +67,8 @@ a.sign {
 }
 
 div.alert {
-	position: fixed;
-	top: 10%;
-	left: 1%;
+	margin: 20 auto;
+	width: 70%;
 }
 
 .edit-card {
@@ -142,7 +141,7 @@ div.alert {
 	top: 10%;
 	left: 20%;
 	width: 60%;
-	height: 51%;
+	height: 60%;
 	padding: 1%;
 	overflow-x: hidden;
 	position: fixed;

@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotBlank;
@@ -34,6 +35,10 @@ public class Review implements Serializable {
 	@NotBlank
 	@Column(name = "DESCRIPTION")
 	private String description;
+
+	@NotNull
+	@Column(name = "RATING")
+	private Integer rating;
 
 	@ManyToOne
 	@JoinColumn(name = "USER_ID", nullable = false)
@@ -61,6 +66,14 @@ public class Review implements Serializable {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public Integer getRating() {
+		return rating;
+	}
+
+	public void setRating(Integer rating) {
+		this.rating = rating;
 	}
 
 	public User getUser() {
