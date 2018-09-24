@@ -39,22 +39,8 @@
 				</div>
 
 				<div class="form-group">
-					<label class="col-sm-2 control-label">Description</label>
-					<div class="col-sm-6">
-
-						<form:textarea name="description" path="description"
-							id="description" class="form-control" cols="40" rows="5" />
-
-					</div>
-					<div class="col-sm-4">
-						<form:errors path="description" style="color: #ff0000"
-							class="alert alert-danger" />
-					</div>
-				</div>
-
-				<div class="form-group">
 					<label class="col-sm-2 control-label">People</label>
-					<div class="col-sm-4">
+					<div class="col-sm-6">
 						<form:input type="text" path="people" id="people"
 							class="form-control" />
 					</div>
@@ -66,7 +52,7 @@
 
 				<div class="form-group">
 					<label class="col-sm-2 control-label">Address</label>
-					<div class="col-sm-4">
+					<div class="col-sm-6">
 						<form:input type="text" path="address" id="address"
 							class="form-control" />
 					</div>
@@ -78,7 +64,7 @@
 
 				<div class="form-group">
 					<label class="col-sm-2 control-label">Email</label>
-					<div class="col-sm-4">
+					<div class="col-sm-6">
 						<form:input type="text" path="email" id="email"
 							class="form-control" />
 					</div>
@@ -132,6 +118,20 @@
 					</div>
 					<div class="col-sm-4">
 						<form:errors path="instagram" style="color: #ff0000"
+							class="alert alert-danger" />
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-sm-2 control-label">Description</label>
+					<div class="col-sm-6">
+
+						<form:textarea name="description" path="description"
+							id="description" class="form-control" cols="40" rows="5" />
+
+					</div>
+					<div class="col-sm-4">
+						<form:errors path="description" style="color: #ff0000"
 							class="alert alert-danger" />
 					</div>
 				</div>

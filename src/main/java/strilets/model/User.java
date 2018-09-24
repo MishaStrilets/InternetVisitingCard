@@ -32,6 +32,7 @@ public class User implements Serializable {
 
 	@NotBlank
 	@Column(name = "LOGIN", unique = true, nullable = false)
+	@Size(max = 30)
 	private String login;
 
 	@NotBlank
@@ -86,9 +87,9 @@ public class User implements Serializable {
 
 	@Column(name = "BACKGROUND_COLOR")
 	private String backgroundColor;
-	
+
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "user", cascade = CascadeType.ALL)
-    private Set<Review> review;
+	private Set<Review> review;
 
 	public Integer getId() {
 		return id;
@@ -233,7 +234,7 @@ public class User implements Serializable {
 	public void setBackgroundColor(String backgroundColor) {
 		this.backgroundColor = backgroundColor;
 	}
-	
+
 	public Set<Review> getReview() {
 		return review;
 	}

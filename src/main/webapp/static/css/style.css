@@ -1,5 +1,5 @@
 body {
-	font-family: Arial;
+	font-family: Tw Cen MT;
 	background-color: #ffffff;
 	overflow-x: hidden;
 }
@@ -45,10 +45,9 @@ a.sign {
 	position: fixed;
 	bottom: 0%;
 	left: 0%;
-	height: 8%;
+	height: 7%;
 	width: 100%;
 	text-align: center;
-	border-top: 5px solid #004387;
 }
 
 #footer-name {
@@ -68,11 +67,10 @@ a.sign {
 	top: 0%;
 	left: 0%;
 	width: 100%;
-	height: 8%;
+	height: 7%;
 	text-align: center;
 	background-color: #004387;
 	color: #ffffff;
-	border-bottom: 5px solid #000000;
 }
 
 div.alert {
@@ -120,11 +118,11 @@ div.alert {
 	background-color: #004387;
 	color: #ffffff;
 	position: fixed;
-	top: 10%;
-	left: 30%;
-	width: 40%;
+	top: 20%;
+	left: 25%;
+	width: 55%;
 	padding: 1%;
-	height: 35%;
+	height: 37%;
 }
 
 .login-user {
@@ -154,10 +152,10 @@ div.alert {
 .add-review {
 	background-color: #004387;
 	color: #ffffff;
-	top: 10%;
+	top: 15%;
 	left: 20%;
 	width: 60%;
-	height: 60%;
+	height: 59%;
 	padding: 1%;
 	overflow-x: hidden;
 	position: fixed;

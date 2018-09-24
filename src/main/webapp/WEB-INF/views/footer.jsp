@@ -4,7 +4,7 @@
 <body>
 	<div class="footer">
 		<div id="footer-name">
-			<br />© 2017 Internet Visiting Card
+			<br />© 2017-2018 Internet Visiting Card
 		</div>
 		<div id="footer-contact">
 			<a href="/admin" target="_blank">Contact information</a>

@@ -26,6 +26,7 @@
 				<h1>
 					<b>${user.name}</b>
 				</h1>
+				<hr />
 
 				<c:if test="${user.people != ''}">
 					<h2>
@@ -73,6 +74,8 @@
 				</div>
 			</c:if>
 		</div>
+		<hr />
+
 		<h2>${user.description}</h2>
 	</div>
 </body>
