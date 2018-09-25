@@ -22,42 +22,48 @@
 	<div>
 		<%@include file="header.jsp"%>
 		<div class="registration-user">
-			<h2>Registration</h2>
+		
+			<div class="row">
+				<div class="registration-column" style="background-color: #004387;">
+					<h2>Registration</h2>
+				</div>
+			</div>
+
 			<form:form method="POST" modelAttribute="user"
 				class="form-horizontal">
 				<form:input type="hidden" path="id" id="id" />
 				<form:input type="hidden" path="role" id="role" />
 
-				<div class="form-group">
-					<label class="col-sm-2 control-label">Login</label>
-
-					<div class="col-sm-4">
+				<div class="row">
+					<div class="registration-column" style="background-color: #004387;">
+						<label>Login</label>
 						<form:input type="text" path="login" id="login"
 							class="form-control" />
 					</div>
-
-					<div class="col-sm-6">
+					<div class="registration-column"
+						style="background-color: #ffffff; width: 50%;">
 						<form:errors path="login" style="color: #ff0000"
 							class="alert alert-danger" />
 					</div>
 				</div>
 
-				<div class="form-group">
-					<label class="col-sm-2 control-label">Password</label>
-
-					<div class="col-sm-4">
+				<div class="row">
+					<div class="registration-column" style="background-color: #004387;">
+						<label>Password</label>
 						<form:input type="password" path="password" id="password"
 							class="form-control" />
 					</div>
-
-					<div class="col-sm-6">
+					<div class="registration-column"
+						style="background-color: #ffffff;">
 						<form:errors path="password" style="color: #ff0000"
 							class="alert alert-danger" />
 					</div>
 				</div>
 
-				<div>
-					<input type="submit" value="Sign up" class="btn btn-success" />
+				<div class="row">
+					<div class="registration-column" style="background-color: #004387;">
+						<input type="submit" value="Sign up" class="btn btn-success" />
+					</div>
 				</div>
 			</form:form>
 		</div>
