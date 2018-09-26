@@ -42,28 +42,26 @@ a.sign {
 .footer {
 	background-color: #000000;
 	color: #ffffff;
-	position: fixed;
+	position: absolute;
 	bottom: 0%;
-	left: 0%;
 	height: 7%;
 	width: 100%;
-	text-align: center;
 }
 
 #footer-name {
-	position: fixed;
-	bottom: 2%;
+	position: absolute;
+	bottom: 25%;
 	left: 1%;
 }
 
 #footer-contact {
-	position: fixed;
-	bottom: 2%;
+	position: absolute;
+	bottom: 25%;
 	right: 1%;
 }
 
 .header {
-	position: fixed;
+	position: absolute;
 	top: 0%;
 	left: 0%;
 	width: 100%;
@@ -82,9 +80,9 @@ div.alert {
 .edit-card {
 	color: #ffffff;
 	top: 10%;
-	left: 28%;
-	width: 100%;
-	position: fixed;
+	left: 35%;
+	width: 60%;
+	position: absolute;
 }
 
 .edit-column {
