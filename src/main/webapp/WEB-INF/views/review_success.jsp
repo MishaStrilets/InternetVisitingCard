@@ -19,14 +19,12 @@
 </head>
 
 <body>
-	<div>
-		<%@include file="header.jsp"%>
-		<div class="alert">
-			<div class="alert alert-success">
-				Your review to user<strong> ${login} </strong>added successfully.
-			</div>
-			<%@include file="footer.jsp"%>
+	<%@include file="header.jsp"%>
+	<div class="alert">
+		<div class="alert alert-success">
+			Your review to user<strong> ${login} </strong>added successfully.
 		</div>
 	</div>
+	<%@include file="footer.jsp"%>>
 </body>
 </html>

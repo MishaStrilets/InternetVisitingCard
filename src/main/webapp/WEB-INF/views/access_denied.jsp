@@ -19,14 +19,12 @@
 </head>
 
 <body>
-	<div>
-		<%@include file="header.jsp"%>
-		<div class="alert">
-			<div class="alert alert-danger">
-				<strong> User!</strong> You are not authorized to access this page.
-			</div>
-			<%@include file="footer.jsp"%>
+	<%@include file="header.jsp"%>
+	<div class="alert">
+		<div class="alert alert-danger">
+			<strong> User!</strong> You are not authorized to access this page.
 		</div>
 	</div>
+	<%@include file="footer.jsp"%>
 </body>
 </html>

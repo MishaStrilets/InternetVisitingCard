@@ -19,20 +19,15 @@
 </head>
 
 <body>
-	<div>
-		<%@include file="header.jsp"%>
-		<div class="index">
-			<div>
-				<div class="row text-center">
-					<h2>Welcome to Internet Visiting Card site!!!</h2>
-				</div>
-				<div>
-					<h3>On this site you can create your own internet visiting
-						card.</h3>
-				</div>
-			</div>
+	<%@include file="header.jsp"%>
+	<div class="index">
+		<div class="row text-center">
+			<h2>Welcome to Internet Visiting Card site!!!</h2>
 		</div>
-		<%@include file="footer.jsp"%>
+		<div>
+			<h3>On this site you can create your own internet visiting card.</h3>
+		</div>
 	</div>
+	<%@include file="footer.jsp"%>
 </body>
 </html>

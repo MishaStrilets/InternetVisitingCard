@@ -73,7 +73,7 @@ a.sign {
 
 div.alert {
 	position: fixed;
-	top: 10%;
+	top: 20%;
 	left: 40%;
 }
 
@@ -89,6 +89,15 @@ div.alert {
 	float: left;
 	width: 50%;
 	padding: 1%;
+}
+
+.edit-card-footer {
+	background-color: #000000;
+	color: #ffffff;
+	position: absolute;
+	top: 235%;
+	height: 7%;
+	width: 100%;
 }
 
 .list-cards {
@@ -156,6 +165,7 @@ div.alert {
 	left: 5%;
 	right: 5%;
 	padding: 2%;
+	overflow-x: hidden;
 }
 
 .add-review {
@@ -182,4 +192,8 @@ div.alert {
 	padding: 1%;
 	overflow-x: hidden;
 	position: fixed;
+}
+
+textarea {
+	resize: none;
 }

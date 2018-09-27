@@ -157,7 +157,7 @@
 					<c:if test="${card.nameImage != ''}">
 						<br />
 						<img src="image-<c:out value="${card.login}"/>"
-							class="img-rounded" style="width: 100%" alt="Image">
+							class="img-rounded" style="height: 200px" alt="Image">
 
 						<div>
 							<br /> <a href="<c:url value='/delete-image-${card.login}' />"
@@ -194,6 +194,13 @@
 			</div>
 		</form:form>
 	</div>
-	<%@include file="footer.jsp"%>
+	<div class="edit-card-footer">
+		<div id="footer-name">
+			<br />© 2017-2018 Internet Visiting Card
+		</div>
+		<div id="footer-contact">
+			<a href="/admin" target="_blank">Contact information</a>
+		</div>
+	</div>
 </body>
 </html>

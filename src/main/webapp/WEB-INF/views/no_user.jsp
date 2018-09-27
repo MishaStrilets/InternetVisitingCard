@@ -19,14 +19,12 @@
 </head>
 
 <body>
-	<div>
-		<%@include file="header.jsp"%>
-		<div class="alert">
-			<div class="alert alert-danger">
-				User with a username<strong> ${login} </strong>is not.
-			</div>
-			<%@include file="footer.jsp"%>
+	<%@include file="header.jsp"%>
+	<div class="alert">
+		<div class="alert alert-danger">
+			User with a username<strong> ${login} </strong>is not.
 		</div>
 	</div>
+	<%@include file="footer.jsp"%>
 </body>
 </html>

@@ -38,7 +38,7 @@
 									<c:choose>
 										<c:when test="${user.nameImage != ''}">
 											<td><img src="image-<c:out value="${user.login}"/>"
-												class="img-rounded" style="width: 25%" alt="Image"></td>
+												class="img-rounded" style="height: 100px" alt="Image"></td>
 										</c:when>
 										<c:otherwise>
 											<td></td>
