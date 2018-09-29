@@ -98,6 +98,18 @@
 
 			<div class="row">
 				<div class="edit-column" style="background-color: #004387;">
+					<label>LinkedIn</label>
+					<form:input type="text" path="linkedin" id="linkedin"
+						class="form-control" />
+				</div>
+				<div class="edit-column" style="background-color: #ffffff;">
+					<form:errors path="linkedin" style="color: #ff0000"
+						class="alert alert-danger" />
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="edit-column" style="background-color: #004387;">
 					<label>Facebook</label>
 					<form:input type="text" path="facebook" id="facebook"
 						class="form-control" />
@@ -165,6 +177,11 @@
 						</div>
 					</c:if>
 				</div>
+
+				<div class="edit-column" style="background-color: #ffffff;">
+					<form:errors path="image" style="color: #ff0000"
+						class="alert alert-danger" />
+				</div>
 			</div>
 
 			<div class="row">
@@ -190,6 +207,13 @@
 			<div class="row">
 				<div class="edit-column" style="background-color: #004387;">
 					<input type="submit" value="Edit" class="btn btn-warning" />
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="edit-column" style="background-color: #004387;">
+					<a href="<c:url value='/delete-user-${card.login}' />"
+						class="btn btn-danger">Delete account</a>
 				</div>
 			</div>
 		</form:form>

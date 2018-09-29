@@ -1,6 +1,7 @@
 package strilets.service;
 
 import java.util.List;
+import java.util.Set;
 
 import strilets.model.User;
 import strilets.model.Search;
@@ -23,4 +24,7 @@ public interface UserService {
 
 	boolean isUserLoginUnique(Integer id, String login);
 
+	Double countAverageRating(User user);
+
+	Set<User> sortUsersByRating(List<User> users);
 }

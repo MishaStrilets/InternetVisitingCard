@@ -32,13 +32,16 @@ public class Card implements Serializable {
 	@Size(max = 50)
 	private String phone;
 
-	@Size(max = 30)
+	@Size(max = 100)
+	private String linkedin;
+
+	@Size(max = 100)
 	private String facebook;
 
-	@Size(max = 30)
+	@Size(max = 100)
 	private String twitter;
 
-	@Size(max = 30)
+	@Size(max = 100)
 	private String instagram;
 
 	MultipartFile file;
@@ -103,6 +106,14 @@ public class Card implements Serializable {
 
 	public void setPhone(String phone) {
 		this.phone = phone;
+	}
+
+	public String getLinkedin() {
+		return linkedin;
+	}
+
+	public void setLinkedin(String linkedin) {
+		this.linkedin = linkedin;
 	}
 
 	public String getFacebook() {

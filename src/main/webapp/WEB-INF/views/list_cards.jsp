@@ -64,7 +64,7 @@
 
 									<sec:authorize access="hasRole('ADMIN')">
 										<td><a
-											href="<c:url value='/delete-card-${user.login}' />"
+											href="<c:url value='/admin-delete-user-${user.login}' />"
 											class="btn btn-danger"><span
 												class="glyphicon glyphicon-trash"></span></a></td>
 									</sec:authorize>

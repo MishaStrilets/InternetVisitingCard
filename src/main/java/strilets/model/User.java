@@ -58,6 +58,9 @@ public class User implements Serializable {
 	@Column(name = "PHONE")
 	private String phone;
 
+	@Column(name = "LINKEDIN")
+	private String linkedin;
+
 	@Column(name = "FACEBOOK")
 	private String facebook;
 
@@ -89,7 +92,7 @@ public class User implements Serializable {
 	private String backgroundColor;
 
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "user", cascade = CascadeType.ALL)
-	private Set<Review> review;
+	private Set<Review> reviews;
 
 	public Integer getId() {
 		return id;
@@ -161,6 +164,14 @@ public class User implements Serializable {
 
 	public void setPhone(String phone) {
 		this.phone = phone;
+	}
+
+	public String getLinkedin() {
+		return linkedin;
+	}
+
+	public void setLinkedin(String linkedin) {
+		this.linkedin = linkedin;
 	}
 
 	public String getFacebook() {
@@ -235,11 +246,11 @@ public class User implements Serializable {
 		this.backgroundColor = backgroundColor;
 	}
 
-	public Set<Review> getReview() {
-		return review;
+	public Set<Review> getReviews() {
+		return reviews;
 	}
 
-	public void setReview(Set<Review> review) {
-		this.review = review;
+	public void setReview(Set<Review> reviews) {
+		this.reviews = reviews;
 	}
 }

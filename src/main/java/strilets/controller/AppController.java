@@ -68,7 +68,7 @@ public class AppController {
 	@RequestMapping(value = { "/list-cards" }, method = RequestMethod.GET)
 	public String listCards(ModelMap model) {
 		List<User> users = userService.getAllUsers();
-		model.addAttribute("users", users);
+		model.addAttribute("users", userService.sortUsersByRating(users));
 		Search search = new Search();
 		model.addAttribute("search", search);
 		return "list_cards";
@@ -81,7 +81,7 @@ public class AppController {
 	@RequestMapping(value = { "/list-cards" }, method = RequestMethod.POST)
 	public String searchCards(Search search, ModelMap model) {
 		List<User> users = userService.getUsers(search);
-		model.addAttribute("users", users);
+		model.addAttribute("users", userService.sortUsersByRating(users));
 		model.addAttribute("search", search);
 		return "list_cards";
 	}
@@ -119,6 +119,7 @@ public class AppController {
 		user.setAddress("");
 		user.setEmail("");
 		user.setPhone("");
+		user.setLinkedin("");
 		user.setFacebook("");
 		user.setTwitter("");
 		user.setInstagram("");
@@ -150,6 +151,7 @@ public class AppController {
 		card.setAddress(user.getAddress());
 		card.setEmail(user.getEmail());
 		card.setPhone(user.getPhone());
+		card.setLinkedin(user.getLinkedin());
 		card.setFacebook(user.getFacebook());
 		card.setTwitter(user.getTwitter());
 		card.setInstagram(user.getInstagram());
@@ -206,10 +208,29 @@ public class AppController {
 	}
 
 	/**
-	 * This method will delete an user by it's login.
+	 * This method will delete an user by the user.
 	 */
-	@RequestMapping(value = { "/delete-card-{login}" }, method = RequestMethod.GET)
-	public String deleteUser(@PathVariable String login) {
+	@RequestMapping(value = { "/delete-user-{login}" }, method = RequestMethod.GET)
+	public String deleteUser(@PathVariable String login, HttpServletRequest request, HttpServletResponse response,
+			ModelMap model) {
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+
+		if (auth != null) {
+			persistentTokenBasedRememberMeServices.logout(request, response, auth);
+			new SecurityContextLogoutHandler().logout(request, response, auth);
+		}
+
+		userService.deleteUser(login);
+
+		model.addAttribute("login", login);
+		return "delete_user";
+	}
+
+	/**
+	 * This method will delete an user by admin.
+	 */
+	@RequestMapping(value = { "/admin-delete-user-{login}" }, method = RequestMethod.GET)
+	public String deleteUserByAdmin(@PathVariable String login) {
 		userService.deleteUser(login);
 		return "redirect:/list-cards";
 	}
@@ -218,7 +239,7 @@ public class AppController {
 	 * This method will delete an image by it's login.
 	 */
 	@RequestMapping(value = { "/delete-image-{login}" }, method = RequestMethod.GET)
-	public String deleteUmage(@PathVariable String login) {
+	public String deleteImage(@PathVariable String login) {
 		if (!getPrincipal().equals(login))
 			return "access_denied";
 
@@ -257,10 +278,12 @@ public class AppController {
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public String logoutPage(HttpServletRequest request, HttpServletResponse response) {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+
 		if (auth != null) {
 			persistentTokenBasedRememberMeServices.logout(request, response, auth);
 			new SecurityContextLogoutHandler().logout(request, response, auth);
 		}
+
 		return "redirect:/";
 	}
 
@@ -298,6 +321,7 @@ public class AppController {
 		user.setAddress(card.getAddress());
 		user.setEmail(card.getEmail());
 		user.setPhone(card.getPhone());
+		user.setLinkedin(card.getLinkedin());
 		user.setFacebook(card.getFacebook());
 		user.setTwitter(card.getTwitter());
 		user.setInstagram(card.getInstagram());
@@ -349,7 +373,8 @@ public class AppController {
 	@RequestMapping(value = { "/list-reviews-{login}" }, method = RequestMethod.GET)
 	public String listReviews(@PathVariable String login, ModelMap model) {
 		User user = userService.getUserByLogin(login);
-		model.addAttribute("reviews", user.getReview());
+		model.addAttribute("averageRating", userService.countAverageRating(user));
+		model.addAttribute("reviews", user.getReviews());
 		return "list_reviews";
 	}
 }

@@ -26,6 +26,7 @@
 			<div class="col-sm-8">
 				<div class="list-reviews">
 					<h2>List of reviews</h2>
+					<h3>Average rating ${averageRating}</h3>
 					<table class="table table-condensed"
 						style="color: #ffffff; table-layout: fixed">
 						<thead>

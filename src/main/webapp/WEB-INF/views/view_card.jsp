@@ -24,7 +24,7 @@
 	style="color: ${user.fontColor}; background-color: ${user.backgroundColor}">
 	<div class="view-card">
 		<div class="row">
-			<div class="col-sm-8">
+			<div class="col-sm-7">
 				<h1>
 					<b>${user.name}</b>
 				</h1>
@@ -50,6 +50,12 @@
 						<i>Phone number: </i>${user.phone}</h2>
 				</c:if>
 
+				<c:if test="${user.linkedin != '' }">
+					<a href="<c:url value='${user.linkedin}' />" target="_blank"><i
+						class="fa fa-linkedin-square"
+						style="font-size: 48px; color: #245e99"></i></a>
+				</c:if>
+
 				<c:if test="${user.facebook != '' }">
 					<a href="<c:url value='${user.facebook}' />" target="_blank"><i
 						class="fa fa-facebook-square"
@@ -70,7 +76,7 @@
 			</div>
 
 			<c:if test="${user.nameImage != ''}">
-				<div class="col-sm-4">
+				<div class="col-sm-5">
 					<img src="image-<c:out value="${user.login}"/>" class="img-rounded"
 						style="width: 100%" alt="Image">
 				</div>
