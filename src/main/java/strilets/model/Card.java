@@ -14,7 +14,7 @@ public class Card implements Serializable {
 
 	private String login;
 
-	@Size(max = 30)
+	@Size(max = 50)
 	private String name;
 
 	@Size(max = 2147483647)

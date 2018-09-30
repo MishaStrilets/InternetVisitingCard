@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ page isELIgnored="false"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="sec"
@@ -8,7 +8,7 @@
 
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Internet Visiting Card</title>
 
 <link rel="icon" type="image/png" href="/static/images/icon.png" />
@@ -152,7 +152,6 @@
 
 					<form:textarea name="description" path="description"
 						id="description" class="form-control" cols="40" rows="5" />
-
 				</div>
 
 				<div class="edit-column" style="background-color: #ffffff;">
@@ -176,11 +175,6 @@
 								class="btn btn-danger">Delete image</a>
 						</div>
 					</c:if>
-				</div>
-
-				<div class="edit-column" style="background-color: #ffffff;">
-					<form:errors path="image" style="color: #ff0000"
-						class="alert alert-danger" />
 				</div>
 			</div>
 
@@ -220,11 +214,10 @@
 	</div>
 	<div class="edit-card-footer">
 		<div id="footer-name">
-			<br />© 2017-2018 Internet Visiting Card
+			<br />Â© 2017-2018 Internet Visiting Card
 		</div>
-		<div id="footer-contact">
-			<a href="/admin" target="_blank">Contact information</a>
-		</div>
+		<div id="footer-contact">Contact information:
+			mishastrilets@gmail.com</div>
 	</div>
 </body>
 </html>

@@ -28,7 +28,7 @@ public class Review implements Serializable {
 	private Integer id;
 
 	@NotBlank
-	@Size(max = 30)
+	@Size(max = 50)
 	@Column(name = "AUTHOR")
 	private String author;
 

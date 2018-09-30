@@ -2,7 +2,7 @@ CREATE TABLE IF NOT EXISTS user (
    id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
    login VARCHAR(30) NOT NULL UNIQUE,
    password VARCHAR(100) NOT NULL,
-   name VARCHAR(30),
+   name VARCHAR(50),
    description TEXT,
    people VARCHAR(50),
    address VARCHAR(50),
@@ -14,8 +14,8 @@ CREATE TABLE IF NOT EXISTS user (
    instagram VARCHAR(100),
    role VARCHAR(5) NOT NULL,
    image longblob,
-   name_image VARCHAR(15),
-   type VARCHAR(15),
+   name_image VARCHAR(30),
+   type VARCHAR(20),
    font_color VARCHAR(7), 
    background_color VARCHAR(7)
 );
@@ -29,7 +29,7 @@ CREATE TABLE IF NOT EXISTS persistent_logins (
 
 CREATE TABLE IF NOT EXISTS review (
   id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  author VARCHAR(30) NOT NULL,
+  author VARCHAR(50) NOT NULL,
   description TEXT NOT NULL,
   rating INT NOT NULL,
   user_id bigint REFERENCES user (id)

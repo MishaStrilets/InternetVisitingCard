@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ page isELIgnored="false"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="sec"
@@ -8,7 +8,7 @@
 
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Internet Visiting Card</title>
 
 <link rel="icon" type="image/png" href="/static/images/icon.png" />
@@ -22,7 +22,7 @@
 	<div>
 		<%@include file="header.jsp"%>
 		<div class="registration-user">
-		
+
 			<div class="row">
 				<div class="registration-column" style="background-color: #004387;">
 					<h2>Registration</h2>
@@ -53,8 +53,7 @@
 						<form:input type="password" path="password" id="password"
 							class="form-control" />
 					</div>
-					<div class="registration-column"
-						style="background-color: #ffffff;">
+					<div class="registration-column" style="background-color: #ffffff;">
 						<form:errors path="password" style="color: #ff0000"
 							class="alert alert-danger" />
 					</div>
