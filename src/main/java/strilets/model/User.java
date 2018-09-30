@@ -24,6 +24,18 @@ import org.hibernate.validator.constraints.NotBlank;
 public class User implements Serializable {
 
 	public User() {
+		this.setRole("USER");
+		this.setPeople("");
+		this.setAddress("");
+		this.setEmail("");
+		this.setPhone("");
+		this.setLinkedin("");
+		this.setFacebook("");
+		this.setTwitter("");
+		this.setInstagram("");
+		this.setNameImage("");
+		this.setFontColor("#000000");
+		this.setBackgroundColor("#ffffff");
 	}
 
 	@Id

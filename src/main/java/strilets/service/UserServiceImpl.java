@@ -1,5 +1,6 @@
 package strilets.service;
 
+import java.io.IOException;
 import java.util.Collections;
 import java.util.stream.Collectors;
 import java.util.HashMap;
@@ -12,9 +13,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.multipart.MultipartFile;
 
 import strilets.dao.UserDao;
 import strilets.model.User;
+import strilets.model.Card;
 import strilets.model.Review;
 import strilets.model.Search;
 
@@ -111,5 +114,30 @@ public class UserServiceImpl implements UserService {
 				.collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e2, LinkedHashMap::new));
 
 		return sortedUsersMap.keySet();
+	}
+
+	public User copyCardToUser(User user, Card card) throws IOException {
+		user.setLogin(card.getLogin());
+		user.setName(card.getName());
+		user.setDescription(card.getDescription());
+		user.setPeople(card.getPeople());
+		user.setAddress(card.getAddress());
+		user.setEmail(card.getEmail());
+		user.setPhone(card.getPhone());
+		user.setLinkedin(card.getLinkedin());
+		user.setFacebook(card.getFacebook());
+		user.setTwitter(card.getTwitter());
+		user.setInstagram(card.getInstagram());
+		user.setFontColor(card.getFontColor());
+		user.setBackgroundColor(card.getBackgroundColor());
+
+		if ((!("".equals(card.getFile().getOriginalFilename())))) {
+			MultipartFile multipartFile = card.getFile();
+			user.setNameImage(multipartFile.getOriginalFilename());
+			user.setType(multipartFile.getContentType());
+			user.setImage(multipartFile.getBytes());
+		}
+
+		return user;
 	}
 }

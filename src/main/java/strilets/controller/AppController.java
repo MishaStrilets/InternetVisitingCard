@@ -26,7 +26,6 @@ import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.multipart.MultipartFile;
 
 import strilets.model.Card;
 import strilets.model.Review;
@@ -114,50 +113,26 @@ public class AppController {
 			return "registration";
 		}
 
-		user.setRole("USER");
-		user.setPeople("");
-		user.setAddress("");
-		user.setEmail("");
-		user.setPhone("");
-		user.setLinkedin("");
-		user.setFacebook("");
-		user.setTwitter("");
-		user.setInstagram("");
-		user.setNameImage("");
-		user.setFontColor("#000000");
-		user.setBackgroundColor("#ffffff");
 		userService.saveUser(user);
+
 		model.addAttribute("login", user.getLogin());
+
 		return "registration_success";
 	}
 
 	/**
 	 * This method will provide to update visiting card.
+	 * 
+	 * @throws IOException
 	 */
 	@RequestMapping(value = { "/edit-card-{login}" }, method = RequestMethod.GET)
-	public String editCard(@PathVariable String login, ModelMap model) {
+	public String editCard(@PathVariable String login, ModelMap model) throws IOException {
 
 		if (!getPrincipal().equals(login))
 			return "access_denied";
 
 		User user = userService.getUserByLogin(login);
-
-		Card card = new Card();
-
-		card.setLogin(user.getLogin());
-		card.setName(user.getName());
-		card.setDescription(user.getDescription());
-		card.setPeople(user.getPeople());
-		card.setAddress(user.getAddress());
-		card.setEmail(user.getEmail());
-		card.setPhone(user.getPhone());
-		card.setLinkedin(user.getLinkedin());
-		card.setFacebook(user.getFacebook());
-		card.setTwitter(user.getTwitter());
-		card.setInstagram(user.getInstagram());
-		card.setNameImage(user.getNameImage());
-		card.setFontColor(user.getFontColor());
-		card.setBackgroundColor(user.getBackgroundColor());
+		Card card = new Card(user);
 
 		model.addAttribute("card", card);
 		return "edit_card";
@@ -175,8 +150,9 @@ public class AppController {
 			return "edit_card";
 		}
 
-		User user = userService.getUserByLogin(login);
-		saveCard(user, card);
+		User userOld = userService.getUserByLogin(login);
+		User userNew = userService.copyCardToUser(userOld, card);
+		userService.updateUser(userNew);
 
 		return "edit_card";
 	}
@@ -288,57 +264,6 @@ public class AppController {
 	}
 
 	/**
-	 * This method returns the principal of logged user.
-	 */
-	private String getPrincipal() {
-		String userName = null;
-		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-
-		if (principal instanceof UserDetails) {
-			userName = ((UserDetails) principal).getUsername();
-		} else {
-			userName = principal.toString();
-		}
-		return userName;
-	}
-
-	/**
-	 * This method returns true if users is already authenticated, else false.
-	 */
-	private boolean isCurrentAuthenticationAnonymous() {
-		final Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-		return authenticationTrustResolver.isAnonymous(authentication);
-	}
-
-	/**
-	 * This method copy data from Card to User.
-	 */
-	private void saveCard(User user, Card card) throws IOException {
-		user.setLogin(card.getLogin());
-		user.setName(card.getName());
-		user.setDescription(card.getDescription());
-		user.setPeople(card.getPeople());
-		user.setAddress(card.getAddress());
-		user.setEmail(card.getEmail());
-		user.setPhone(card.getPhone());
-		user.setLinkedin(card.getLinkedin());
-		user.setFacebook(card.getFacebook());
-		user.setTwitter(card.getTwitter());
-		user.setInstagram(card.getInstagram());
-		user.setFontColor(card.getFontColor());
-		user.setBackgroundColor(card.getBackgroundColor());
-
-		if ((!("".equals(card.getFile().getOriginalFilename())))) {
-			MultipartFile multipartFile = card.getFile();
-			user.setNameImage(multipartFile.getOriginalFilename());
-			user.setType(multipartFile.getContentType());
-			user.setImage(multipartFile.getBytes());
-		}
-
-		userService.updateUser(user);
-	}
-
-	/**
 	 * This method will provide to add review.
 	 */
 	@RequestMapping(value = { "/add-review-{login}" }, method = RequestMethod.GET)
@@ -376,5 +301,28 @@ public class AppController {
 		model.addAttribute("averageRating", userService.countAverageRating(user));
 		model.addAttribute("reviews", user.getReviews());
 		return "list_reviews";
+	}
+
+	/**
+	 * This method returns the principal of logged user.
+	 */
+	private String getPrincipal() {
+		String userName = null;
+		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+
+		if (principal instanceof UserDetails) {
+			userName = ((UserDetails) principal).getUsername();
+		} else {
+			userName = principal.toString();
+		}
+		return userName;
+	}
+
+	/**
+	 * This method returns true if users is already authenticated, else false.
+	 */
+	private boolean isCurrentAuthenticationAnonymous() {
+		final Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		return authenticationTrustResolver.isAnonymous(authentication);
 	}
 }

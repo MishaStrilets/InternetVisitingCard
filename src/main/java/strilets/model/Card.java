@@ -12,6 +12,23 @@ public class Card implements Serializable {
 	public Card() {
 	}
 
+	public Card(User user) {
+		this.setLogin(user.getLogin());
+		this.setName(user.getName());
+		this.setDescription(user.getDescription());
+		this.setPeople(user.getPeople());
+		this.setAddress(user.getAddress());
+		this.setEmail(user.getEmail());
+		this.setPhone(user.getPhone());
+		this.setLinkedin(user.getLinkedin());
+		this.setFacebook(user.getFacebook());
+		this.setTwitter(user.getTwitter());
+		this.setInstagram(user.getInstagram());
+		this.setNameImage(user.getNameImage());
+		this.setFontColor(user.getFontColor());
+		this.setBackgroundColor(user.getBackgroundColor());
+	}
+
 	private String login;
 
 	@Size(max = 50)

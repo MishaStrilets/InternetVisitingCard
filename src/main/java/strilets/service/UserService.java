@@ -1,9 +1,11 @@
 package strilets.service;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Set;
 
 import strilets.model.User;
+import strilets.model.Card;
 import strilets.model.Search;
 
 public interface UserService {
@@ -27,4 +29,6 @@ public interface UserService {
 	Double countAverageRating(User user);
 
 	Set<User> sortUsersByRating(List<User> users);
+
+	User copyCardToUser(User user, Card card) throws IOException;
 }
