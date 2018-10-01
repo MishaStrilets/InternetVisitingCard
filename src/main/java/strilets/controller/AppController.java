@@ -1,3 +1,10 @@
+/**
+ * Class AppController is class controller which manage 
+ * incoming requests and redirect to proper response.
+ * 
+ * @author Misha Strilets
+ * @version 1.0
+ */
 package strilets.controller;
 
 import java.io.ByteArrayInputStream;
@@ -54,7 +61,7 @@ public class AppController {
 	AuthenticationTrustResolver authenticationTrustResolver;
 
 	/**
-	 * This method will return home page.
+	 * Method index return home page.
 	 */
 	@RequestMapping("/")
 	String index() {
@@ -62,7 +69,7 @@ public class AppController {
 	}
 
 	/**
-	 * This method will list all visiting cards.
+	 * Method listCards return list all visiting cards.
 	 */
 	@RequestMapping(value = { "/list-cards" }, method = RequestMethod.GET)
 	public String listCards(ModelMap model) {
