@@ -1,5 +1,5 @@
 /**
- * Class AppController is class controller which manage 
+ * Class controller which manage 
  * incoming requests and redirect to proper response.
  * 
  * @author Misha Strilets
@@ -61,7 +61,7 @@ public class AppController {
 	AuthenticationTrustResolver authenticationTrustResolver;
 
 	/**
-	 * Method index return home page.
+	 * Method return home page.
 	 */
 	@RequestMapping("/")
 	String index() {
@@ -69,7 +69,7 @@ public class AppController {
 	}
 
 	/**
-	 * Method listCards return list all visiting cards.
+	 * Method return a list of all cards.
 	 */
 	@RequestMapping(value = { "/list-cards" }, method = RequestMethod.GET)
 	public String listCards(ModelMap model) {
@@ -81,8 +81,8 @@ public class AppController {
 	}
 
 	/**
-	 * This method will be called on form submission, handling POST request for
-	 * searching cards in database.
+	 * Method be called on form submission, handling POST request for searching
+	 * cards in database.
 	 */
 	@RequestMapping(value = { "/list-cards" }, method = RequestMethod.POST)
 	public String searchCards(Search search, ModelMap model) {
@@ -93,7 +93,7 @@ public class AppController {
 	}
 
 	/**
-	 * This method will provide to registered a new user.
+	 * Method provide to registered a new user.
 	 */
 	@RequestMapping(value = { "/registration-user" }, method = RequestMethod.GET)
 	public String newUser(ModelMap model) {
@@ -103,8 +103,8 @@ public class AppController {
 	}
 
 	/**
-	 * This method will be called on form submission, handling POST request for
-	 * saving user in database. It also validates the user input.
+	 * Method be called on form submission, handling POST request for saving
+	 * user in database. It also validates the user input.
 	 */
 	@RequestMapping(value = { "/registration-user" }, method = RequestMethod.POST)
 	public String saveUser(@Valid User user, BindingResult result, ModelMap model) {
@@ -128,7 +128,7 @@ public class AppController {
 	}
 
 	/**
-	 * This method will provide to update visiting card.
+	 * Method provide to update card.
 	 * 
 	 * @throws IOException
 	 */
@@ -146,8 +146,8 @@ public class AppController {
 	}
 
 	/**
-	 * This method will be called on form submission, handling POST request for
-	 * updating card in database.
+	 * Method be called on form submission, handling POST request for updating
+	 * card in database.
 	 */
 	@RequestMapping(value = { "/edit-card-{login}" }, method = RequestMethod.POST)
 	public String updateCard(@Valid Card card, BindingResult result, ModelMap model, @PathVariable String login)
@@ -165,7 +165,7 @@ public class AppController {
 	}
 
 	/**
-	 * This method will provide to view visiting card.
+	 * Method provide to view visiting card.
 	 */
 	@RequestMapping(value = { "/{login}" }, method = RequestMethod.GET)
 	public String viewCard(@PathVariable String login, ModelMap model) {
@@ -180,10 +180,10 @@ public class AppController {
 	}
 
 	/**
-	 * This method will provide to view user image.
+	 * Method provide to view image.
 	 */
 	@RequestMapping(value = "/image-{login}")
-	public void getUserImage(HttpServletResponse response, @PathVariable String login) throws IOException {
+	public void getImage(HttpServletResponse response, @PathVariable String login) throws IOException {
 		response.setContentType(userService.getUserByLogin(login).getType());
 		byte[] buffer = userService.getUserByLogin(login).getImage();
 		InputStream in1 = new ByteArrayInputStream(buffer);
@@ -191,7 +191,7 @@ public class AppController {
 	}
 
 	/**
-	 * This method will delete an user by the user.
+	 * Method delete an user.
 	 */
 	@RequestMapping(value = { "/delete-user-{login}" }, method = RequestMethod.GET)
 	public String deleteUser(@PathVariable String login, HttpServletRequest request, HttpServletResponse response,
@@ -210,7 +210,7 @@ public class AppController {
 	}
 
 	/**
-	 * This method will delete an user by admin.
+	 * Method delete an user by admin.
 	 */
 	@RequestMapping(value = { "/admin-delete-user-{login}" }, method = RequestMethod.GET)
 	public String deleteUserByAdmin(@PathVariable String login) {
@@ -219,7 +219,7 @@ public class AppController {
 	}
 
 	/**
-	 * This method will delete an image by it's login.
+	 * Method delete an image.
 	 */
 	@RequestMapping(value = { "/delete-image-{login}" }, method = RequestMethod.GET)
 	public String deleteImage(@PathVariable String login) {
@@ -235,7 +235,7 @@ public class AppController {
 	}
 
 	/**
-	 * This method handles access denied redirect.
+	 * Method handles access denied redirect.
 	 */
 	@RequestMapping(value = "/access_denied")
 	public String accessDeniedPage() {
@@ -243,8 +243,8 @@ public class AppController {
 	}
 
 	/**
-	 * This method handles login GET requests. If users is already logged and
-	 * tries to goto login page again, will be redirected to list page.
+	 * Method handles login GET requests. If users is already logged and tries
+	 * to goto login page again, will be redirected to list page.
 	 */
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String loginPage() {
@@ -256,7 +256,7 @@ public class AppController {
 	}
 
 	/**
-	 * This method handles logout requests. Toggle the handlers if you are
+	 * Method handles logout requests.
 	 */
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public String logoutPage(HttpServletRequest request, HttpServletResponse response) {
@@ -271,7 +271,7 @@ public class AppController {
 	}
 
 	/**
-	 * This method will provide to add review.
+	 * Method provide to add review.
 	 */
 	@RequestMapping(value = { "/add-review-{login}" }, method = RequestMethod.GET)
 	public String newReview(@PathVariable String login, ModelMap model) {
@@ -281,8 +281,8 @@ public class AppController {
 	}
 
 	/**
-	 * This method will be called on form submission, handling POST request for
-	 * adding review in database.
+	 * Method be called on form submission, handling POST request for adding
+	 * review in database.
 	 */
 	@RequestMapping(value = { "/add-review-{login}" }, method = RequestMethod.POST)
 	public String saveReview(@Valid Review review, BindingResult result, ModelMap model, @PathVariable String login)
@@ -300,7 +300,7 @@ public class AppController {
 	}
 
 	/**
-	 * This method will list all reviews to user.
+	 * Method return a list of all reviews.
 	 */
 	@RequestMapping(value = { "/list-reviews-{login}" }, method = RequestMethod.GET)
 	public String listReviews(@PathVariable String login, ModelMap model) {
@@ -311,7 +311,7 @@ public class AppController {
 	}
 
 	/**
-	 * This method returns the principal of logged user.
+	 * Method return the principal of logged user.
 	 */
 	private String getPrincipal() {
 		String userName = null;
@@ -326,7 +326,7 @@ public class AppController {
 	}
 
 	/**
-	 * This method returns true if users is already authenticated, else false.
+	 * Method return true if users is already authenticated, else false.
 	 */
 	private boolean isCurrentAuthenticationAnonymous() {
 		final Authentication authentication = SecurityContextHolder.getContext().getAuthentication();

@@ -21,6 +21,7 @@
 <body>
 	<div>
 		<%@include file="header.jsp"%>
+
 		<div class="registration-user">
 
 			<div class="row">
@@ -67,6 +68,7 @@
 			</form:form>
 		</div>
 	</div>
+
 	<%@include file="footer.jsp"%>
 </body>
 </html>

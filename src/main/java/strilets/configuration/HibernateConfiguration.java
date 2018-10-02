@@ -1,3 +1,9 @@
+/**
+ * Configuration class for configuration Hibernate, data source and session factory. 
+ * 
+ * @author Misha Strilets
+ * @version 1.0
+ */
 package strilets.configuration;
 
 import java.util.Properties;

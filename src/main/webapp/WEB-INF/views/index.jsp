@@ -15,11 +15,11 @@
 	href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
 	rel="stylesheet" media="screen" />
 <link href="<c:url value='/static/css/style.css' />" rel="stylesheet" />
-
 </head>
 
 <body>
 	<%@include file="header.jsp"%>
+
 	<div class="index">
 		<div class="row text-center">
 			<h1>Welcome to Internet Visiting Card site!</h1>
@@ -43,6 +43,7 @@
 			<h2>Good luck!</h2>
 		</div>
 	</div>
+
 	<%@include file="footer.jsp"%>
 </body>
 </html>

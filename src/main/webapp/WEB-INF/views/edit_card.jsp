@@ -16,13 +16,12 @@
 	href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
 	rel="stylesheet" media="screen" />
 <link href="<c:url value='/static/css/style.css' />" rel="stylesheet" />
-
 </head>
 
 <body>
 	<%@include file="header.jsp"%>
-	<div class="edit-card">
 
+	<div class="edit-card">
 		<div class="row">
 			<div class="edit-column" style="background-color: #004387;">
 				<h2>Edit card</h2>
@@ -212,6 +211,7 @@
 			</div>
 		</form:form>
 	</div>
+
 	<div class="edit-card-footer">
 		<div id="footer-name">
 			<br />© 2017-2018 Internet Visiting Card

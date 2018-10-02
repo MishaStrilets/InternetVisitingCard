@@ -19,13 +19,6 @@ CREATE TABLE IF NOT EXISTS user (
    font_color VARCHAR(7), 
    background_color VARCHAR(7)
 );
-   
-CREATE TABLE IF NOT EXISTS persistent_logins (
-    login VARCHAR(64) NOT NULL,
-    series VARCHAR(64) NOT NULL PRIMARY KEY,
-    token VARCHAR(64) NOT NULL,
-    last_used TIMESTAMP NOT NULL
-);
 
 CREATE TABLE IF NOT EXISTS review (
   id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -33,4 +26,11 @@ CREATE TABLE IF NOT EXISTS review (
   description TEXT NOT NULL,
   rating INT NOT NULL,
   user_id bigint REFERENCES user (id)
+);
+   
+CREATE TABLE IF NOT EXISTS persistent_logins (
+    login VARCHAR(64) NOT NULL,
+    series VARCHAR(64) NOT NULL PRIMARY KEY,
+    token VARCHAR(64) NOT NULL,
+    last_used TIMESTAMP NOT NULL
 );

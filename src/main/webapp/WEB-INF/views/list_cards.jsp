@@ -16,12 +16,12 @@
 	href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
 	rel="stylesheet" media="screen" />
 <link href="<c:url value='/static/css/style.css' />" rel="stylesheet" />
-
 </head>
 
 <body>
 	<div>
 		<%@include file="header.jsp"%>
+
 		<div class="row">
 			<div class="col-sm-8">
 				<div class="list-cards">
@@ -102,6 +102,7 @@
 				</div>
 			</div>
 		</div>
+
 		<%@include file="footer.jsp"%>
 	</div>
 </body>

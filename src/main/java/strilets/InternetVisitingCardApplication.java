@@ -1,3 +1,9 @@
+/**
+ * Application class for launch an application.
+ * 
+ * @author Misha Strilets
+ * @version 1.0
+ */
 package strilets;
 
 import org.springframework.boot.SpringApplication;

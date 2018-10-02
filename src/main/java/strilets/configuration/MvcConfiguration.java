@@ -1,3 +1,9 @@
+/**
+ * Configuration class for configuration resources, views and static resources.
+ * 
+ * @author Misha Strilets
+ * @version 1.0
+ */
 package strilets.configuration;
 
 import org.springframework.context.MessageSource;

@@ -15,16 +15,17 @@
 	href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
 	rel="stylesheet" media="screen" />
 <link href="<c:url value='/static/css/style.css' />" rel="stylesheet" />
-
 </head>
 
 <body>
 	<%@include file="header.jsp"%>
+
 	<div class="alert">
 		<div class="alert alert-danger">
 			User<strong> ${login} </strong>has deleted its account.
 		</div>
 	</div>
+
 	<%@include file="footer.jsp"%>
 </body>
 </html>

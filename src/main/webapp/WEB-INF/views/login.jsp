@@ -20,6 +20,7 @@
 <body>
 	<div>
 		<%@include file="header.jsp"%>
+
 		<div class="login-user">
 			<h2>Login</h2>
 			<c:url var="loginUrl" value="/login" />
@@ -54,6 +55,7 @@
 				<p class="alert alert-danger">Invalid login or password.</p>
 			</c:if>
 		</div>
+
 		<%@include file="footer.jsp"%>
 	</div>
 </body>
