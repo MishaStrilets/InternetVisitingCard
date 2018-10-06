@@ -33,6 +33,7 @@ public class Card implements Serializable {
 		this.setNameImage(user.getNameImage());
 		this.setFontColor(user.getFontColor());
 		this.setBackgroundColor(user.getBackgroundColor());
+		this.setVisible(user.getVisible());
 	}
 
 	private String login;
@@ -74,6 +75,8 @@ public class Card implements Serializable {
 	private String fontColor;
 
 	private String backgroundColor;
+
+	private Boolean visible;
 
 	public String getLogin() {
 		return login;
@@ -193,5 +196,13 @@ public class Card implements Serializable {
 
 	public void setBackgroundColor(String backgroundColor) {
 		this.backgroundColor = backgroundColor;
+	}
+
+	public Boolean getVisible() {
+		return visible;
+	}
+
+	public void setVisible(Boolean visible) {
+		this.visible = visible;
 	}
 }

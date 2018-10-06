@@ -199,6 +199,16 @@
 
 			<div class="row">
 				<div class="edit-column" style="background-color: #004387;">
+					<label>Visible</label>
+					<div>
+						<form:checkbox name="visible" value='${card.visible}'
+							path="visible" id="visible" />
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="edit-column" style="background-color: #004387;">
 					<input type="submit" value="Edit" class="btn btn-warning" />
 				</div>
 			</div>

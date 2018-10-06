@@ -42,6 +42,7 @@ public class User implements Serializable {
 		this.setNameImage("");
 		this.setFontColor("#000000");
 		this.setBackgroundColor("#ffffff");
+		this.setVisible(false);
 	}
 
 	@Id
@@ -108,6 +109,9 @@ public class User implements Serializable {
 
 	@Column(name = "BACKGROUND_COLOR")
 	private String backgroundColor;
+
+	@Column(name = "VISIBLE")
+	private Boolean visible;
 
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "user", cascade = CascadeType.ALL)
 	private Set<Review> reviews;
@@ -262,6 +266,14 @@ public class User implements Serializable {
 
 	public void setBackgroundColor(String backgroundColor) {
 		this.backgroundColor = backgroundColor;
+	}
+
+	public Boolean getVisible() {
+		return visible;
+	}
+
+	public void setVisible(Boolean visible) {
+		this.visible = visible;
 	}
 
 	public Set<Review> getReviews() {

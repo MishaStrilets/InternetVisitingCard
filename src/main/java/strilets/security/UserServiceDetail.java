@@ -29,7 +29,7 @@ public class UserServiceDetail implements UserDetailsService {
 	private UserService userService;
 
 	public UserDetails loadUserByUsername(String login) throws UsernameNotFoundException {
-		User user = userService.getUserByLogin(login);
+		User user = userService.getUserByLogin(login, true);
 		logger.info("User: {}", login);
 		if (user == null) {
 			logger.info("User not found.");

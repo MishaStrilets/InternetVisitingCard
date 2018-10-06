@@ -17,7 +17,8 @@ CREATE TABLE IF NOT EXISTS user (
    name_image VARCHAR(30),
    type VARCHAR(20),
    font_color VARCHAR(7), 
-   background_color VARCHAR(7)
+   background_color VARCHAR(7),
+   visible TINYINT(1)
 );
 
 CREATE TABLE IF NOT EXISTS review (

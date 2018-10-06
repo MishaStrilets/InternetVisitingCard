@@ -22,31 +22,49 @@ import strilets.model.Search;
 public class UserDaoImpl extends AbstractDao<Integer, User> implements UserDao {
 
 	static final Logger logger = LoggerFactory.getLogger(UserDaoImpl.class);
+	final String ADMIN = "ADMIN";
 
 	@SuppressWarnings("unchecked")
-	public List<User> getUsers(Search search) {
+	public List<User> getUsers(Search search, String role) {
 		logger.info("Search users by criterias search: {}", search);
 		Criteria criteria = createEntityCriteria();
-		List<User> users = criteria.add(Restrictions.like("name", search.getName(), MatchMode.ANYWHERE))
+		criteria.add(Restrictions.like("name", search.getName(), MatchMode.ANYWHERE))
 				.add(Restrictions.like("description", search.getDescription(), MatchMode.ANYWHERE))
-				.add(Restrictions.like("address", search.getAddress(), MatchMode.ANYWHERE)).list();
+				.add(Restrictions.like("address", search.getAddress(), MatchMode.ANYWHERE))
+				.add(Restrictions.eq("visible", true));
+
+		if (!role.equals(ADMIN))
+			criteria.add(Restrictions.eq("visible", true));
+
+		List<User> users = criteria.list();
+
 		return users;
 	}
 
-	public User getUserByLogin(String login) {
+	public User getUserByLogin(String login, Boolean authenticationOrAuthorization) {
 		logger.info("Get user: {}", login);
 		Criteria criteria = createEntityCriteria();
 		criteria.add(Restrictions.eq("login", login));
+
+		if (authenticationOrAuthorization == false)
+			criteria.add(Restrictions.eq("visible", true)).uniqueResult();
+
 		User user = (User) criteria.uniqueResult();
+
 		return user;
 	}
 
 	@SuppressWarnings("unchecked")
-	public List<User> getAllUsers() {
+	public List<User> getAllUsers(String role) {
 		logger.info("Get all users.");
 		Criteria criteria = createEntityCriteria();
 		criteria.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY);
+
+		if (!role.equals(ADMIN))
+			criteria.add(Restrictions.eq("visible", true));
+
 		List<User> users = criteria.list();
+
 		return users;
 	}
 

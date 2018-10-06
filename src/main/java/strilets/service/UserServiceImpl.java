@@ -37,13 +37,13 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	private PasswordEncoder passwordEncoder;
 
-	public User getUserByLogin(String login) {
-		User user = dao.getUserByLogin(login);
+	public User getUserByLogin(String login, Boolean authenticationOrAuthorization) {
+		User user = dao.getUserByLogin(login, authenticationOrAuthorization);
 		return user;
 	}
 
-	public List<User> getUsers(Search search) {
-		List<User> users = dao.getUsers(search);
+	public List<User> getUsers(Search search, String role) {
+		List<User> users = dao.getUsers(search, role);
 		return users;
 	}
 
@@ -53,7 +53,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	public void updateUser(User user) {
-		User entity = dao.getUserByLogin(user.getLogin());
+		User entity = dao.getUserByLogin(user.getLogin(), true);
 		if (entity != null) {
 			entity.setLogin(user.getLogin());
 			if (!user.getPassword().equals(entity.getPassword())) {
@@ -75,6 +75,7 @@ public class UserServiceImpl implements UserService {
 			entity.setType(user.getType());
 			entity.setFontColor(user.getFontColor());
 			entity.setBackgroundColor(user.getBackgroundColor());
+			entity.setVisible(user.getVisible());
 		}
 	}
 
@@ -82,12 +83,12 @@ public class UserServiceImpl implements UserService {
 		dao.deleteUser(login);
 	}
 
-	public List<User> getAllUsers() {
-		return dao.getAllUsers();
+	public List<User> getAllUsers(String role) {
+		return dao.getAllUsers(role);
 	}
 
 	public boolean isUserLoginUnique(Integer id, String login) {
-		User user = getUserByLogin(login);
+		User user = getUserByLogin(login, true);
 		return (user == null || ((id != null) && (user.getId() == id)));
 	}
 
@@ -132,6 +133,7 @@ public class UserServiceImpl implements UserService {
 		user.setInstagram(card.getInstagram());
 		user.setFontColor(card.getFontColor());
 		user.setBackgroundColor(card.getBackgroundColor());
+		user.setVisible(card.getVisible());
 
 		if ((!("".equals(card.getFile().getOriginalFilename())))) {
 			MultipartFile multipartFile = card.getFile();

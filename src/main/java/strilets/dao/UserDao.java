@@ -13,13 +13,13 @@ import strilets.model.Search;
 
 public interface UserDao {
 
-	List<User> getUsers(Search search);
+	List<User> getUsers(Search search, String role);
 
-	User getUserByLogin(String login);
+	User getUserByLogin(String login, Boolean authenticationOrAuthorization);
 
 	void saveUser(User user);
 
 	void deleteUser(String login);
 
-	List<User> getAllUsers();
+	List<User> getAllUsers(String role);
 }

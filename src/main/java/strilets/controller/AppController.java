@@ -1,6 +1,5 @@
 /**
- * Class controller which manage 
- * incoming requests and redirect to proper response.
+ * Class controller which manage incoming requests and redirect to proper response.
  * 
  * @author Misha Strilets
  * @version 1.0
@@ -60,6 +59,8 @@ public class AppController {
 	@Autowired
 	AuthenticationTrustResolver authenticationTrustResolver;
 
+	final String anonym = "anonymousUser";
+
 	/**
 	 * Method return home page.
 	 */
@@ -73,7 +74,13 @@ public class AppController {
 	 */
 	@RequestMapping(value = { "/list-cards" }, method = RequestMethod.GET)
 	public String listCards(ModelMap model) {
-		List<User> users = userService.getAllUsers();
+		String role = new String();
+		if (getPrincipal().equals(anonym))
+			role = anonym;
+		else
+			role = userService.getUserByLogin(getPrincipal(), true).getRole();
+
+		List<User> users = userService.getAllUsers(role);
 		model.addAttribute("users", userService.sortUsersByRating(users));
 		Search search = new Search();
 		model.addAttribute("search", search);
@@ -86,7 +93,13 @@ public class AppController {
 	 */
 	@RequestMapping(value = { "/list-cards" }, method = RequestMethod.POST)
 	public String searchCards(Search search, ModelMap model) {
-		List<User> users = userService.getUsers(search);
+		String role = new String();
+		if (getPrincipal().equals(anonym))
+			role = anonym;
+		else
+			role = userService.getUserByLogin(getPrincipal(), true).getRole();
+
+		List<User> users = userService.getUsers(search, role);
 		model.addAttribute("users", userService.sortUsersByRating(users));
 		model.addAttribute("search", search);
 		return "list_cards";
@@ -138,7 +151,7 @@ public class AppController {
 		if (!getPrincipal().equals(login))
 			return "access_denied";
 
-		User user = userService.getUserByLogin(login);
+		User user = userService.getUserByLogin(login, true);
 		Card card = new Card(user);
 
 		model.addAttribute("card", card);
@@ -157,7 +170,7 @@ public class AppController {
 			return "edit_card";
 		}
 
-		User userOld = userService.getUserByLogin(login);
+		User userOld = userService.getUserByLogin(login, true);
 		User userNew = userService.copyCardToUser(userOld, card);
 		userService.updateUser(userNew);
 
@@ -169,7 +182,13 @@ public class AppController {
 	 */
 	@RequestMapping(value = { "/{login}" }, method = RequestMethod.GET)
 	public String viewCard(@PathVariable String login, ModelMap model) {
-		User user = userService.getUserByLogin(login);
+		User user = null;
+
+		if (login.equals(getPrincipal()))
+			user = userService.getUserByLogin(login, true);
+		else
+			user = userService.getUserByLogin(login, false);
+
 		if (user == null) {
 			model.addAttribute("login", login);
 			return "no_user";
@@ -184,8 +203,8 @@ public class AppController {
 	 */
 	@RequestMapping(value = "/image-{login}")
 	public void getImage(HttpServletResponse response, @PathVariable String login) throws IOException {
-		response.setContentType(userService.getUserByLogin(login).getType());
-		byte[] buffer = userService.getUserByLogin(login).getImage();
+		response.setContentType(userService.getUserByLogin(login, true).getType());
+		byte[] buffer = userService.getUserByLogin(login, true).getImage();
 		InputStream in1 = new ByteArrayInputStream(buffer);
 		IOUtils.copy(in1, response.getOutputStream());
 	}
@@ -226,7 +245,7 @@ public class AppController {
 		if (!getPrincipal().equals(login))
 			return "access_denied";
 
-		User user = userService.getUserByLogin(login);
+		User user = userService.getUserByLogin(login, true);
 		user.setNameImage("");
 		user.setType("");
 		user.setImage(null);
@@ -275,9 +294,16 @@ public class AppController {
 	 */
 	@RequestMapping(value = { "/add-review-{login}" }, method = RequestMethod.GET)
 	public String newReview(@PathVariable String login, ModelMap model) {
-		Review review = new Review();
-		model.addAttribute("review", review);
-		return "add_review";
+		User user = userService.getUserByLogin(login, false);
+
+		if (user == null) {
+			model.addAttribute("login", login);
+			return "no_user";
+		} else {
+			Review review = new Review();
+			model.addAttribute("review", review);
+			return "add_review";
+		}
 	}
 
 	/**
@@ -287,15 +313,13 @@ public class AppController {
 	@RequestMapping(value = { "/add-review-{login}" }, method = RequestMethod.POST)
 	public String saveReview(@Valid Review review, BindingResult result, ModelMap model, @PathVariable String login)
 			throws IOException {
-
 		if (result.hasErrors()) {
 			return "add_review";
 		}
 
-		User user = userService.getUserByLogin(login);
+		User user = userService.getUserByLogin(login, false);
 		review.setUser(user);
 		reviewService.saveReview(review);
-
 		return "review_success";
 	}
 
@@ -304,10 +328,17 @@ public class AppController {
 	 */
 	@RequestMapping(value = { "/list-reviews-{login}" }, method = RequestMethod.GET)
 	public String listReviews(@PathVariable String login, ModelMap model) {
-		User user = userService.getUserByLogin(login);
-		model.addAttribute("averageRating", userService.countAverageRating(user));
-		model.addAttribute("reviews", user.getReviews());
-		return "list_reviews";
+
+		User user = userService.getUserByLogin(login, false);
+
+		if (user == null) {
+			model.addAttribute("login", login);
+			return "no_user";
+		} else {
+			model.addAttribute("averageRating", userService.countAverageRating(user));
+			model.addAttribute("reviews", user.getReviews());
+			return "list_reviews";
+		}
 	}
 
 	/**
@@ -322,6 +353,7 @@ public class AppController {
 		} else {
 			userName = principal.toString();
 		}
+
 		return userName;
 	}
 
