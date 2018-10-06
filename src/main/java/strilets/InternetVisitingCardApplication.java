@@ -1,5 +1,5 @@
 /**
- * Application class for launch an application.
+ * Class application for launch an application.
  * 
  * @author Misha Strilets
  * @version 1.0

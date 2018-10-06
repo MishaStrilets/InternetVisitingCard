@@ -1,5 +1,5 @@
 /**
- * Configuration class for configuration Hibernate, data source and session factory. 
+ * Class configuration for setup Hibernate, data source and session factory. 
  * 
  * @author Misha Strilets
  * @version 1.0

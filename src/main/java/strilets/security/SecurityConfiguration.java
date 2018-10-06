@@ -1,5 +1,5 @@
 /**
- * Configuration class for configuration security.
+ * Class configuration for setup security.
  * 
  * @author Misha Strilets
  * @version 1.0

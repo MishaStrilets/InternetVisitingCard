@@ -1,5 +1,5 @@
 /**
- * Configuration class for configuration resources, views and static resources.
+ * Class configuration for setup resources, views and static resources.
  * 
  * @author Misha Strilets
  * @version 1.0
