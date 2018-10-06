@@ -1,3 +1,9 @@
+/**
+ * Configuration class for configuration security.
+ * 
+ * @author Misha Strilets
+ * @version 1.0
+ */
 package strilets.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,11 +42,12 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests().antMatchers("/", "/list-cards", "/registration-user", "/{login}").permitAll()
-				.antMatchers("/edit-card-{login}", "/delete-image-{login}").access("hasRole('USER') or hasRole('ADMIN')")
-				.antMatchers("/delete-user-{login}").access("hasRole('ADMIN')").and().formLogin().loginPage("/login")
-				.loginProcessingUrl("/login").usernameParameter("login").passwordParameter("password").and()
-				.rememberMe().rememberMeParameter("remember-me").tokenRepository(tokenRepository)
-				.tokenValiditySeconds(86400).and().csrf().and().exceptionHandling().accessDeniedPage("/access-denied");
+				.antMatchers("/edit-card-{login}", "/delete-image-{login}")
+				.access("hasRole('USER') or hasRole('ADMIN')").antMatchers("/delete-user-{login}")
+				.access("hasRole('ADMIN')").and().formLogin().loginPage("/login").loginProcessingUrl("/login")
+				.usernameParameter("login").passwordParameter("password").and().rememberMe()
+				.rememberMeParameter("remember-me").tokenRepository(tokenRepository).tokenValiditySeconds(86400).and()
+				.csrf().and().exceptionHandling().accessDeniedPage("/access-denied");
 	}
 
 	@Bean
@@ -67,5 +74,4 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	public AuthenticationTrustResolver getAuthenticationTrustResolver() {
 		return new AuthenticationTrustResolverImpl();
 	}
-
 }

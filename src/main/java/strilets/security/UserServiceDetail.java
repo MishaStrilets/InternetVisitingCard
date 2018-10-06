@@ -1,3 +1,6 @@
+/**
+ * Class for user authentication.
+ */
 package strilets.security;
 
 import java.util.ArrayList;
@@ -27,9 +30,9 @@ public class UserServiceDetail implements UserDetailsService {
 
 	public UserDetails loadUserByUsername(String login) throws UsernameNotFoundException {
 		User user = userService.getUserByLogin(login);
-		logger.info("User : {}", user);
+		logger.info("User: {}", login);
 		if (user == null) {
-			logger.info("User not found");
+			logger.info("User not found.");
 			throw new UsernameNotFoundException("User not found");
 		}
 		return new org.springframework.security.core.userdetails.User(user.getLogin(), user.getPassword(), true, true,
@@ -38,10 +41,9 @@ public class UserServiceDetail implements UserDetailsService {
 
 	private List<GrantedAuthority> getGrantedAuthorities(User user) {
 		List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
-		logger.info("Card profile : {}", user);
+		logger.info("User: {}", user.getLogin());
 		authorities.add(new SimpleGrantedAuthority("ROLE_" + user.getRole()));
-		logger.info("Authorities : {}", authorities);
+		logger.info("Authorities: {}", authorities);
 		return authorities;
 	}
-
 }

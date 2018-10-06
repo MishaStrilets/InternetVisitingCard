@@ -55,5 +55,4 @@ public class MvcConfiguration extends WebMvcConfigurerAdapter {
 	public void configurePathMatch(PathMatchConfigurer matcher) {
 		matcher.setUseRegisteredSuffixPatternMatch(true);
 	}
-
 }

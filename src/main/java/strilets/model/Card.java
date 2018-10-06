@@ -1,3 +1,9 @@
+/**
+ * Class POJO which implements methods for get and set card.
+ * 
+ * @author Misha Strilets
+ * @version 1.0
+ */
 package strilets.model;
 
 import java.io.Serializable;
@@ -188,5 +194,4 @@ public class Card implements Serializable {
 	public void setBackgroundColor(String backgroundColor) {
 		this.backgroundColor = backgroundColor;
 	}
-
 }

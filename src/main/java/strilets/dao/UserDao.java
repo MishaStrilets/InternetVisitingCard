@@ -1,3 +1,9 @@
+/**
+ * Interface which contains abstract methods for get, save and delete user.
+ * 
+ * @author Misha Strilets
+ * @version 1.0
+ */
 package strilets.dao;
 
 import java.util.List;
@@ -6,8 +12,6 @@ import strilets.model.User;
 import strilets.model.Search;
 
 public interface UserDao {
-
-	User getUserById(Integer id);
 
 	List<User> getUsers(Search search);
 

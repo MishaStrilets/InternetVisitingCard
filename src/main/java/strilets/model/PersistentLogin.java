@@ -1,3 +1,6 @@
+/**
+ * Class POJO which implements methods for get and set persistent login.
+ */
 package strilets.model;
 
 import java.io.Serializable;
@@ -61,5 +64,4 @@ public class PersistentLogin implements Serializable {
 	public void setLast_used(Date last_used) {
 		this.last_used = last_used;
 	}
-
 }

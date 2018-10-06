@@ -1,3 +1,9 @@
+/**
+ * Class DAO which implements method for save review.
+ * 
+ * @author Misha Strilets
+ * @version 1.0
+ */
 package strilets.dao;
 
 import org.slf4j.Logger;
@@ -11,13 +17,8 @@ public class ReviewDaoImpl extends AbstractDao<Integer, Review> implements Revie
 
 	static final Logger logger = LoggerFactory.getLogger(ReviewDaoImpl.class);
 
-	public Review getReviewById(Integer id) {
-		Review review = getByKey(id);
-		return review;
-	}
-
 	public void saveReview(Review review) {
-		logger.info("Save review: {}", review);
-		persist(review);	
+		logger.info("Save review on user: {}", review.getUser().getLogin());
+		persist(review);
 	}
 }

@@ -1,3 +1,9 @@
+/**
+ * Class which implements method for business logic review.
+ * 
+ * @author Misha Strilets
+ * @version 1.0
+ */
 package strilets.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,10 +19,6 @@ public class ReviewServiceImpl implements ReviewService {
 
 	@Autowired
 	private ReviewDao dao;
-
-	public Review getReviewById(Integer id) {
-		return dao.getReviewById(id);
-	}
 
 	public void saveReview(Review review) {
 		dao.saveReview(review);

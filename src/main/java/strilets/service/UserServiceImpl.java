@@ -1,3 +1,9 @@
+/**
+ * Class which implements method for business logic user.
+ * 
+ * @author Misha Strilets
+ * @version 1.0
+ */
 package strilets.service;
 
 import java.io.IOException;
@@ -31,10 +37,6 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	private PasswordEncoder passwordEncoder;
 
-	public User getUserById(Integer id) {
-		return dao.getUserById(id);
-	}
-
 	public User getUserByLogin(String login) {
 		User user = dao.getUserByLogin(login);
 		return user;
@@ -51,7 +53,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	public void updateUser(User user) {
-		User entity = dao.getUserById(user.getId());
+		User entity = dao.getUserByLogin(user.getLogin());
 		if (entity != null) {
 			entity.setLogin(user.getLogin());
 			if (!user.getPassword().equals(entity.getPassword())) {

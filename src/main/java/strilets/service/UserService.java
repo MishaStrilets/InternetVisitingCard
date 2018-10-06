@@ -1,3 +1,9 @@
+/**
+ * Interface which contains abstract methods for business logic user.
+ * 
+ * @author Misha Strilets
+ * @version 1.0
+ */
 package strilets.service;
 
 import java.io.IOException;
@@ -9,8 +15,6 @@ import strilets.model.Card;
 import strilets.model.Search;
 
 public interface UserService {
-
-	User getUserById(Integer id);
 
 	List<User> getUsers(Search search);
 

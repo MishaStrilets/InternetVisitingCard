@@ -21,7 +21,5 @@ public class InternetVisitingCardApplication extends SpringBootServletInitialize
 
 	public static void main(String[] args) {
 		SpringApplication.run(InternetVisitingCardApplication.class, args);
-
 	}
-
 }

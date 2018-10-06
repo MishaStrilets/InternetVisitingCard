@@ -1,3 +1,9 @@
+/**
+ * Class POJO which implements methods for get and set review.
+ * 
+ * @author Misha Strilets
+ * @version 1.0
+ */
 package strilets.model;
 
 import java.io.Serializable;

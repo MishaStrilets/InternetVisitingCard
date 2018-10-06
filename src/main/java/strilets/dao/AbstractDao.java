@@ -1,3 +1,6 @@
+/**
+ * Abstract class DAO which manage CRUD operations.
+ */
 package strilets.dao;
 
 import java.io.Serializable;
@@ -45,5 +48,4 @@ public abstract class AbstractDao<PK extends Serializable, T> {
 	protected Criteria createEntityCriteria() {
 		return getSession().createCriteria(persistentClass);
 	}
-
 }
