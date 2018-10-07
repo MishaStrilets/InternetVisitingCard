@@ -59,7 +59,7 @@ public class AppController {
 	@Autowired
 	AuthenticationTrustResolver authenticationTrustResolver;
 
-	final String anonym = "anonymousUser";
+	final private String ANONYM = "anonymousUser";
 
 	/**
 	 * Method return home page.
@@ -74,13 +74,7 @@ public class AppController {
 	 */
 	@RequestMapping(value = { "/list-cards" }, method = RequestMethod.GET)
 	public String listCards(ModelMap model) {
-		String role = new String();
-		if (getPrincipal().equals(anonym))
-			role = anonym;
-		else
-			role = userService.getUserByLogin(getPrincipal(), true).getRole();
-
-		List<User> users = userService.getAllUsers(role);
+		List<User> users = userService.getAllUsers(getUserRole());
 		model.addAttribute("users", userService.sortUsersByRating(users));
 		Search search = new Search();
 		model.addAttribute("search", search);
@@ -93,13 +87,7 @@ public class AppController {
 	 */
 	@RequestMapping(value = { "/list-cards" }, method = RequestMethod.POST)
 	public String searchCards(Search search, ModelMap model) {
-		String role = new String();
-		if (getPrincipal().equals(anonym))
-			role = anonym;
-		else
-			role = userService.getUserByLogin(getPrincipal(), true).getRole();
-
-		List<User> users = userService.getUsers(search, role);
+		List<User> users = userService.getUsers(search, getUserRole());
 		model.addAttribute("users", userService.sortUsersByRating(users));
 		model.addAttribute("search", search);
 		return "list_cards";
@@ -147,14 +135,13 @@ public class AppController {
 	 */
 	@RequestMapping(value = { "/edit-card-{login}" }, method = RequestMethod.GET)
 	public String editCard(@PathVariable String login, ModelMap model) throws IOException {
-
 		if (!getPrincipal().equals(login))
 			return "access_denied";
 
 		User user = userService.getUserByLogin(login, true);
 		Card card = new Card(user);
-
 		model.addAttribute("card", card);
+
 		return "edit_card";
 	}
 
@@ -165,7 +152,6 @@ public class AppController {
 	@RequestMapping(value = { "/edit-card-{login}" }, method = RequestMethod.POST)
 	public String updateCard(@Valid Card card, BindingResult result, ModelMap model, @PathVariable String login)
 			throws IOException {
-
 		if (result.hasErrors()) {
 			return "edit_card";
 		}
@@ -223,8 +209,8 @@ public class AppController {
 		}
 
 		userService.deleteUser(login);
-
 		model.addAttribute("login", login);
+
 		return "delete_user";
 	}
 
@@ -250,6 +236,7 @@ public class AppController {
 		user.setType("");
 		user.setImage(null);
 		userService.updateUser(user);
+
 		return "redirect:/edit-card-{login}";
 	}
 
@@ -267,11 +254,10 @@ public class AppController {
 	 */
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String loginPage() {
-		if (isCurrentAuthenticationAnonymous()) {
+		if (isCurrentAuthenticationAnonymous())
 			return "login";
-		} else {
+		else
 			return "redirect:/";
-		}
 	}
 
 	/**
@@ -313,13 +299,13 @@ public class AppController {
 	@RequestMapping(value = { "/add-review-{login}" }, method = RequestMethod.POST)
 	public String saveReview(@Valid Review review, BindingResult result, ModelMap model, @PathVariable String login)
 			throws IOException {
-		if (result.hasErrors()) {
+		if (result.hasErrors())
 			return "add_review";
-		}
 
 		User user = userService.getUserByLogin(login, false);
 		review.setUser(user);
 		reviewService.saveReview(review);
+
 		return "review_success";
 	}
 
@@ -328,7 +314,6 @@ public class AppController {
 	 */
 	@RequestMapping(value = { "/list-reviews-{login}" }, method = RequestMethod.GET)
 	public String listReviews(@PathVariable String login, ModelMap model) {
-
 		User user = userService.getUserByLogin(login, false);
 
 		if (user == null) {
@@ -363,5 +348,18 @@ public class AppController {
 	private boolean isCurrentAuthenticationAnonymous() {
 		final Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		return authenticationTrustResolver.isAnonymous(authentication);
+	}
+
+	/**
+	 * Method return role of user.
+	 */
+	private String getUserRole() {
+		String role = new String();
+		if (getPrincipal().equals(ANONYM))
+			role = ANONYM;
+		else
+			role = userService.getUserByLogin(getPrincipal(), true).getRole();
+
+		return role;
 	}
 }

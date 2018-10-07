@@ -41,12 +41,12 @@ public class UserDaoImpl extends AbstractDao<Integer, User> implements UserDao {
 		return users;
 	}
 
-	public User getUserByLogin(String login, Boolean authenticationOrAuthorization) {
+	public User getUserByLogin(String login, Boolean visible) {
 		logger.info("Get user: {}", login);
 		Criteria criteria = createEntityCriteria();
 		criteria.add(Restrictions.eq("login", login));
 
-		if (authenticationOrAuthorization == false)
+		if (visible == false)
 			criteria.add(Restrictions.eq("visible", true)).uniqueResult();
 
 		User user = (User) criteria.uniqueResult();

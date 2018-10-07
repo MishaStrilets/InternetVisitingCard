@@ -37,8 +37,8 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	private PasswordEncoder passwordEncoder;
 
-	public User getUserByLogin(String login, Boolean authenticationOrAuthorization) {
-		User user = dao.getUserByLogin(login, authenticationOrAuthorization);
+	public User getUserByLogin(String login, Boolean visible) {
+		User user = dao.getUserByLogin(login, visible);
 		return user;
 	}
 
@@ -56,9 +56,11 @@ public class UserServiceImpl implements UserService {
 		User entity = dao.getUserByLogin(user.getLogin(), true);
 		if (entity != null) {
 			entity.setLogin(user.getLogin());
+
 			if (!user.getPassword().equals(entity.getPassword())) {
 				entity.setPassword(passwordEncoder.encode(user.getPassword()));
 			}
+
 			entity.setName(user.getName());
 			entity.setDescription(user.getDescription());
 			entity.setPeople(user.getPeople());

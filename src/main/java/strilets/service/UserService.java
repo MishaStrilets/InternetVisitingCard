@@ -18,7 +18,7 @@ public interface UserService {
 
 	List<User> getUsers(Search search, String role);
 
-	User getUserByLogin(String login, Boolean authenticationOrAuthorization);
+	User getUserByLogin(String login, Boolean visible);
 
 	void saveUser(User user);
 
