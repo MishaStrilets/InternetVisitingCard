@@ -60,6 +60,18 @@ a.sign {
 	right: 1%;
 }
 
+#footer-change-lang {
+	position: absolute;
+	bottom: 10%;
+	right: 31%;
+}
+
+#footer-lang {
+	position: absolute;
+	bottom: 10%;
+	right: 22%;
+}
+
 .header {
 	position: absolute;
 	top: 0%;

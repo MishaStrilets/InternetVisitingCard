@@ -61,7 +61,7 @@
 					<label>Rating</label>
 					<form:select name="rating" path="rating" id="rating"
 						class="form-control">
-						<option value="">-</option>
+						<option value=""></option>
 						<option value="0">0</option>
 						<option value="1">1</option>
 						<option value="2">2</option>
