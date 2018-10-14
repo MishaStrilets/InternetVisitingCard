@@ -5,6 +5,7 @@
 <%@ taglib prefix="sec"
 	uri="http://www.springframework.org/security/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 
 <html>
 <head>
@@ -25,7 +26,9 @@
 		<div class="row">
 			<div class="col-sm-8">
 				<div class="list-cards">
-					<h2>List of cards</h2>
+					<h2>
+						<spring:message code="list_cards" />
+					</h2>
 					<table class="table table-hover">
 						<tbody>
 							<c:forEach items="${users}" var="user">
@@ -77,20 +80,25 @@
 
 			<div class="col-sm-4">
 				<div class="search-cards">
-					<h2>Search</h2>
+					<h2>
+						<spring:message code="search" />
+					</h2>
 					<form:form method="POST" modelAttribute="search"
 						class="form-horizontal">
 
-						<form:input type="search" path="name" id="name" placeholder="Name"
-							class="form-control" />
+						<spring:message code="name" var="name" />
+						<form:input type="search" path="name" id="name"
+							placeholder='${name}' class="form-control" />
 						<br />
 
+						<spring:message code="description" var="description" />
 						<form:input type="search" path="description" id="description"
-							placeholder="Description" class="form-control" />
+							placeholder='${description}' class="form-control" />
 						<br />
 
+						<spring:message code="address" var="address" />
 						<form:input type="search" path="address" id="address"
-							placeholder="Address" class="form-control" />
+							placeholder='${address}' class="form-control" />
 						<br />
 
 						<div>

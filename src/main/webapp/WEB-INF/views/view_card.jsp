@@ -4,6 +4,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="sec"
 	uri="http://www.springframework.org/security/tags"%>
+<%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 
 <html>
 <head>
@@ -31,22 +32,26 @@
 
 				<c:if test="${user.people != ''}">
 					<h2>
-						<i>Contact person: </i>${user.people}</h2>
+						<i><spring:message code="people" />:</i> ${user.people}
+					</h2>
 				</c:if>
 
 				<c:if test="${user.address != ''}">
 					<h2>
-						<i>Address: </i>${user.address}</h2>
+						<i><spring:message code="address" />:</i> ${user.address}
+					</h2>
 				</c:if>
 
 				<c:if test="${user.email != ''}">
 					<h2>
-						<i>Email: </i>${user.email}</h2>
+						<i><spring:message code="email" />:</i> ${user.email}
+					</h2>
 				</c:if>
 
 				<c:if test="${user.phone != ''}">
 					<h2>
-						<i>Phone number: </i>${user.phone}</h2>
+						<i><spring:message code="phone" />:</i> ${user.phone}
+					</h2>
 				</c:if>
 
 				<c:if test="${user.linkedin != '' }">

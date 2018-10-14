@@ -4,6 +4,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="sec"
 	uri="http://www.springframework.org/security/tags"%>
+<%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 
 <html>
 <head>
@@ -22,7 +23,9 @@
 
 	<div class="alert">
 		<div class="alert alert-danger">
-			<strong> User!</strong> You are not authorized to access this page.
+			<strong> <spring:message code="user" />
+			</strong>
+			<spring:message code="access_denied" />
 		</div>
 	</div>
 

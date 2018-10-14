@@ -1,5 +1,5 @@
 body {
-	font-family: Tw Cen MT;
+	font-family: Verdana, sans-serif;
 	background-color: #ffffff;
 	overflow-x: hidden;
 }
@@ -34,8 +34,7 @@ a.sign {
 	top: 10%;
 	left: 1%;
 	width: 98%;
-	height: 75%;
-	position: fixed;
+	position: absolute;
 	padding: 1%;
 }
 
@@ -50,26 +49,26 @@ a.sign {
 
 #footer-name {
 	position: absolute;
-	bottom: 25%;
+	bottom: 45%;
 	left: 1%;
 }
 
 #footer-contact {
 	position: absolute;
-	bottom: 25%;
-	right: 1%;
+	bottom: 0%;
+	left: 1%;
 }
 
 #footer-change-lang {
 	position: absolute;
 	bottom: 10%;
-	right: 31%;
+	right: 12%;
 }
 
 #footer-lang {
 	position: absolute;
 	bottom: 10%;
-	right: 22%;
+	right: 1%;
 }
 
 .header {
@@ -86,7 +85,7 @@ a.sign {
 div.alert {
 	position: fixed;
 	top: 20%;
-	left: 40%;
+	left: 37%;
 }
 
 .edit-card {
@@ -169,7 +168,7 @@ div.alert {
 .login-error {
 	position: fixed;
 	top: 10%;
-	left: 43%;
+	left: 40%;
 }
 
 .view-card {

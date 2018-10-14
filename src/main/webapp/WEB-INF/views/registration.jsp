@@ -5,6 +5,7 @@
 <%@ taglib prefix="sec"
 	uri="http://www.springframework.org/security/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 
 <html>
 <head>
@@ -26,7 +27,9 @@
 
 			<div class="row">
 				<div class="registration-column" style="background-color: #004387;">
-					<h2>Registration</h2>
+					<h2>
+						<spring:message code="registration" />
+					</h2>
 				</div>
 			</div>
 
@@ -37,7 +40,7 @@
 
 				<div class="row">
 					<div class="registration-column" style="background-color: #004387;">
-						<label>Login</label>
+						<label><spring:message code="login" /></label>
 						<form:input type="text" path="login" id="login"
 							class="form-control" />
 					</div>
@@ -50,11 +53,12 @@
 
 				<div class="row">
 					<div class="registration-column" style="background-color: #004387;">
-						<label>Password</label>
+						<label><spring:message code="password" /></label>
 						<form:input type="password" path="password" id="password"
 							class="form-control" />
 					</div>
-					<div class="registration-column" style="background-color: #ffffff;">
+					<div class="registration-column"
+						style="background-color: #ffffff; width: 50%;">
 						<form:errors path="password" style="color: #ff0000"
 							class="alert alert-danger" />
 					</div>
@@ -62,7 +66,8 @@
 
 				<div class="row">
 					<div class="registration-column" style="background-color: #004387;">
-						<input type="submit" value="Sign up" class="btn btn-success" />
+						<input type="submit" value=<spring:message code="sign_up" />
+							class="btn btn-success" />
 					</div>
 				</div>
 			</form:form>

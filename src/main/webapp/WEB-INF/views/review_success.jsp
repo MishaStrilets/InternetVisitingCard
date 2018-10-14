@@ -4,6 +4,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="sec"
 	uri="http://www.springframework.org/security/tags"%>
+<%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 
 <html>
 <head>
@@ -22,7 +23,9 @@
 
 	<div class="alert">
 		<div class="alert alert-success">
-			Your review to user<strong> ${login} </strong>added successfully.
+			<spring:message code="rev_seccess_1" />
+			<strong> ${login} </strong>.
+			<spring:message code="rev_success_2" />
 		</div>
 	</div>
 

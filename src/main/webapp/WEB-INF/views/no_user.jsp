@@ -4,6 +4,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="sec"
 	uri="http://www.springframework.org/security/tags"%>
+<%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 
 <html>
 <head>
@@ -22,7 +23,9 @@
 
 	<div class="alert">
 		<div class="alert alert-danger">
-			User with a login<strong> ${login} </strong>is not.
+			<spring:message code="no_user_1" />
+			<strong> ${login} </strong>
+			<spring:message code="no_user_2" />
 		</div>
 	</div>
 

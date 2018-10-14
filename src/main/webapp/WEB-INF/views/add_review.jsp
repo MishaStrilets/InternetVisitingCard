@@ -5,6 +5,7 @@
 <%@ taglib prefix="sec"
 	uri="http://www.springframework.org/security/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 
 <html>
 <head>
@@ -25,7 +26,9 @@
 
 		<div class="row">
 			<div class="review-column" style="background-color: #004387;">
-				<h2>Add review</h2>
+				<h2>
+					<spring:message code="add_review" />
+				</h2>
 			</div>
 		</div>
 
@@ -34,7 +37,7 @@
 
 			<div class="row">
 				<div class="review-column" style="background-color: #004387;">
-					<label>Author</label>
+					<label><spring:message code="author" /></label>
 					<form:input type="text" path="author" id="author"
 						class="form-control" />
 				</div>
@@ -46,7 +49,7 @@
 
 			<div class="row">
 				<div class="review-column" style="background-color: #004387;">
-					<label>Description</label>
+					<label><spring:message code="description" /></label>
 					<form:textarea name="description" path="description"
 						id="description" class="form-control" cols="40" rows="5" />
 				</div>
@@ -58,7 +61,7 @@
 
 			<div class="row">
 				<div class="review-column" style="background-color: #004387;">
-					<label>Rating</label>
+					<label><spring:message code="rating" /></label>
 					<form:select name="rating" path="rating" id="rating"
 						class="form-control">
 						<option value=""></option>
@@ -83,7 +86,8 @@
 
 			<div class="row">
 				<div class="review-column" style="background-color: #004387;">
-					<input type="submit" value="Add" class="btn btn-warning" />
+					<input type="submit" value=<spring:message code="add" />
+						class="btn btn-warning" />
 				</div>
 			</div>
 		</form:form>

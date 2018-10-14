@@ -5,6 +5,7 @@
 <%@ taglib prefix="sec"
 	uri="http://www.springframework.org/security/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 
 <html>
 
@@ -26,17 +27,20 @@
 		<div class="row">
 			<div class="col-sm-8">
 				<div class="list-reviews">
-					<h2>List of reviews</h2>
+					<h2>
+						<spring:message code="list_reviews" />
+					</h2>
 
-					<h3>Average rating ${averageRating}</h3>
+					<h3>
+						<spring:message code="average_rating" />${averageRating}</h3>
 
 					<table class="table table-condensed"
 						style="color: #ffffff; table-layout: fixed">
 						<thead>
 							<tr>
-								<th>Author</th>
-								<th>Description</th>
-								<th>Rating</th>
+								<th><spring:message code="author" /></th>
+								<th><spring:message code="description" /></th>
+								<th><spring:message code="rating" /></th>
 							</tr>
 						</thead>
 						<tbody>

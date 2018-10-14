@@ -40,7 +40,9 @@
 	<div class="edit-card">
 		<div class="row">
 			<div class="edit-column" style="background-color: #004387;">
-				<h2>Edit card</h2>
+				<h2>
+					<spring:message code="edit_card" />
+				</h2>
 			</div>
 		</div>
 		<form:form method="POST" modelAttribute="card"
@@ -48,7 +50,7 @@
 
 			<div class="row">
 				<div class="edit-column" style="background-color: #004387;">
-					<label>Name</label>
+					<label><spring:message code="name" /></label>
 					<form:input type="text" path="name" id="name" class="form-control" />
 				</div>
 
@@ -60,7 +62,7 @@
 
 			<div class="row">
 				<div class="edit-column" style="background-color: #004387;">
-					<label>People</label>
+					<label><spring:message code="people" /></label>
 					<form:input type="text" path="people" id="people"
 						class="form-control" />
 				</div>
@@ -73,7 +75,7 @@
 
 			<div class="row">
 				<div class="edit-column" style="background-color: #004387;">
-					<label>Address</label>
+					<label><spring:message code="address" /></label>
 
 					<form:input type="text" path="address" id="address"
 						class="form-control" />
@@ -87,7 +89,7 @@
 
 			<div class="row">
 				<div class="edit-column" style="background-color: #004387;">
-					<label>Email</label>
+					<label><spring:message code="email" /></label>
 					<form:input type="text" path="email" id="email"
 						class="form-control" />
 				</div>
@@ -100,7 +102,7 @@
 
 			<div class="row">
 				<div class="edit-column" style="background-color: #004387;">
-					<label>Phone</label>
+					<label><spring:message code="phone" /></label>
 					<form:input type="text" path="phone" id="phone"
 						class="form-control" />
 				</div>
@@ -163,7 +165,7 @@
 
 			<div class="row">
 				<div class="edit-column" style="background-color: #004387;">
-					<label>Description</label>
+					<label><spring:message code="description" /></label>
 
 					<form:textarea name="description" path="description"
 						id="description" class="form-control" cols="40" rows="5" />
@@ -177,7 +179,7 @@
 
 			<div class="row">
 				<div class="edit-column" style="background-color: #004387;">
-					<label>Image</label>
+					<label><spring:message code="image" /></label>
 					<form:input type="file" path="file" id="file" class="form-control" />
 
 					<c:if test="${card.nameImage != ''}">
@@ -187,7 +189,7 @@
 
 						<div>
 							<br /> <a href="<c:url value='/delete-image-${card.login}' />"
-								class="btn btn-danger">Delete image</a>
+								class="btn btn-danger"><spring:message code="delete_image" /></a>
 						</div>
 					</c:if>
 				</div>
@@ -195,7 +197,7 @@
 
 			<div class="row">
 				<div class="edit-column" style="background-color: #004387;">
-					<label>Font color</label>
+					<label><spring:message code="font_color" /></label>
 					<div>
 						<form:input type="color" value='${card.fontColor}'
 							path="fontColor" id="fontColor" class="form-control" />
@@ -205,7 +207,7 @@
 
 			<div class="row">
 				<div class="edit-column" style="background-color: #004387;">
-					<label>Background color</label>
+					<label><spring:message code="background_color" /></label>
 					<div>
 						<form:input type="color" value='${card.backgroundColor}'
 							path="backgroundColor" id="backgroundColor" class="form-control" />
@@ -215,7 +217,7 @@
 
 			<div class="row">
 				<div class="edit-column" style="background-color: #004387;">
-					<label>Visible</label>
+					<label><spring:message code="visible" /></label>
 					<div>
 						<form:checkbox name="visible" value='${card.visible}'
 							path="visible" id="visible" />
@@ -225,14 +227,15 @@
 
 			<div class="row">
 				<div class="edit-column" style="background-color: #004387;">
-					<input type="submit" value="Edit" class="btn btn-warning" />
+					<input type="submit" value="<spring:message code="edit" />"
+						class="btn btn-warning" />
 				</div>
 			</div>
 
 			<div class="row">
 				<div class="edit-column" style="background-color: #004387;">
 					<a href="<c:url value='/delete-user-${card.login}' />"
-						class="btn btn-danger">Delete account</a>
+						class="btn btn-danger"><spring:message code="delete_account" /></a>
 				</div>
 			</div>
 		</form:form>
