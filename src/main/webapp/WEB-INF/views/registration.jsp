@@ -45,7 +45,7 @@
 							class="form-control" />
 					</div>
 					<div class="registration-column"
-						style="background-color: #ffffff; width: 50%;">
+						style="background-color: #ffffff; width: 65%;">
 						<form:errors path="login" style="color: #ff0000"
 							class="alert alert-danger" />
 					</div>
