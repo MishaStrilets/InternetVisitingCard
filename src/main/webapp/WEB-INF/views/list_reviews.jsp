@@ -32,7 +32,9 @@
 					</h2>
 
 					<h3>
-						<spring:message code="average_rating" />${averageRating}</h3>
+						<spring:message code="average_rating" />
+						${averageRating}
+					</h3>
 
 					<table class="table table-condensed"
 						style="color: #ffffff; table-layout: fixed">

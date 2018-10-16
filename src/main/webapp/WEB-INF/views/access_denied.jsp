@@ -23,7 +23,7 @@
 
 	<div class="alert">
 		<div class="alert alert-danger">
-			<strong> <spring:message code="user" />
+			<strong> <spring:message code="user" />!
 			</strong>
 			<spring:message code="access_denied" />
 		</div>

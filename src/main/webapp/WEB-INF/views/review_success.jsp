@@ -23,8 +23,8 @@
 
 	<div class="alert">
 		<div class="alert alert-success">
-			<spring:message code="rev_seccess_1" />
-			<strong> ${login} </strong>.
+			<spring:message code="rev_success_1" />
+			<strong> ${login} </strong>
 			<spring:message code="rev_success_2" />
 		</div>
 	</div>

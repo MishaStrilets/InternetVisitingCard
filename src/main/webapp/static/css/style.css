@@ -84,8 +84,18 @@ a.sign {
 
 div.alert {
 	position: fixed;
+	left: 50%;
 	top: 20%;
-	left: 37%;
+	transform: translate(-50%);
+	white-space: nowrap;
+}
+
+.login-error {
+	position: fixed;
+	left: 50%;
+	top: 10%;
+	transform: translate(-50%);
+	white-space: nowrap;
 }
 
 .edit-card {
@@ -143,9 +153,9 @@ div.alert {
 .registration-user {
 	color: #ffffff;
 	position: fixed;
-	top: 15%;
-	left: 43%;
+	left: 41%;
 	width: 54%;
+	top: 15%;
 }
 
 .registration-column {
@@ -163,12 +173,6 @@ div.alert {
 	width: 20%;
 	padding: 1%;
 	height: 40%
-}
-
-.login-error {
-	position: fixed;
-	top: 10%;
-	left: 40%;
 }
 
 .view-card {
