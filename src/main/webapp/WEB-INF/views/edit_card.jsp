@@ -256,7 +256,7 @@
 		</div>
 		<div id="footer-contact">
 			<spring:message code="contact_inf" />
-			: mishastrilets@gmail.com
+			mishastrilets@gmail.com
 		</div>
 	</div>
 </body>
